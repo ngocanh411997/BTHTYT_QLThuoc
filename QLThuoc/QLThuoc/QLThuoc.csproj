@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="models\ChiTietHoaDonXuat.cs" />
     <Compile Include="models\CoSo.cs" />
     <Compile Include="models\HoaDonNhap.cs" />
@@ -62,9 +56,60 @@
     <Compile Include="models\Thuoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="view\CoSo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\CoSo.Designer.cs">
+      <DependentUpon>CoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\HoaDonNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\HoaDonNhap.Designer.cs">
+      <DependentUpon>HoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\HoaDonXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\HoaDonXuat.Designer.cs">
+      <DependentUpon>HoaDonXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\LoaiThuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\LoaiThuoc.Designer.cs">
+      <DependentUpon>LoaiThuoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\NhaCungCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\NhanVien.Designer.cs">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Quanlichung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\Quanlichung.Designer.cs">
+      <DependentUpon>Quanlichung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Thuoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\Thuoc.Designer.cs">
+      <DependentUpon>Thuoc.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +119,33 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\CoSo.resx">
+      <DependentUpon>CoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\HoaDonNhap.resx">
+      <DependentUpon>HoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\HoaDonXuat.resx">
+      <DependentUpon>HoaDonXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\LoaiThuoc.resx">
+      <DependentUpon>LoaiThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\NhanVien.resx">
+      <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Quanlichung.resx">
+      <DependentUpon>Quanlichung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Thuoc.resx">
+      <DependentUpon>Thuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -89,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controller\" />
-    <Folder Include="view\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
