@@ -40,7 +40,7 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnCS = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -191,20 +191,20 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Hệ thống quản lý thuốc";
             // 
-            // button1
+            // btnThoat
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(884, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 100);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.Location = new System.Drawing.Point(884, 12);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(85, 100);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // Quanlichung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -230,6 +230,6 @@
         private System.Windows.Forms.Button btnHDNhap;
         private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button btnCS;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThoat;
     }
 }
