@@ -71,6 +71,7 @@
             this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSua = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLuu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHuy = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -394,7 +395,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(4, 140);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(237, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(329, 55);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -449,11 +450,12 @@
             this.mnsIDU.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnThem,
             this.btnSua,
-            this.btnLuu});
+            this.btnLuu,
+            this.btnHuy});
             this.mnsIDU.Location = new System.Drawing.Point(4, 40);
             this.mnsIDU.Name = "mnsIDU";
             this.mnsIDU.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnsIDU.Size = new System.Drawing.Size(219, 55);
+            this.mnsIDU.Size = new System.Drawing.Size(263, 55);
             this.mnsIDU.TabIndex = 7;
             this.mnsIDU.Text = "menuStrip1";
             // 
@@ -490,6 +492,17 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHuy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(44, 51);
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // NhanVien
             // 
@@ -561,5 +574,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Macs;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.ToolStripMenuItem btnThoat;
+        private System.Windows.Forms.ToolStripMenuItem btnHuy;
     }
 }

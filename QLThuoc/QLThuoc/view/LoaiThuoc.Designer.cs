@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoaiThuoc));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnsIDU = new System.Windows.Forms.MenuStrip();
-            this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSua = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLuu = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -57,13 +49,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsIDU = new System.Windows.Forms.MenuStrip();
+            this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSua = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLuu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHuy = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox7.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.mnsIDU.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.mnsIDU.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox7
@@ -76,101 +78,6 @@
             this.groupBox7.TabIndex = 22;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chức Năng";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
-            this.menuStrip1.Location = new System.Drawing.Point(8, 129);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(168, 55);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
-            this.toolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(44, 51);
-            this.toolStripMenuItem4.Text = "Xóa";
-            this.toolStripMenuItem4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem5.Image")));
-            this.toolStripMenuItem5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripMenuItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(66, 51);
-            this.toolStripMenuItem5.Text = "Làm mới";
-            this.toolStripMenuItem5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem6.Image")));
-            this.toolStripMenuItem6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(50, 51);
-            this.toolStripMenuItem6.Text = "Thoát";
-            this.toolStripMenuItem6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.toolStripMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // mnsIDU
-            // 
-            this.mnsIDU.Dock = System.Windows.Forms.DockStyle.None;
-            this.mnsIDU.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnThem,
-            this.btnSua,
-            this.btnLuu});
-            this.mnsIDU.Location = new System.Drawing.Point(8, 38);
-            this.mnsIDU.Name = "mnsIDU";
-            this.mnsIDU.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnsIDU.Size = new System.Drawing.Size(219, 55);
-            this.mnsIDU.TabIndex = 7;
-            this.mnsIDU.Text = "menuStrip1";
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(50, 51);
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSua.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(117, 51);
-            this.btnSua.Text = "Thay đổi thông tin";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(44, 51);
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // groupBox6
             // 
@@ -351,6 +258,126 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Loại Thuốc";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.btnThongKe,
+            this.btnThoat});
+            this.menuStrip1.Location = new System.Drawing.Point(22, 149);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.Size = new System.Drawing.Size(237, 55);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
+            this.toolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(44, 51);
+            this.toolStripMenuItem4.Text = "Xóa";
+            this.toolStripMenuItem4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem5.Image")));
+            this.toolStripMenuItem5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripMenuItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(66, 51);
+            this.toolStripMenuItem5.Text = "Làm mới";
+            this.toolStripMenuItem5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripMenuItem5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThongKe.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.ShowShortcutKeys = false;
+            this.btnThongKe.Size = new System.Drawing.Size(69, 51);
+            this.btnThongKe.Text = "Thống kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThoat.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(50, 51);
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // mnsIDU
+            // 
+            this.mnsIDU.Dock = System.Windows.Forms.DockStyle.None;
+            this.mnsIDU.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnThem,
+            this.btnSua,
+            this.btnLuu,
+            this.btnHuy});
+            this.mnsIDU.Location = new System.Drawing.Point(22, 49);
+            this.mnsIDU.Name = "mnsIDU";
+            this.mnsIDU.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.mnsIDU.Size = new System.Drawing.Size(263, 55);
+            this.mnsIDU.TabIndex = 9;
+            this.mnsIDU.Text = "menuStrip1";
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(50, 51);
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSua.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(117, 51);
+            this.btnSua.Text = "Thay đổi thông tin";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLuu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(44, 51);
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHuy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(44, 51);
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHuy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // LoaiThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,16 +390,16 @@
             this.Size = new System.Drawing.Size(1001, 493);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.mnsIDU.ResumeLayout(false);
-            this.mnsIDU.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.mnsIDU.ResumeLayout(false);
+            this.mnsIDU.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -380,14 +407,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.MenuStrip mnsIDU;
-        private System.Windows.Forms.ToolStripMenuItem btnThem;
-        private System.Windows.Forms.ToolStripMenuItem btnSua;
-        private System.Windows.Forms.ToolStripMenuItem btnLuu;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -407,5 +426,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem btnThongKe;
+        private System.Windows.Forms.ToolStripMenuItem btnThoat;
+        private System.Windows.Forms.MenuStrip mnsIDU;
+        private System.Windows.Forms.ToolStripMenuItem btnThem;
+        private System.Windows.Forms.ToolStripMenuItem btnSua;
+        private System.Windows.Forms.ToolStripMenuItem btnLuu;
+        private System.Windows.Forms.ToolStripMenuItem btnHuy;
     }
 }
