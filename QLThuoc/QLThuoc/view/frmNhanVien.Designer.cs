@@ -40,6 +40,7 @@
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLamMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLamTrong = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsIDU = new System.Windows.Forms.MenuStrip();
             this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.btnLamTrong = new System.Windows.Forms.ToolStripMenuItem();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +130,14 @@
             // cbTimKiem
             // 
             this.cbTimKiem.FormattingEnabled = true;
+            this.cbTimKiem.Items.AddRange(new object[] {
+            "Mã nhân viên",
+            "Tên nhân viên",
+            "Giới tính",
+            "Ngày sinh",
+            "Địa chỉ",
+            "Cơ sở",
+            "SĐT"});
             this.cbTimKiem.Location = new System.Drawing.Point(118, 17);
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(179, 23);
@@ -154,6 +162,7 @@
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // menuStrip1
             // 
@@ -167,7 +176,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(3, 71);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(405, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(313, 55);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -207,6 +216,18 @@
             this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnLamTrong
+            // 
+            this.btnLamTrong.Image = ((System.Drawing.Image)(resources.GetObject("btnLamTrong.Image")));
+            this.btnLamTrong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnLamTrong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnLamTrong.Name = "btnLamTrong";
+            this.btnLamTrong.Size = new System.Drawing.Size(76, 51);
+            this.btnLamTrong.Text = "Làm Trống";
+            this.btnLamTrong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLamTrong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLamTrong.Click += new System.EventHandler(this.btnLamTrong_Click);
             // 
             // btnThoat
             // 
@@ -469,18 +490,6 @@
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvNhanVien_RowPrePaint);
-            // 
-            // btnLamTrong
-            // 
-            this.btnLamTrong.Image = ((System.Drawing.Image)(resources.GetObject("btnLamTrong.Image")));
-            this.btnLamTrong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLamTrong.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnLamTrong.Name = "btnLamTrong";
-            this.btnLamTrong.Size = new System.Drawing.Size(76, 51);
-            this.btnLamTrong.Text = "Làm Trống";
-            this.btnLamTrong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLamTrong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnLamTrong.Click += new System.EventHandler(this.btnLamTrong_Click);
             // 
             // STT
             // 

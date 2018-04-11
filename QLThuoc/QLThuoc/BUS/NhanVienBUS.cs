@@ -32,5 +32,9 @@ namespace QLThuoc.BUS
         {
             return da.DeleteData(ID);
         }
+        public DataTable TimKiemNV(string strTimKiem)
+        {
+            return da.TimKiemNV(strTimKiem);
+        }
     }
 }

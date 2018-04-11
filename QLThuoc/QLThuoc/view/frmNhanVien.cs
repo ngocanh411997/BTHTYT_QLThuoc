@@ -238,5 +238,37 @@ namespace QLThuoc.view
         {
             clearData();
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cbTimKiem.Text == "Mã nhân viên")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where MaNV like '%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "Tên nhân viên")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where TenNV like N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "Ngày sinh")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where NgaySinh Like '%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "SĐT")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where SDT like '%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "Giới tính")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where GioiTinh like N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "Địa chỉ")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where DiaChi like N'%" + txtTimKiem.Text.Trim() + "%'");
+            }
+            if (cbTimKiem.Text == "Cơ sở")
+            {
+                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where MaCS like '%" + txtTimKiem.Text + "%'");
+            }
+        }
     }
 }

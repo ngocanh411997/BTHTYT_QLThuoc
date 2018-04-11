@@ -22,6 +22,7 @@ BEGIN
 	VALUES  ( @MaNV,@TenNV,@MaCS,@GioiTinh,@NgaySinh,@SDT,@DiaChi)
 END
 -- Thủ tục Sửa NV
+go
 CREATE PROC SuaNV(@MaNV VARCHAR(10), @TenNV NVARCHAR(50), @MaCS VARCHAR(10), @GioiTinh NVARCHAR(5), @NgaySinh DATE,@SDT VARCHAR(11), @DiaChi NVARCHAR(50))
 AS
 BEGIN
@@ -37,3 +38,5 @@ BEGIN
 	DELETE dbo.NhanVien
 	WHERE MaNV=@MaNV
 END
+
+SELECT * FROM dbo.NhanVien WHERE NgaySinh='10/10/1997'

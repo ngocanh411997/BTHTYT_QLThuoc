@@ -56,5 +56,9 @@ namespace QLThuoc.DAL
         {
             return conn.TangMa("Select * From NhanVien", "NV");
         }
+        public DataTable TimKiemNV(string strTimKiem)
+        {
+            return conn.GetData(strTimKiem);
+        }
     }
 }
