@@ -13,7 +13,7 @@ namespace QLThuoc.DAL
         private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QLThuoc;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=DESKTOP-LNKB7IU\SQLEXPRESS;Initial Catalog=QLThuoc;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -24,6 +24,7 @@ namespace QLThuoc.DAL
             conn.Close();
             return dt;
         }
+
         public string TangMa(String sql, string Ma)
         {
             SqlCommand cm = new SqlCommand(sql, conn);      // bắt đầu truy vấn

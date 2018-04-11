@@ -142,6 +142,7 @@
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(179, 23);
             this.cbTimKiem.TabIndex = 9;
+//            this.cbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbTimKiem_SelectedIndexChanged);
             // 
             // txtTimKiem
             // 

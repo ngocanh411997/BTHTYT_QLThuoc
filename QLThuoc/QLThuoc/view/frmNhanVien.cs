@@ -270,5 +270,7 @@ namespace QLThuoc.view
                 dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where MaCS like '%" + txtTimKiem.Text + "%'");
             }
         }
+
+        
     }
 }

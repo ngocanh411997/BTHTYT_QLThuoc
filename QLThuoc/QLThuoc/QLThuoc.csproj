@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\CoSoBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="DAL\CoSoDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="Entity\ChiTietHoaDonNhapEntity.cs" />
