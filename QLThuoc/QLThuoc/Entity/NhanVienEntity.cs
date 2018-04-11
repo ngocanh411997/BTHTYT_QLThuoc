@@ -6,27 +6,29 @@ using System.Threading.Tasks;
 
 namespace QLThuoc.models
 {
-    public class NhanVien
+    public class NhanVienEntity
     {
         public string MaNV { get; set; }
         public string TenNV { get; set; }
         public string MaCS { get; set; }
-        public bool GioiTinh { get; set; }
+        public string GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }
+        public string TenCS { get; set; }
 
-        public NhanVien()
+        public NhanVienEntity()
         {
             MaNV = "";
             TenNV = "";
             MaCS = "";
-            GioiTinh = true;
+            GioiTinh = "";
             NgaySinh = DateTime.Parse("01/01/1997");
             SDT = "";
-            DiaChi = "";            
+            DiaChi = "";
+            TenCS = "";          
         }
-        public NhanVien(string _MaNV, string _TenNV, string _MaCS, bool _GioiTinh, DateTime _NgaySinh, string _SDT, string _DiaChi)
+        public NhanVienEntity(string _MaNV, string _TenNV, string _MaCS, string _GioiTinh, DateTime _NgaySinh, string _SDT, string _DiaChi,string _TenCS)
         {
             MaNV = _MaNV;
             TenNV = _TenNV;
@@ -35,6 +37,7 @@ namespace QLThuoc.models
             NgaySinh = _NgaySinh;
             SDT = _SDT;
             DiaChi = _DiaChi;
+            TenCS = _TenCS;
         }
     }
    

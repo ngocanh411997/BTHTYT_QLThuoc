@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLThuoc.view
 {
-    public partial class KhachHang : UserControl
+    public partial class frmLoaiThuoc : Form
     {
-        public KhachHang()
+        public frmLoaiThuoc()
         {
             InitializeComponent();
         }

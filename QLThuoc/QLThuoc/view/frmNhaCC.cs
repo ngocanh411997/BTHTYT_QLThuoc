@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QLThuoc.view
 {
-    public partial class CoSo : UserControl
+    public partial class frmNhaCC : Form
     {
-        public CoSo()
+        public frmNhaCC()
         {
             InitializeComponent();
-        }
-
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

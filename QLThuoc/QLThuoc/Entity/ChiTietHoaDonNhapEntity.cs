@@ -4,27 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLThuoc.models
+namespace QLThuoc.Entity
 {
-    public class ChiTietHoaDonXuat
+    public class ChiTietHoaDonNhapEntity
     {
-        public string MaHDX { get; set;}
+        public string MaHDN { get; set; }
         public string MaThuoc { get; set; }
         public string DonViTinh { get; set; }
         public long Gia { get; set; }
-        public int SoLuong { get; set;} 
-        
-        public ChiTietHoaDonXuat()
+        public int SoLuong { get; set; }
+
+        public ChiTietHoaDonNhapEntity()
         {
-            MaHDX = "";
+            MaHDN = "";
             MaThuoc = "";
             DonViTinh = "";
             Gia = 0;
             SoLuong = 0;
-        }     
-        public ChiTietHoaDonXuat(string _MaHDX, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong)
+        }
+        public ChiTietHoaDonNhapEntity(string _MaHDN, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong)
         {
-            MaHDX = _MaHDX;
+            MaHDN = _MaHDN;
             MaThuoc = _MaThuoc;
             DonViTinh = _DonViTinh;
             Gia = _Gia;

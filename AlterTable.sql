@@ -1,0 +1,2 @@
+ALTER TABLE dbo.NhanVien
+ALTER COLUMN GioiTinh NVARCHAR(5)
