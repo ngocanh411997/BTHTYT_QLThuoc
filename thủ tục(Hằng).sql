@@ -4,7 +4,7 @@ as
 begin
 select *from CoSo
 end
-
+go
 --test
 EXEC Xem_CoSo
 
@@ -22,7 +22,7 @@ insert into CoSo(MaCS, TenCS, DiaChi,SDT)
 values(@MaCS,@TenCS,@DiaChi,@SDT)
 end
 
-
+go
 -- thủ tục sửa cơ sở
 create proc Sua_CoSo
 (
@@ -39,7 +39,7 @@ set TenCS = @TenCS,
 	SDT = @SDT
 where MaCS = @MaCS
 end
-
+go
 -- thủ tục xóa cơ sở
 create proc Xoa_CoSo(@MaCS varchar(10))
 as
