@@ -47,3 +47,4 @@ begin
 delete KhachHang
 where MaKH = @MaKH
 end
+----------------

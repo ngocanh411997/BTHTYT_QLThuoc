@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLThuoc.models
 {
-    public class ChiTietHoaDonXuat
+    public class ChiTietHoaDonXuatEntity
     {
         public string MaHDX { get; set;}
         public string MaThuoc { get; set; }
@@ -14,7 +14,7 @@ namespace QLThuoc.models
         public long Gia { get; set; }
         public int SoLuong { get; set;} 
         
-        public ChiTietHoaDonXuat()
+        public ChiTietHoaDonXuatEntity()
         {
             MaHDX = "";
             MaThuoc = "";
@@ -22,7 +22,7 @@ namespace QLThuoc.models
             Gia = 0;
             SoLuong = 0;
         }     
-        public ChiTietHoaDonXuat(string _MaHDX, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong)
+        public ChiTietHoaDonXuatEntity(string _MaHDX, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong)
         {
             MaHDX = _MaHDX;
             MaThuoc = _MaThuoc;

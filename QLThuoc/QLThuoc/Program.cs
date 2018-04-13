@@ -17,7 +17,7 @@ namespace QLThuoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCoSo());
+            Application.Run(new frmHoaDonXuat());
         }
     }
 }

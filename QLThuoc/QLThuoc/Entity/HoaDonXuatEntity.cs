@@ -17,7 +17,7 @@ namespace QLThuoc.Entity
         {
             MaHoaDon = "";
             MaKH = "";
-            NgayXuat = DateTime.Parse("01/01/1997");
+            NgayXuat = DateTime.Parse("01/01/2017");
             MaNVXuat = "";
         }
         public HoaDonXuatEntity(string _MaHoaDon, string _MaKH, DateTime _NgayXuat, string _MaNVXuat)

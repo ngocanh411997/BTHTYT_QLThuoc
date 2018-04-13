@@ -40,3 +40,92 @@ BEGIN
 END
 
 SELECT * FROM dbo.NhanVien WHERE NgaySinh='10/10/1997'
+
+-------------
+-- HoaDonXuat
+-- Xem HDX
+GO
+CREATE PROC HDX_SelectAll
+AS
+BEGIN
+	SELECT * FROM dbo.HoaDonXuat
+END
+-- Thêm HĐX
+GO
+CREATE PROC ThemHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+AS
+BEGIN
+	INSERT INTO dbo.HoaDonXuat
+	        ( MaHoaDon, MaKH, NgayXuat, MaNVXuat )
+	VALUES  ( @MaHoaDon,@MaKH,@NgayXuat,@MaNVXuat)
+END
+-- Sửa HĐX
+GO
+CREATE PROC SuaHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+AS
+BEGIN
+	UPDATE dbo.HoaDonXuat
+	SET MaKH=MaKH,NgayXuat=@NgayXuat,MaNVXuat=@MaNVXuat
+	WHERE MaHoaDon=@MaHoaDon
+END
+-- Xóa HĐX
+GO
+CREATE PROC XoaHDX(@MaHoaDon VARCHAR(10))
+AS
+BEGIN
+	UPDATE dbo.ChiTietHoaDonXuat
+	SET MaHDX=NULL
+	WHERE MaHDX=@MaHoaDon
+	DELETE dbo.HoaDonXuat
+	WHERE MaHoaDon=@MaHoaDon
+END
+-- Xem CTHDX
+GO
+CREATE PROC CTHDX_SelectAll
+AS
+BEGIN
+	SELECT * FROM dbo.ChiTietHoaDonXuat
+END
+-- Thêm CTHDX
+GO
+CREATE PROC ThemCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT)
+AS
+BEGIN
+	INSERT INTO dbo.ChiTietHoaDonXuat
+	        ( MaHDX ,
+	          MaThuoc ,
+	          DonViTinh ,
+	          Gia ,
+	          SoLuong
+	        )
+	VALUES  ( @MaHDX,@MaThuoc,@DonViTinh,@Gia,@SoLuong)
+END
+
+
+-- Sửa CTHDX
+GO
+ALTER PROC SuaCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT)
+AS
+BEGIN
+	UPDATE dbo.ChiTietHoaDonXuat
+	SET MaThuoc=@MaThuoc,DonViTinh=@DonViTinh,Gia=@Gia,SoLuong=@SoLuong
+	WHERE MaHDX=@MaHDX AND MaThuoc=@MaThuoc
+END
+-- Xóa CTHDX
+GO
+ALTER PROC XoaCTHDX(@MaHDX VARCHAR(10),@MaThuoc VARCHAR(10))
+AS
+BEGIN
+	DELETE dbo.ChiTietHoaDonXuat
+	WHERE MaHDX=@MaHDX AND MaThuoc=@MaThuoc
+END
+
+--
+EXEC dbo.ThemCTHDX @MaHDX = 'DX04', -- varchar(10)
+    @MaThuoc = 'T02', -- varchar(10)
+    @DonViTinh = N'Vỉ', -- nvarchar(50)
+    @Gia = 200, -- bigint
+    @SoLuong = 20 -- int
+
+EXEC dbo.XoaCTHDX @MaHDX = 'DX01', -- varchar(10)
+    @MaThuoc = 'T06' -- varchar(10)
