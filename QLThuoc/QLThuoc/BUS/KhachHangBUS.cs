@@ -1,15 +1,16 @@
 ﻿using System;
-using QLThuoc.DAL;
-using QLThuoc.models;
-using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QLThuoc.models;
+using QLThuoc.DAL;
+using System.Data;
+
 
 namespace QLThuoc.BUS
 {
-    public class KhachHangBUS
+   public class KhachHangBUS
     {
         KhachHangDAL da = new KhachHangDAL();
 
@@ -38,6 +39,5 @@ namespace QLThuoc.BUS
         {
             return da.TimKiemKH(strTimKiem);
         }
-
     }
 }

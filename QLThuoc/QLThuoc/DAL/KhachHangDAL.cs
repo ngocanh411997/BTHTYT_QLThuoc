@@ -7,9 +7,10 @@ using System.Data;
 using System.Data.SqlClient;
 using QLThuoc.models;
 
+
 namespace QLThuoc.DAL
 {
-    public class KhachHangDAL
+   public class KhachHangDAL
     {
 
         KetNoi conn = new KetNoi();
@@ -26,13 +27,13 @@ namespace QLThuoc.DAL
                 new SqlParameter("DiaChi",KH.DiaChi),
                 new SqlParameter ("SDT",KH.SDT)
             };
-            return conn.ExcuteSQL("Them_KhachHang ", para);
+            return conn.ExcuteSQL("Them_KhachHang", para);
         }
         public int UpdateData(KhachHang KH)
         {
             SqlParameter[] para =
             {
-               new SqlParameter("MaKH",KH.MaKH),
+              new SqlParameter("MaKH",KH.MaKH),
                 new SqlParameter("TenKH",KH.TenKH),
                 new SqlParameter("DiaChi",KH.DiaChi),
                 new SqlParameter ("SDT",KH.SDT)
@@ -55,4 +56,5 @@ namespace QLThuoc.DAL
         {
             return conn.GetData(strTimKiem);
         }
+      }
 }

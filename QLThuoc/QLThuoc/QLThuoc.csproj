@@ -48,10 +48,12 @@
   <ItemGroup>
     <Compile Include="BUS\CoSoBUS.cs" />
     <Compile Include="BUS\HoaDonXuatBUS.cs" />
+    <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
     <Compile Include="DAL\CoSoDAL.cs" />
     <Compile Include="DAL\HoaDonXuatDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
+    <Compile Include="DAL\KhachHangDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="Entity\ChiTietHoaDonNhapEntity.cs" />
     <Compile Include="Entity\ChiTietHoaDonXuatEntity.cs" />

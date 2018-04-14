@@ -7,7 +7,7 @@ end
 go
 --test
 EXEC Xem_CoSo
-
+go
 -- thủ tục thêm cơ sở
 create proc Them_CoSo
 (
