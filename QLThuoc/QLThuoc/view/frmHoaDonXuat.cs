@@ -28,21 +28,19 @@ namespace QLThuoc.view
             btnThem.Enabled = !e;
             btnXoa.Enabled = !e;
             btnSua.Enabled = !e;
-           
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             dtNgayXuat.Enabled = e;
             txtGia.Enabled = e;
             txtMaHD.Enabled = e;
             txtMaKH.Enabled = e;
-            txtMaNVXuat.Enabled = e;          
+            txtMaNVXuat.Enabled = e;
         }
         private void DisEnlCT(bool e)
         {
             btnThemCT.Enabled = !e;
             btnXoaCT.Enabled = !e;
             btnSuaCT.Enabled = !e;
-
             btnLuuCT.Enabled = e;
             btnHuy.Enabled = e;
             txt_MaHD.Enabled = e;
@@ -78,11 +76,12 @@ namespace QLThuoc.view
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
             HienThi();
+            HienThiCT();
             DisEnl(false);
             DisEnlCT(false);
             txt_MaHD.Enabled = false;
             btnThanhToan.Enabled = false;
-            
+
         }
 
         private void dgvHoaDonXuat_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -93,6 +92,9 @@ namespace QLThuoc.view
                 txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
                 dtNgayXuat.Text= Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
                 txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
+                HienThiCT();
+                btnThanhToan.Enabled = true;
+                btnHuy.Enabled = true;
             }
             else if(fluu !=0 && fluu !=-1)
             {
@@ -101,6 +103,9 @@ namespace QLThuoc.view
                 txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
                 dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
                 txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
+                HienThiCT();
+                btnThanhToan.Enabled = true;
+                btnHuy.Enabled = true;
             }
         }
 
@@ -165,9 +170,9 @@ namespace QLThuoc.view
             obj.MaKH = txtMaKH.Text;
             obj.MaNVXuat = txtMaNVXuat.Text;
             obj.NgayXuat = dtNgayXuat.Value;
-          
-            
-            if (txtMaHD.Text != "" && txtMaKH.Text != "" && txtMaNVXuat.Text != "" && dtNgayXuat.Text != ""  && fluu == 0)
+
+
+            if (txtMaHD.Text != "" && txtMaKH.Text != "" && txtMaNVXuat.Text != "" && dtNgayXuat.Text != "" && fluu == 0)
             {
                 try
                 {
@@ -229,21 +234,21 @@ namespace QLThuoc.view
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (cbTimKiem.Text == "Mã Phiếu")
+            if (cbTimKiem.Text == "Mã HĐ")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Khách Hàng")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Nhân Viên")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Ngày Nhập(năm-tháng-ngày)")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
             }
         }
         /// <summary>
@@ -254,17 +259,8 @@ namespace QLThuoc.view
         /// 
         private void HienThiCT()
         {
-            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT * from ChiTietHoaDonXuat WHERE MaHDX LIKE '%"+txt_MaHD.Text.Trim() +"%'");
+            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) FROM dbo.ChiTietHoaDonXuat WHERE MaHDX LIKE '%"+txt_MaHD.Text.Trim() +"%'");
         }
-
-
-        private void btnCT_Click(object sender, EventArgs e)
-        {
-            HienThiCT();
-            btnThanhToan.Enabled = true;
-            btnHuy.Enabled = true;
-        }
-
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             fluu = -1;
@@ -278,7 +274,6 @@ namespace QLThuoc.view
             btnLuu.Enabled = false;
             btnLamMoi.Enabled = false;
             btnHuy.Enabled = true;
-
             txtMaHD.Enabled = false;
             txt_MaHD.Enabled = false;
         }
@@ -292,6 +287,7 @@ namespace QLThuoc.view
             btnLuu.Enabled = false;
             txtMaHD.Enabled = false;
             txt_MaHD.Enabled = false;
+            txtMaThuoc.Enabled = false;
         }
 
         private void btnXoaCT_Click(object sender, EventArgs e)
@@ -300,11 +296,12 @@ namespace QLThuoc.view
             {
                 try
                 {
-                    Bus.DeleteDataCT(txt_MaHD.Text);
+                    Bus.DeleteDataCT(txt_MaHD.Text, txtMaThuoc.Text);
                     MessageBox.Show("Xóa thành công!");
                     clearData();
                     DisEnlCT(false);
                     HienThi();
+                    HienThiCT();
                 }
                 catch (Exception ex)
                 {
@@ -392,11 +389,6 @@ namespace QLThuoc.view
             btnHuy.Enabled = true;
         }
 
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvChiTietHDX_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             dgvChiTietHDX.Rows[e.RowIndex].Cells["_STT"].Value = e.RowIndex + 1;
@@ -410,6 +402,12 @@ namespace QLThuoc.view
                 txtSoLuong.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["SoLuong"].Value);
                 txtGia.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["Gia"].Value);
          
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            frmThanhToan ThanhToan = new frmThanhToan(txt_MaHD.Text);
+            ThanhToan.ShowDialog();
         }
     }
 }

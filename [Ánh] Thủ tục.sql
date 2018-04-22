@@ -1,9 +1,10 @@
 ﻿-- Thủ tục lấy danh sách NV
 GO
-CREATE PROC NV_SelectAll
+ALTER PROC NV_SelectAll
 AS
 BEGIN
-	SELECT * FROM dbo.NhanVien
+	SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
 END
 -- Thủ tục Thêm NV
 GO
@@ -70,11 +71,10 @@ BEGIN
 END
 -- Xóa HĐX
 GO
-CREATE PROC XoaHDX(@MaHoaDon VARCHAR(10))
+ALTER PROC XoaHDX(@MaHoaDon VARCHAR(10))
 AS
 BEGIN
-	UPDATE dbo.ChiTietHoaDonXuat
-	SET MaHDX=NULL
+	DELETE dbo.ChiTietHoaDonXuat
 	WHERE MaHDX=@MaHoaDon
 	DELETE dbo.HoaDonXuat
 	WHERE MaHoaDon=@MaHoaDon
@@ -129,3 +129,15 @@ EXEC dbo.ThemCTHDX @MaHDX = 'DX04', -- varchar(10)
 
 EXEC dbo.XoaCTHDX @MaHDX = 'DX01', -- varchar(10)
     @MaThuoc = 'T06' -- varchar(10)
+
+
+	SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) 
+	FROM dbo.ChiTietHoaDonXuat
+
+	SELECT A.MaKH,TenKH,A.MaHoaDon,SUM(A.ThanhTien) 
+	FROM dbo.KhachHang,(SELECT MaHoaDon,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong),MaKH
+						FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX
+						WHERE MaHoaDon='') A
+	WHERE A.MaKH=KhachHang.MaKH
+	GROUP BY A.MaKH,TenKH,A.MaHoaDon
+
