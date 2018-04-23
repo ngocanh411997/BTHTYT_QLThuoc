@@ -24,7 +24,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
+                new SqlParameter("TrangThai",HDX.TrangThai)
             };
             return conn.ExcuteSQL("ThemHDX", para);
         }
@@ -35,7 +36,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
+                new SqlParameter("TrangThai",HDX.TrangThai)
         };
             return conn.ExcuteSQL("SuaHDX", para);
         }
@@ -71,6 +73,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("Gia",CTHDX.Gia)
 
             };
+
             return conn.ExcuteSQL("ThemCTHDX", para);
         }
         public int UpdateDataCT(ChiTietHoaDonXuatEntity CTHDX)
@@ -85,13 +88,33 @@ namespace QLThuoc.DAL
             };
             return conn.ExcuteSQL("SuaCTHDX", para);
         }
-        public int DeleteDataCT(string ID)
+        public int DeleteDataCT(string IDHD, string IDT)
         {
             SqlParameter[] para =
             {
-                new SqlParameter("MaHDX",ID)
+                new SqlParameter("MaHDX", IDHD),
+                new SqlParameter("MaThuoc", IDT),
         };
             return conn.ExcuteSQL("XoaCTHDX", para);
         }
+        public DataTable ThanhToan(string str)
+        {
+            return conn.GetData(str);
+        }
+        //
+        public DataTable XemHoaDonTT()
+        {
+            return conn.GetData("XemHDTT", null);
+        }
+        public int UpdateDataTT(HoaDonXuatEntity HDX)
+        {
+            SqlParameter[] para =
+           {
+               new SqlParameter("MaHoaDon",HDX.MaHoaDon),
+                new SqlParameter("TrangThai",HDX.TrangThai)
+            };
+            return conn.ExcuteSQL("DaTT", para);
+        }
+        
     }
 }

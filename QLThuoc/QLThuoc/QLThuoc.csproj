@@ -49,12 +49,14 @@
     <Compile Include="BUS\CoSoBUS.cs" />
     <Compile Include="BUS\HoaDonXuatBUS.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="BUS\NhaCCBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
     <Compile Include="BUS\ThuocBUS.cs" />
     <Compile Include="DAL\CoSoDAL.cs" />
     <Compile Include="DAL\HoaDonXuatDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\NhaCCDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="DAL\ThuocDAL.cs" />
     <Compile Include="Entity\ChiTietHoaDonNhapEntity.cs" />
@@ -74,6 +76,12 @@
     </Compile>
     <Compile Include="view\frmCoSo.Designer.cs">
       <DependentUpon>frmCoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\frmHoaDonDaThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmHoaDonDaThanhToan.Designer.cs">
+      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="view\frmHoaDonNhap.cs">
       <SubType>Form</SubType>
@@ -117,6 +125,12 @@
     <Compile Include="view\frmQuanLyChung.Designer.cs">
       <DependentUpon>frmQuanLyChung.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\frmThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmThanhToan.Designer.cs">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\frmThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="view\frmCoSo.resx">
       <DependentUpon>frmCoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmHoaDonDaThanhToan.resx">
+      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmHoaDonNhap.resx">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
@@ -155,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmQuanLyChung.resx">
       <DependentUpon>frmQuanLyChung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmThanhToan.resx">
+      <DependentUpon>frmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmThuoc.resx">
       <DependentUpon>frmThuoc.cs</DependentUpon>

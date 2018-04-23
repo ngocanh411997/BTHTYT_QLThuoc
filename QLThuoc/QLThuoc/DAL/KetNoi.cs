@@ -13,7 +13,11 @@ namespace QLThuoc.DAL
         private SqlConnection conn;
         public KetNoi()
         {
+<<<<<<< HEAD
             conn = new SqlConnection(@"Data Source=DESKTOP-9RL4FLL\SQLEXPRESS;Initial Catalog=QLThuoc;Integrated Security=True");
+=======
+            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QLThuoc;Integrated Security=True");
+>>>>>>> ebab992f957f4637fff4d7ba060ec85a9d2ba4a5
         }
         public DataTable GetData(string strSql)
         {

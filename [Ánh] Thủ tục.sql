@@ -1,9 +1,10 @@
 ﻿-- Thủ tục lấy danh sách NV
 GO
-CREATE PROC NV_SelectAll
+ALTER PROC NV_SelectAll
 AS
 BEGIN
-	SELECT * FROM dbo.NhanVien
+	SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
 END
 -- Thủ tục Thêm NV
 GO
@@ -45,36 +46,35 @@ SELECT * FROM dbo.NhanVien WHERE NgaySinh='10/10/1997'
 -- HoaDonXuat
 -- Xem HDX
 GO
-CREATE PROC HDX_SelectAll
+ALTER PROC HDX_SelectAll
 AS
 BEGIN
-	SELECT * FROM dbo.HoaDonXuat
+	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Chưa thanh toán'
 END
 -- Thêm HĐX
 GO
-CREATE PROC ThemHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+ALTER PROC ThemHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10), @TrangThai NVARCHAR(50))
 AS
 BEGIN
 	INSERT INTO dbo.HoaDonXuat
-	        ( MaHoaDon, MaKH, NgayXuat, MaNVXuat )
-	VALUES  ( @MaHoaDon,@MaKH,@NgayXuat,@MaNVXuat)
+	        ( MaHoaDon, MaKH, NgayXuat, MaNVXuat,TrangThai )
+	VALUES  ( @MaHoaDon,@MaKH,@NgayXuat,@MaNVXuat,N'Chưa thanh toán')
 END
 -- Sửa HĐX
 GO
-CREATE PROC SuaHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+ALTER PROC SuaHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10),@TrangThai NVARCHAR(50))
 AS
 BEGIN
 	UPDATE dbo.HoaDonXuat
-	SET MaKH=MaKH,NgayXuat=@NgayXuat,MaNVXuat=@MaNVXuat
+	SET MaKH=MaKH,NgayXuat=@NgayXuat,MaNVXuat=@MaNVXuat, TrangThai=N'Chưa thanh toán'
 	WHERE MaHoaDon=@MaHoaDon
 END
 -- Xóa HĐX
 GO
-CREATE PROC XoaHDX(@MaHoaDon VARCHAR(10))
+ALTER PROC XoaHDX(@MaHoaDon VARCHAR(10))
 AS
 BEGIN
-	UPDATE dbo.ChiTietHoaDonXuat
-	SET MaHDX=NULL
+	DELETE dbo.ChiTietHoaDonXuat
 	WHERE MaHDX=@MaHoaDon
 	DELETE dbo.HoaDonXuat
 	WHERE MaHoaDon=@MaHoaDon
@@ -129,3 +129,35 @@ EXEC dbo.ThemCTHDX @MaHDX = 'DX04', -- varchar(10)
 
 EXEC dbo.XoaCTHDX @MaHDX = 'DX01', -- varchar(10)
     @MaThuoc = 'T06' -- varchar(10)
+
+
+	SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) 
+	FROM dbo.ChiTietHoaDonXuat
+
+	SELECT A.MaKH,TenKH,A.MaHoaDon,SUM(A.ThanhTien) 
+	FROM dbo.KhachHang,(SELECT MaHoaDon,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong),MaKH
+						FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX
+						WHERE MaHoaDon='') A
+	WHERE A.MaKH=KhachHang.MaKH
+	GROUP BY A.MaKH,TenKH,A.MaHoaDon
+
+GO
+ALTER TABLE dbo.HoaDonXuat
+ADD TrangThai NVARCHAR(50)
+--Xem hóa đơn đã thanh toán
+GO
+CREATE PROC XemHDTT
+AS
+BEGIN
+	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
+END
+
+-- Sau khi thanh toán, sửa trạng thái từ chưa thanh toán sang đã thanh toán
+GO
+CREATE PROC DaTT(@MaHoaDon VARCHAR(10),@TrangThai NVARCHAR(50))
+AS
+BEGIN
+	UPDATE dbo.HoaDonXuat
+	SET TrangThai=N'Đã thanh toán'
+	WHERE MaHoaDon=@MaHoaDon
+END
