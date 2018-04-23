@@ -41,6 +41,7 @@
             this.btnCS = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnHoaDonTT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             this.btnLoaiThuoc.Text = "Loại thuốc";
             this.btnLoaiThuoc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLoaiThuoc.UseVisualStyleBackColor = true;
+            this.btnLoaiThuoc.Click += new System.EventHandler(this.btnLoaiThuoc_Click);
             // 
             // btnNCC
             // 
@@ -86,6 +88,7 @@
             this.btnNCC.Text = "Nhà cung cấp";
             this.btnNCC.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNCC.UseVisualStyleBackColor = true;
+            this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
             // btnHDNhap
             // 
@@ -99,6 +102,7 @@
             this.btnHDNhap.Text = "Hóa đơn nhập";
             this.btnHDNhap.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHDNhap.UseVisualStyleBackColor = true;
+            this.btnHDNhap.Click += new System.EventHandler(this.btnHDNhap_Click);
             // 
             // btnHDXuat
             // 
@@ -112,6 +116,7 @@
             this.btnHDXuat.Text = "Hóa đơn xuất";
             this.btnHDXuat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHDXuat.UseVisualStyleBackColor = true;
+            this.btnHDXuat.Click += new System.EventHandler(this.btnHDXuat_Click);
             // 
             // btnThuoc
             // 
@@ -125,6 +130,7 @@
             this.btnThuoc.Text = "Thuốc";
             this.btnThuoc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThuoc.UseVisualStyleBackColor = true;
+            this.btnThuoc.Click += new System.EventHandler(this.btnThuoc_Click);
             // 
             // btnKhachHang
             // 
@@ -138,9 +144,11 @@
             this.btnKhachHang.Text = "Khách hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnHoaDonTT);
             this.groupBox2.Controls.Add(this.btnNhanVien);
             this.groupBox2.Controls.Add(this.btnCS);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,6 +171,7 @@
             this.btnNhanVien.Text = "Nhân viên";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnCS
             // 
@@ -176,6 +185,7 @@
             this.btnCS.Text = "Cơ sở làm việc";
             this.btnCS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCS.UseVisualStyleBackColor = true;
+            this.btnCS.Click += new System.EventHandler(this.btnCS_Click);
             // 
             // btnThoat
             // 
@@ -185,6 +195,7 @@
             this.btnThoat.Size = new System.Drawing.Size(85, 100);
             this.btnThoat.TabIndex = 10;
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label1
             // 
@@ -196,6 +207,20 @@
             this.label1.Size = new System.Drawing.Size(403, 42);
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
+            // 
+            // btnHoaDonTT
+            // 
+            this.btnHoaDonTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDonTT.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDonTT.Image")));
+            this.btnHoaDonTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHoaDonTT.Location = new System.Drawing.Point(326, 45);
+            this.btnHoaDonTT.Name = "btnHoaDonTT";
+            this.btnHoaDonTT.Size = new System.Drawing.Size(85, 100);
+            this.btnHoaDonTT.TabIndex = 3;
+            this.btnHoaDonTT.Text = "Hóa đơn đã thanh toán";
+            this.btnHoaDonTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHoaDonTT.UseVisualStyleBackColor = true;
+            this.btnHoaDonTT.Click += new System.EventHandler(this.btnHoaDonTT_Click);
             // 
             // frmQuanLyChung
             // 
@@ -229,5 +254,6 @@
         private System.Windows.Forms.Button btnCS;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHoaDonTT;
     }
 }

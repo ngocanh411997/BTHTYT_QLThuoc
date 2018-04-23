@@ -21,6 +21,15 @@ namespace QLThuoc.view
         {
             InitializeComponent();
         }
+        public void ShowCS()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListCS();
+            cbMaCS.DataSource = dt;
+            cbMaCS.DisplayMember = "TenCS";
+            cbMaCS.ValueMember = "MaCS";
+
+        }
         private void DisEnl(bool e)
         {
             btnThem.Enabled = !e;
@@ -52,6 +61,7 @@ namespace QLThuoc.view
         private void HienThi()
         {
             dgvNhanVien.DataSource = Bus.GetData();
+            ShowCS();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -78,7 +88,7 @@ namespace QLThuoc.view
                 txtTenNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenNV"].Value);
                 txtDiaChi.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DiaChi"].Value);
                 txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
-                cbMaCS.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaCS"].Value);
+                cbMaCS.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenCS"].Value);
                 dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);                
                 if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
                 else radNu.Checked = true;
@@ -89,7 +99,7 @@ namespace QLThuoc.view
                 txtTenNV.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenNV"].Value);
                 txtDiaChi.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["DiaChi"].Value);
                 txtSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["SDT"].Value);
-                cbMaCS.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["MaCS"].Value);
+                cbMaCS.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["TenCS"].Value);
                 dtNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value);
                 if (dgvNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString() == "Nam") radNam.Checked = true;
                 else radNu.Checked = true;
@@ -150,7 +160,7 @@ namespace QLThuoc.view
             }
             if (cbMaCS.Text == "")
             {
-                MessageBox.Show("Bạn chưa chọn Mã CS nhân viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa chọn cơ sở của nhân viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (radNam.Checked == false && radNu.Checked==false)
             {
@@ -158,7 +168,7 @@ namespace QLThuoc.view
             }
             obj.MaNV = txtMaNV.Text;
             obj.TenNV = txtTenNV.Text;
-            obj.MaCS = cbMaCS.Text;
+            obj.MaCS = cbMaCS.SelectedValue.ToString();
             obj.DiaChi = txtDiaChi.Text;   
             obj.SDT = txtSDT.Text;
             obj.NgaySinh = dtNgaySinh.Value;

@@ -62,10 +62,11 @@ namespace QLThuoc.BUS
         {
             return da.XemHoaDonTT();
         }
-        public DataTable GetDataHoaDonTT()
+        public int UpdateDataTT(HoaDonXuatEntity HDX)
         {
-            return da.GetDataHoaDonTT();
+            return da.UpdateDataTT(HDX);
         }
+        
 
     }
 }

@@ -54,7 +54,7 @@ namespace QLThuoc.view
         private void button1_Click(object sender, EventArgs e)
         {
             obj.MaHoaDon = txtMaHDX.Text;
-            Bus.GetDataHoaDonTT(obj);
+            Bus.UpdateDataTT(obj);
 
             MessageBox.Show("Xuất hóa đơn thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

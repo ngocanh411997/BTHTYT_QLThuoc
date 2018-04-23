@@ -60,5 +60,9 @@ namespace QLThuoc.DAL
         {
             return conn.GetData(strTimKiem);
         }
+        public DataTable GetListCS()
+        {
+            return conn.GetData("Select * from CoSo");
+        }
     }
 }

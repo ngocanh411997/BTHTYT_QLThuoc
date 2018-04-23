@@ -106,9 +106,15 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("XemHDTT", null);
         }
-        public DataTable GetDataHoaDonTT()
+        public int UpdateDataTT(HoaDonXuatEntity HDX)
         {
-            return conn.GetData("HoaDonDaTT", null);
+            SqlParameter[] para =
+           {
+               new SqlParameter("MaHoaDon",HDX.MaHoaDon),
+                new SqlParameter("TrangThai",HDX.TrangThai)
+            };
+            return conn.ExcuteSQL("DaTT", para);
         }
+        
     }
 }

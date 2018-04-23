@@ -71,7 +71,7 @@
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Macs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -142,7 +142,6 @@
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(179, 23);
             this.cbTimKiem.TabIndex = 9;
-//            this.cbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbTimKiem_SelectedIndexChanged);
             // 
             // txtTimKiem
             // 
@@ -481,7 +480,7 @@
             this.GioiTinh,
             this.NgaySinh,
             this.Diachi,
-            this.Macs,
+            this.TenCS,
             this.SDT});
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(3, 17);
@@ -529,11 +528,11 @@
             this.Diachi.HeaderText = "Địa chỉ";
             this.Diachi.Name = "Diachi";
             // 
-            // Macs
+            // TenCS
             // 
-            this.Macs.DataPropertyName = "MaCS";
-            this.Macs.HeaderText = "Mã cơ sở";
-            this.Macs.Name = "Macs";
+            this.TenCS.DataPropertyName = "TenCS";
+            this.TenCS.HeaderText = "Mã cơ sở";
+            this.TenCS.Name = "TenCS";
             // 
             // SDT
             // 
@@ -613,7 +612,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Macs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenCS;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
     }
 }
