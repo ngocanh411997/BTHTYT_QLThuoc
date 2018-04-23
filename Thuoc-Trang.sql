@@ -28,7 +28,7 @@ end
 
 go
 -- thủ tục sửa Thuốc
-create proc Sua_CoSo
+create proc Sua_Thuoc
 (
 	@MaThuoc varchar(10),
 	@TenThuoc nvarchar(50),

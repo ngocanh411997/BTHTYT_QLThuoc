@@ -13,7 +13,7 @@ namespace QLThuoc.DAL
         private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuoc;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=DESKTOP-9RL4FLL\SQLEXPRESS;Initial Catalog=QLThuoc;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -92,6 +92,35 @@ namespace QLThuoc.DAL
             int count = cmd.ExecuteNonQuery();
             conn.Close();
             return count;
+        }    
+        //
+        public string TangMaT(String sql, string Ma)
+        {
+            SqlCommand cm = new SqlCommand(sql, conn);      // bắt đầu truy vấn
+            cm.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(cm);     //vận chuyển dữ liệu về
+            DataTable dt = new DataTable();                 //tạo 1 kho ảo để chứa dữ liệu
+            da.Fill(dt);
+            if (dt.Rows.Count <= 0)
+            {
+                Ma = Ma + "01";
+            }
+            else
+            {
+                int k;
+                k = Convert.ToInt32(dt.Rows[dt.Rows.Count - 1][0].ToString().Substring(1, 2));
+                k = k + 1;
+                if (k < 10)
+                {
+                    Ma = Ma + "0";
+                }
+                else if (k < 100)
+                {
+                    Ma = Ma + "";
+                }
+                Ma = Ma + k.ToString();
+            }
+            return Ma;
         }
     }
 }

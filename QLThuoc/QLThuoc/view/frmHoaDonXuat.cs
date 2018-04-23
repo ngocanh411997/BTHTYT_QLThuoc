@@ -411,5 +411,10 @@ namespace QLThuoc.view
                 txtGia.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["Gia"].Value);
          
         }
+
+        private void txtMaHD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
