@@ -24,8 +24,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
-                new SqlParameter("TrangThai",HDX.TrangThai)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
             };
             return conn.ExcuteSQL("ThemHDX", para);
         }
@@ -36,8 +35,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
-                new SqlParameter("TrangThai",HDX.TrangThai)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
         };
             return conn.ExcuteSQL("SuaHDX", para);
         }
@@ -73,7 +71,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("Gia",CTHDX.Gia)
 
             };
-
+            
             return conn.ExcuteSQL("ThemCTHDX", para);
         }
         public int UpdateDataCT(ChiTietHoaDonXuatEntity CTHDX)
@@ -101,20 +99,5 @@ namespace QLThuoc.DAL
         {
             return conn.GetData(str);
         }
-        //
-        public DataTable XemHoaDonTT()
-        {
-            return conn.GetData("XemHDTT", null);
-        }
-        public int UpdateDataTT(HoaDonXuatEntity HDX)
-        {
-            SqlParameter[] para =
-           {
-               new SqlParameter("MaHoaDon",HDX.MaHoaDon),
-                new SqlParameter("TrangThai",HDX.TrangThai)
-            };
-            return conn.ExcuteSQL("DaTT", para);
-        }
-        
     }
 }

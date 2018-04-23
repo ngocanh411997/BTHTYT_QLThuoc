@@ -49,16 +49,14 @@
     <Compile Include="BUS\CoSoBUS.cs" />
     <Compile Include="BUS\HoaDonXuatBUS.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
-    <Compile Include="BUS\NhaCCBUS.cs" />
+    <Compile Include="BUS\KhoBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
-    <Compile Include="BUS\ThuocBUS.cs" />
     <Compile Include="DAL\CoSoDAL.cs" />
     <Compile Include="DAL\HoaDonXuatDAL.cs" />
     <Compile Include="DAL\KetNoi.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
-    <Compile Include="DAL\NhaCCDAL.cs" />
+    <Compile Include="DAL\KhoDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
-    <Compile Include="DAL\ThuocDAL.cs" />
     <Compile Include="Entity\ChiTietHoaDonNhapEntity.cs" />
     <Compile Include="Entity\ChiTietHoaDonXuatEntity.cs" />
     <Compile Include="Entity\CoSoEntity.cs" />
@@ -76,12 +74,6 @@
     </Compile>
     <Compile Include="view\frmCoSo.Designer.cs">
       <DependentUpon>frmCoSo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\frmHoaDonDaThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\frmHoaDonDaThanhToan.Designer.cs">
-      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="view\frmHoaDonNhap.cs">
       <SubType>Form</SubType>
@@ -137,6 +129,12 @@
     <Compile Include="view\frmThuoc.Designer.cs">
       <DependentUpon>frmThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\Kho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Kho.Designer.cs">
+      <DependentUpon>Kho.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,9 +146,6 @@
     </Compile>
     <EmbeddedResource Include="view\frmCoSo.resx">
       <DependentUpon>frmCoSo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\frmHoaDonDaThanhToan.resx">
-      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmHoaDonNhap.resx">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
@@ -178,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmThuoc.resx">
       <DependentUpon>frmThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Kho.resx">
+      <DependentUpon>Kho.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

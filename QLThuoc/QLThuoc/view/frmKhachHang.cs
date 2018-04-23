@@ -26,11 +26,6 @@ namespace QLThuoc.view
         {
             InitializeComponent();
         }
-        private void dgvKH_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            dgvKH.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
-
-        }
         private void DisEnl(bool e)
         {
             btnThem.Enabled = !e;
@@ -55,30 +50,10 @@ namespace QLThuoc.view
         {
            dgvKH.DataSource = Bus.GetData();
         }
-
-        private void frmKhachHang_Load(object sender, EventArgs e)
+        private void frmKhachHang_Load_1(object sender, EventArgs e)
         {
             HienThi();
             DisEnl(false);
-        }
-
-        private void dgvKH_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (fluu == 0)
-            {
-                txtDiaChi.Text = Convert.ToString(dgvKH.CurrentRow.Cells["DiaChi"].Value);
-                txtSDT.Text = Convert.ToString(dgvKH.CurrentRow.Cells["SDT"].Value);
-                txtTenKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["TenKH"].Value);
-            }
-            else
-            {
-                txtMaKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["MaKH"].Value);
-                txtDiaChi.Text = Convert.ToString(dgvKH.CurrentRow.Cells["DiaChi"].Value);
-                txtSDT.Text = Convert.ToString(dgvKH.CurrentRow.Cells["SDT"].Value);
-                txtTenKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["TenKH"].Value);
-            }
-
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -142,7 +117,7 @@ namespace QLThuoc.view
                     Bus.InsertData(KH);
                     MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
-                    frmKhachHang_Load(sender, e);
+                    frmKhachHang_Load_1(sender, e);
                     Clear();
                     DisEnl(false);
                     fluu = 1;
@@ -159,7 +134,7 @@ namespace QLThuoc.view
                     Bus.UpdateData(KH);
                     MessageBox.Show("Sửa Thành Công ! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
-                    frmKhachHang_Load(sender, e);
+                    frmKhachHang_Load_1(sender, e);
                     Clear();
                     DisEnl(false);
                 }
@@ -224,6 +199,28 @@ namespace QLThuoc.view
             }
             else
                 HienThi();
+        }
+
+        private void dgvKH_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (fluu == 0)
+            {
+                txtDiaChi.Text = Convert.ToString(dgvKH.CurrentRow.Cells["DiaChi"].Value);
+                txtSDT.Text = Convert.ToString(dgvKH.CurrentRow.Cells["SDT"].Value);
+                txtTenKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["TenKH"].Value);
+            }
+            else
+            {
+                txtMaKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["MaKH"].Value);
+                txtDiaChi.Text = Convert.ToString(dgvKH.CurrentRow.Cells["DiaChi"].Value);
+                txtSDT.Text = Convert.ToString(dgvKH.CurrentRow.Cells["SDT"].Value);
+                txtTenKH.Text = Convert.ToString(dgvKH.CurrentRow.Cells["TenKH"].Value);
+            }
+        }
+
+        private void dgvKH_RowPrePaint_1(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dgvKH.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
         }
     }
 }

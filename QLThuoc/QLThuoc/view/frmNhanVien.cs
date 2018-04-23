@@ -21,15 +21,6 @@ namespace QLThuoc.view
         {
             InitializeComponent();
         }
-        public void ShowCS()
-        {
-            DataTable dt = new DataTable();
-            dt = Bus.GetListCS();
-            cbMaCS.DataSource = dt;
-            cbMaCS.DisplayMember = "TenCS";
-            cbMaCS.ValueMember = "MaCS";
-
-        }
         private void DisEnl(bool e)
         {
             btnThem.Enabled = !e;
@@ -58,10 +49,18 @@ namespace QLThuoc.view
             cbMaCS.Text = "";
 
         }
+        private void ShowListCS()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListCS();
+            cbMaCS.DataSource = dt;
+            cbMaCS.DisplayMember = "TenCS";
+            cbMaCS.ValueMember = "MaCS";
+        }
         private void HienThi()
         {
+            ShowListCS();
             dgvNhanVien.DataSource = Bus.GetData();
-            ShowCS();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -160,7 +159,7 @@ namespace QLThuoc.view
             }
             if (cbMaCS.Text == "")
             {
-                MessageBox.Show("Bạn chưa chọn cơ sở của nhân viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa chọn Mã CS nhân viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (radNam.Checked == false && radNu.Checked==false)
             {

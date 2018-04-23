@@ -418,6 +418,7 @@
             // 
             // txtTenNV
             // 
+            this.txtTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNV.Location = new System.Drawing.Point(120, 51);
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(174, 21);
@@ -531,7 +532,7 @@
             // TenCS
             // 
             this.TenCS.DataPropertyName = "TenCS";
-            this.TenCS.HeaderText = "Mã cơ sở";
+            this.TenCS.HeaderText = "Cơ sở";
             this.TenCS.Name = "TenCS";
             // 
             // SDT

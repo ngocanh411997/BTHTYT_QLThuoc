@@ -52,7 +52,7 @@ namespace QLThuoc.view
         private void clearData()
         {
             txtMaHD.Text = "";
-            txtMaKH.Text = "";          
+            txtMaKH.Text = "";
             txtMaNVXuat.Text = "";
             dtNgayXuat.Text = "";
 
@@ -83,37 +83,6 @@ namespace QLThuoc.view
             btnThanhToan.Enabled = false;
 
         }
-
-        private void dgvHoaDonXuat_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (fluu == 0)
-            {
-                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
-                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
-                dtNgayXuat.Text= Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
-                txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
-                HienThiCT();
-                btnThanhToan.Enabled = true;
-                btnHuy.Enabled = true;
-            }
-            else if(fluu !=0 && fluu !=-1)
-            {
-                txtMaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
-                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
-                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
-                dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
-                txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
-                HienThiCT();
-                btnThanhToan.Enabled = true;
-                btnHuy.Enabled = true;
-            }
-        }
-
-        private void dgvHoaDonXuat_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            dgvHoaDonXuat.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             fluu = 0;
@@ -234,21 +203,21 @@ namespace QLThuoc.view
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (cbTimKiem.Text == "Mã HĐ")
+            if (cbTimKiem.Text == "Mã Phiếu")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Khách Hàng")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Nhân Viên")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Ngày Nhập(năm-tháng-ngày)")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%' and TrangThai=N'Chưa thanh toán'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%'");
             }
         }
         /// <summary>
@@ -259,8 +228,17 @@ namespace QLThuoc.view
         /// 
         private void HienThiCT()
         {
-            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) FROM dbo.ChiTietHoaDonXuat WHERE MaHDX LIKE '%"+txt_MaHD.Text.Trim() +"%'");
+            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) FROM dbo.ChiTietHoaDonXuat where MaHDX like '%" + txt_MaHD.Text.Trim() + "%'");
         }
+
+
+        private void btnCT_Click(object sender, EventArgs e)
+        {
+            HienThiCT();
+            btnThanhToan.Enabled = true;
+            btnHuy.Enabled = true;
+        }
+
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             fluu = -1;
@@ -274,6 +252,7 @@ namespace QLThuoc.view
             btnLuu.Enabled = false;
             btnLamMoi.Enabled = false;
             btnHuy.Enabled = true;
+
             txtMaHD.Enabled = false;
             txt_MaHD.Enabled = false;
         }
@@ -287,7 +266,6 @@ namespace QLThuoc.view
             btnLuu.Enabled = false;
             txtMaHD.Enabled = false;
             txt_MaHD.Enabled = false;
-            txtMaThuoc.Enabled = false;
         }
 
         private void btnXoaCT_Click(object sender, EventArgs e)
@@ -296,7 +274,7 @@ namespace QLThuoc.view
             {
                 try
                 {
-                    Bus.DeleteDataCT(txt_MaHD.Text, txtMaThuoc.Text);
+                    Bus.DeleteDataCT(txt_MaHD.Text,txtMaThuoc.Text);
                     MessageBox.Show("Xóa thành công!");
                     clearData();
                     DisEnlCT(false);
@@ -309,7 +287,6 @@ namespace QLThuoc.view
                 }
             }
         }
-
         private void btnLuuCT_Click(object sender, EventArgs e)
         {
             if (txt_MaHD.Text == "")
@@ -350,6 +327,7 @@ namespace QLThuoc.view
             {
                 try
                 {
+                  
                     Bus.InsertDataCT(CT);
                     MessageBox.Show("Thêm thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi();
@@ -357,14 +335,14 @@ namespace QLThuoc.view
                     frmHoaDonXuat_Load(sender, e);
                     clearData();
                     DisEnlCT(false);
-                    fluu = 22;
+                    fluu = 2;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi" + ex.Message);
+                MessageBox.Show("Lỗi" + ex.Message);
                 }
             }
-            else if (txt_MaHD.Text != "" && txtMaThuoc.Text != "" && cbDonViTinh.Text != "" && txtSoLuong.Text != "" && txtGia.Text != "" && fluu != -1)
+            else if (txt_MaHD.Text != "" && txtMaThuoc.Text != "" && cbDonViTinh.Text != "" && txtSoLuong.Text != "" && txtGia.Text != "" && fluu != -1 && fluu!=0)
             {
                 try
                 {
@@ -385,8 +363,14 @@ namespace QLThuoc.view
 
         private void btnDSCT_Click(object sender, EventArgs e)
         {
-            HienThiCT();
+            dgvChiTietHDX.DataSource = Bus.DataCTHDX("Select * from ChiTietHoaDonXuat");
             btnHuy.Enabled = true;
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            frmThanhToan ThanhToan = new frmThanhToan(txt_MaHD.Text);
+            ThanhToan.ShowDialog();
         }
 
         private void dgvChiTietHDX_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
@@ -404,16 +388,29 @@ namespace QLThuoc.view
          
         }
 
-<<<<<<< HEAD
-        private void txtMaHD_TextChanged(object sender, EventArgs e)
+        private void dgvHoaDonXuat_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
-=======
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            frmThanhToan ThanhToan = new frmThanhToan(txt_MaHD.Text);
-            ThanhToan.ShowDialog();
->>>>>>> ebab992f957f4637fff4d7ba060ec85a9d2ba4a5
+            if (fluu == 0)
+            {
+                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
+                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
+                dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
+                txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
+            }
+            else if (fluu != 0 && fluu != -1)
+            {
+                txtMaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
+                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
+                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
+                dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
+                txt_MaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
+            }
         }
+
+        private void dgvHoaDonXuat_RowPrePaint_1(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            dgvHoaDonXuat.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
+        }
+
     }
 }

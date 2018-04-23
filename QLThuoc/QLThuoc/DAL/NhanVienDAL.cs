@@ -62,7 +62,7 @@ namespace QLThuoc.DAL
         }
         public DataTable GetListCS()
         {
-            return conn.GetData("Select * from CoSo");
+            return conn.GetData("Xem_CoSo", null);
         }
     }
 }

@@ -50,23 +50,13 @@ namespace QLThuoc.BUS
         {
             return da.UpdateDataCT(CTHDX);
         }
-        public int DeleteDataCT(string IDHD, string IDT)
+        public int DeleteDataCT(string IDHD,string IDT)
         {
-            return da.DeleteDataCT(IDHD, IDT);
+            return da.DeleteDataCT(IDHD,IDT);
         }
         public DataTable ThanhToan(string str)
         {
-            return da.ThanhToan(str);
+            return da.ThanhToan( str);
         }
-        public DataTable XemHoaDonTT()
-        {
-            return da.XemHoaDonTT();
-        }
-        public int UpdateDataTT(HoaDonXuatEntity HDX)
-        {
-            return da.UpdateDataTT(HDX);
-        }
-        
-
     }
 }

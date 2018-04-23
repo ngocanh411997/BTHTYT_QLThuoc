@@ -41,7 +41,7 @@
             this.btnCS = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHoaDonTT = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -148,7 +148,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnHoaDonTT);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnNhanVien);
             this.groupBox2.Controls.Add(this.btnCS);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,19 +208,18 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
             // 
-            // btnHoaDonTT
+            // button1
             // 
-            this.btnHoaDonTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDonTT.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDonTT.Image")));
-            this.btnHoaDonTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHoaDonTT.Location = new System.Drawing.Point(326, 45);
-            this.btnHoaDonTT.Name = "btnHoaDonTT";
-            this.btnHoaDonTT.Size = new System.Drawing.Size(85, 100);
-            this.btnHoaDonTT.TabIndex = 3;
-            this.btnHoaDonTT.Text = "Hóa đơn đã thanh toán";
-            this.btnHoaDonTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHoaDonTT.UseVisualStyleBackColor = true;
-            this.btnHoaDonTT.Click += new System.EventHandler(this.btnHoaDonTT_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(40, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 100);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Kho";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmQuanLyChung
             // 
@@ -254,6 +253,6 @@
         private System.Windows.Forms.Button btnCS;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnHoaDonTT;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -17,16 +17,28 @@ namespace QLThuoc.view
             InitializeComponent();
         }
 
-        private void btnHoaDonTT_Click(object sender, EventArgs e)
-        {
-            frmHoaDonDaThanhToan HDTT = new frmHoaDonDaThanhToan();
-            HDTT.ShowDialog();
-        }
-
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             frmNhanVien NhanVien = new frmNhanVien();
             NhanVien.ShowDialog();
+        }
+
+        private void btnCS_Click(object sender, EventArgs e)
+        {
+            frmCoSo CoSo = new frmCoSo();
+            CoSo.ShowDialog();
+        }
+
+        private void btnHDXuat_Click(object sender, EventArgs e)
+        {
+            frmHoaDonXuat HDX = new frmHoaDonXuat();
+            HDX.ShowDialog();
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            frmKhachHang KhachHang = new frmKhachHang();
+            KhachHang.ShowDialog();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -38,12 +50,7 @@ namespace QLThuoc.view
             }
             else
                 this.Show();
-        }
-
-        private void btnHDXuat_Click(object sender, EventArgs e)
-        {
-            frmHoaDonXuat HDX = new frmHoaDonXuat();
-            HDX.ShowDialog();
+                    
         }
 
         private void btnThuoc_Click(object sender, EventArgs e)
@@ -64,22 +71,10 @@ namespace QLThuoc.view
             NCC.ShowDialog();
         }
 
-        private void btnKhachHang_Click(object sender, EventArgs e)
-        {
-            frmKhachHang KH = new frmKhachHang();
-            KH.ShowDialog();
-        }
-
         private void btnHDNhap_Click(object sender, EventArgs e)
         {
             frmHoaDonNhap HDN = new frmHoaDonNhap();
             HDN.ShowDialog();
-        }
-
-        private void btnCS_Click(object sender, EventArgs e)
-        {
-            frmCoSo CS = new frmCoSo();
-            CS.ShowDialog();
         }
     }
 }

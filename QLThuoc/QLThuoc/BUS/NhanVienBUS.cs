@@ -19,7 +19,7 @@ namespace QLThuoc.BUS
         public string TangMa()
         {
             return da.TangMa();
-        }   
+        }
         public int InsertData(NhanVienEntity NV)
         {
             return da.InsertData(NV);
@@ -36,9 +36,12 @@ namespace QLThuoc.BUS
         {
             return da.TimKiemNV(strTimKiem);
         }
-       public DataTable GetListCS()
+        public DataTable GetListCS()
         {
             return da.GetListCS();
         }
-    }
+
+
+
+    } 
 }

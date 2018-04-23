@@ -12,7 +12,6 @@ namespace QLThuoc.Entity
         public string MaKH { get; set; }
         public DateTime NgayXuat { get; set; }
         public string MaNVXuat { get; set; }
-        public string TrangThai { get; set; }
 
         public HoaDonXuatEntity()
         {
@@ -20,15 +19,13 @@ namespace QLThuoc.Entity
             MaKH = "";
             NgayXuat = DateTime.Parse("01/01/2017");
             MaNVXuat = "";
-            TrangThai = "";
         }
-        public HoaDonXuatEntity(string _MaHoaDon, string _MaKH, DateTime _NgayXuat, string _MaNVXuat,string _TrangThai)
+        public HoaDonXuatEntity(string _MaHoaDon, string _MaKH, DateTime _NgayXuat, string _MaNVXuat)
         {
             MaHoaDon = _MaHoaDon;
             MaKH = _MaKH;
             NgayXuat = _NgayXuat;
             MaNVXuat = _MaNVXuat;
-            TrangThai = _TrangThai;
         }
     }
 

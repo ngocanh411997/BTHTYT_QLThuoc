@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.dgvKH = new System.Windows.Forms.DataGridView();
-            this.Columm1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
@@ -62,6 +57,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Columm1,
+            this.STT,
             this.MaKH,
             this.TenKH,
             this.DiaChi,
@@ -85,40 +85,8 @@
             this.dgvKH.RowHeadersVisible = false;
             this.dgvKH.Size = new System.Drawing.Size(610, 309);
             this.dgvKH.TabIndex = 0;
-            // 
-            // Columm1
-            // 
-            this.Columm1.HeaderText = "STT";
-            this.Columm1.Name = "Columm1";
-            this.Columm1.Width = 40;
-            // 
-            // MaKH
-            // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.Name = "MaKH";
-            this.MaKH.Width = 90;
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 150;
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
+            this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick_1);
+            this.dgvKH.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvKH_RowPrePaint_1);
             // 
             // label8
             // 
@@ -395,7 +363,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(21, 142);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(329, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(237, 55);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -421,6 +389,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thống kê";
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã khách hàng";
+            this.MaKH.Name = "MaKH";
+            this.MaKH.Width = 90;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Width = 150;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 150;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +434,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "frmKhachHang";
             this.Text = "frmKhachHang";
+            this.Load += new System.EventHandler(this.frmKhachHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -451,11 +454,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Columm1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTimKiem;
@@ -483,5 +481,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
     }
 }
