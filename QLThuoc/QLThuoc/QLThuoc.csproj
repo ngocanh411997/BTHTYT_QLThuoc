@@ -81,6 +81,12 @@
     <Compile Include="view\frmCoSo.Designer.cs">
       <DependentUpon>frmCoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\frmHoaDonDaThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmHoaDonDaThanhToan.Designer.cs">
+      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\frmHoaDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="view\frmCoSo.resx">
       <DependentUpon>frmCoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmHoaDonDaThanhToan.resx">
+      <DependentUpon>frmHoaDonDaThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmHoaDonNhap.resx">
       <DependentUpon>frmHoaDonNhap.cs</DependentUpon>

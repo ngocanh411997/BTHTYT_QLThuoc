@@ -58,5 +58,14 @@ namespace QLThuoc.BUS
         {
             return da.ThanhToan( str);
         }
+        public int UpdateDataTT(HoaDonXuatEntity HDX)
+        {
+            return da.UpdateDataTT(HDX);
+        }
+        //
+        public DataTable GetDataHoaDonTT()
+        {
+            return da.GetDataHoaDonTT();
+        }
     }
 }

@@ -37,11 +37,12 @@
             this.btnThuoc = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnCS = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnHDTT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +149,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnHDTT);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnNhanVien);
             this.groupBox2.Controls.Add(this.btnCS);
@@ -158,6 +160,19 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý nhân sự";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(40, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 100);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Kho";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnNhanVien
             // 
@@ -208,18 +223,19 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
             // 
-            // button1
+            // btnHDTT
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(40, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 100);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Kho";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnHDTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDTT.Image = ((System.Drawing.Image)(resources.GetObject("btnHDTT.Image")));
+            this.btnHDTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHDTT.Location = new System.Drawing.Point(187, 183);
+            this.btnHDTT.Name = "btnHDTT";
+            this.btnHDTT.Size = new System.Drawing.Size(85, 100);
+            this.btnHDTT.TabIndex = 4;
+            this.btnHDTT.Text = "Hóa đơn đã thanh toán";
+            this.btnHDTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHDTT.UseVisualStyleBackColor = true;
+            this.btnHDTT.Click += new System.EventHandler(this.btnHDTT_Click);
             // 
             // frmQuanLyChung
             // 
@@ -254,5 +270,6 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHDTT;
     }
 }

@@ -24,7 +24,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
+                 new SqlParameter("TrangThai",HDX.TrangThai)
             };
             return conn.ExcuteSQL("ThemHDX", para);
         }
@@ -35,7 +36,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHoaDon",HDX.MaHoaDon),
                 new SqlParameter("MaKH",HDX.MaKH),
                 new SqlParameter("NgayXuat",HDX.NgayXuat),
-                new SqlParameter("MaNVXuat",HDX.MaNVXuat)
+                new SqlParameter("MaNVXuat",HDX.MaNVXuat),
+                new SqlParameter("TrangThai",HDX.TrangThai)
         };
             return conn.ExcuteSQL("SuaHDX", para);
         }
@@ -98,6 +100,21 @@ namespace QLThuoc.DAL
         public DataTable ThanhToan(string str)
         {
             return conn.GetData(str);
+        }
+        //
+        public int UpdateDataTT(HoaDonXuatEntity HDX)
+        {
+            SqlParameter[] para =
+           {
+               new SqlParameter("MaHoaDon",HDX.MaHoaDon),
+                new SqlParameter("TrangThai",HDX.TrangThai)
+            };
+            return conn.ExcuteSQL("DaTT", para);
+        }
+        // Quản lý hóa đơn đã thanh toán
+        public DataTable GetDataHoaDonTT()
+        {
+            return conn.GetData("HoaDonDaTT", null);
         }
     }
 }

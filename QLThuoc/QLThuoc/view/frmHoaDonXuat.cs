@@ -205,19 +205,19 @@ namespace QLThuoc.view
         {
             if (cbTimKiem.Text == "Mã Phiếu")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaHoaDon like '%" + txtTimKiem.Text.Trim() + "%'and TRANGTHAI=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Khách Hàng")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaKH like '%" + txtTimKiem.Text.Trim() + "%' and TRANGTHAI=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Nhân Viên")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like '%" + txtTimKiem.Text.Trim() + "%' and TRANGTHAI=N'Chưa thanh toán'");
             }
             if (cbTimKiem.Text == "Ngày Nhập(năm-tháng-ngày)")
             {
-                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvHoaDonXuat.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where NgayXuat like '%" + txtTimKiem.Text.Trim() + "%' and TRANGTHAI=N'Chưa thanh toán'");
             }
         }
         /// <summary>

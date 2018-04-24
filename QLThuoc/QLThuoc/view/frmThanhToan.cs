@@ -50,5 +50,13 @@ namespace QLThuoc.view
         {
             HienThi();
         }
+
+        private void btnXuatHD_Click(object sender, EventArgs e)
+        {
+            obj.MaHoaDon = txtMaHDX.Text;
+            Bus.UpdateDataTT(obj);
+
+            MessageBox.Show("Xuất hóa đơn thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

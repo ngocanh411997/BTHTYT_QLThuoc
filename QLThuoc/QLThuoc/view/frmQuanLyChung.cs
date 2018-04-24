@@ -76,5 +76,13 @@ namespace QLThuoc.view
             frmHoaDonNhap HDN = new frmHoaDonNhap();
             HDN.ShowDialog();
         }
+
+        private void btnHDTT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHoaDonDaThanhToan HDTT = new frmHoaDonDaThanhToan();
+            HDTT.ShowDialog();
+            this.Show();
+        }
     }
 }

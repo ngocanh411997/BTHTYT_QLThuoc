@@ -46,27 +46,27 @@ SELECT * FROM dbo.NhanVien WHERE NgaySinh='10/10/1997'
 -- HoaDonXuat
 -- Xem HDX
 GO
-CREATE PROC HDX_SelectAll
+ALTER PROC [dbo].[HDX_SelectAll]
 AS
 BEGIN
-	SELECT * FROM dbo.HoaDonXuat
+	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Chưa thanh toán'
 END
 -- Thêm HĐX
 GO
-CREATE PROC ThemHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+ALTER PROC [dbo].[ThemHDX](@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10), @TrangThai NVARCHAR(50))
 AS
 BEGIN
 	INSERT INTO dbo.HoaDonXuat
-	        ( MaHoaDon, MaKH, NgayXuat, MaNVXuat )
-	VALUES  ( @MaHoaDon,@MaKH,@NgayXuat,@MaNVXuat)
+	        ( MaHoaDon, MaKH, NgayXuat, MaNVXuat,TrangThai )
+	VALUES  ( @MaHoaDon,@MaKH,@NgayXuat,@MaNVXuat,N'Chưa thanh toán')
 END
 -- Sửa HĐX
 GO
-CREATE PROC SuaHDX(@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10))
+ALTER PROC [dbo].[SuaHDX](@MaHoaDon VARCHAR(10), @MaKH VARCHAR(10), @NgayXuat DATE, @MaNVXuat VARCHAR(10),@TrangThai NVARCHAR(50))
 AS
 BEGIN
 	UPDATE dbo.HoaDonXuat
-	SET MaKH=MaKH,NgayXuat=@NgayXuat,MaNVXuat=@MaNVXuat
+	SET MaKH=MaKH,NgayXuat=@NgayXuat,MaNVXuat=@MaNVXuat, TrangThai=N'Chưa thanh toán'
 	WHERE MaHoaDon=@MaHoaDon
 END
 -- Xóa HĐX
@@ -141,3 +141,27 @@ EXEC dbo.XoaCTHDX @MaHDX = 'DX01', -- varchar(10)
 	WHERE A.MaKH=KhachHang.MaKH
 	GROUP BY A.MaKH,TenKH,A.MaHoaDon
 
+-- Thanh toán hóa đơn, chuyển từ trạng thái chưa thanh toán sang đã thanh toán
+GO
+CREATE PROC [dbo].[DaTT](@MaHoaDon VARCHAR(10),@TrangThai NVARCHAR(50))
+AS
+BEGIN
+	UPDATE dbo.HoaDonXuat
+	SET TrangThai=N'Đã thanh toán'
+	WHERE MaHoaDon=@MaHoaDon
+END
+--Xem hóa đơn đã thanh toán
+GO
+ALTER PROC [dbo].[XemHDTT]
+AS
+BEGIN
+	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
+END
+
+--
+GO
+ALTER PROC [dbo].[XemHoaDonTT]
+AS
+BEGIN
+	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
+END
