@@ -70,7 +70,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaThuoc",CTHDX.MaThuoc),
                 new SqlParameter("DonViTinh",CTHDX.DonViTinh),
                 new SqlParameter("SoLuong",CTHDX.SoLuong),
-                new SqlParameter("Gia",CTHDX.Gia)
+                new SqlParameter("Gia",CTHDX.Gia),
+                new SqlParameter("ThanhTien",CTHDX.ThanhTien)
 
             };
             
@@ -84,7 +85,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaThuoc",CTHDX.MaThuoc),
                 new SqlParameter("DonViTinh",CTHDX.DonViTinh),
                 new SqlParameter("SoLuong",CTHDX.SoLuong),
-                new SqlParameter("Gia",CTHDX.Gia)
+                new SqlParameter("Gia",CTHDX.Gia),
+                new SqlParameter("ThanhTien",CTHDX.ThanhTien)
             };
             return conn.ExcuteSQL("SuaCTHDX", para);
         }
@@ -97,6 +99,12 @@ namespace QLThuoc.DAL
         };
             return conn.ExcuteSQL("XoaCTHDX", para);
         }
+        //
+        public DataTable GetListT()
+        {
+            return conn.GetData("Xem_Thuoc ", null);
+        }
+        //
         public DataTable ThanhToan(string str)
         {
             return conn.GetData(str);

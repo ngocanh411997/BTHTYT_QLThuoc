@@ -17,7 +17,7 @@ namespace QLThuoc.view
         NhaCC NCC = new NhaCC();
         NhaCCBUS Bus = new NhaCCBUS();
         private int fluu = 1;
-        private object cboTenNCC;
+       // private object cboTenNCC;
         public frmNhaCC()
         {
             InitializeComponent();

@@ -21,7 +21,7 @@ namespace QLThuoc.view
         KhachHang KH = new KhachHang();
         KhachHangBUS Bus = new KhachHangBUS();
         private int fluu = 1;
-        private object cboTenCS;
+       // private object cboTenCS;
         public frmKhachHang()
         {
             InitializeComponent();

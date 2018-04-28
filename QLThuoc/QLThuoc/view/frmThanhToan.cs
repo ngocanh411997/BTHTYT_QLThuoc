@@ -32,7 +32,7 @@ namespace QLThuoc.view
         {
             txtMaHDX.Text = ma;
             txtMaHDX.Enabled = false;
-            dgvThanhToan.DataSource = Bus.ThanhToan("SELECT A.MaKH,TenKH,A.MaHoaDon,SUM(A.ThanhTien) as TongTien FROM dbo.KhachHang, (SELECT MaHoaDon, MaThuoc, DonViTinh, Gia, SoLuong, ThanhTien= (Gia * SoLuong), MaKH FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX WHERE MaHoaDon='"+txtMaHDX.Text.Trim()+"') A WHERE A.MaKH = KhachHang.MaKH GROUP BY A.MaKH,TenKH,A.MaHoaDon");
+            dgvThanhToan.DataSource = Bus.ThanhToan("SELECT HoaDonXuat.MaKH,TenKH,MaHDX, SUM(ThanhTien) AS TongTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDonXuat.MaKH WHERE TrangThai = N'Đã thanh toán' AND MaHDX = '"+txtMaHDX.Text+"' GROUP BY HoaDonXuat.MaKH, TenKH, MaHDX");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -55,7 +55,6 @@ namespace QLThuoc.view
         {
             obj.MaHoaDon = txtMaHDX.Text;
             Bus.UpdateDataTT(obj);
-
             MessageBox.Show("Xuất hóa đơn thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

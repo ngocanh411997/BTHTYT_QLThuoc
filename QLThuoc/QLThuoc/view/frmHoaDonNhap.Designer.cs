@@ -110,7 +110,7 @@
             this.btnLamTrong.Text = "Làm Trống";
             this.btnLamTrong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLamTrong.UseVisualStyleBackColor = false;
-            this.btnLamTrong.Click += new System.EventHandler(this.btnLamTrong_Click);
+           
             // 
             // groupBox2
             // 
@@ -150,7 +150,7 @@
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLamMoi.UseVisualStyleBackColor = false;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            
             // 
             // txtTimKiem
             // 
@@ -172,7 +172,7 @@
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.button1_Click);
+         
             // 
             // groupBox3
             // 
@@ -201,8 +201,8 @@
             this.dgvHoaDonNhap.RowHeadersVisible = false;
             this.dgvHoaDonNhap.Size = new System.Drawing.Size(496, 293);
             this.dgvHoaDonNhap.TabIndex = 0;
-            this.dgvHoaDonNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDonNhap_CellClick);
-            this.dgvHoaDonNhap.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvHoaDonNhap_RowPrePaint);
+          
+           
             // 
             // STT
             // 
@@ -268,8 +268,7 @@
             this.dgvChiTietHDN.RowHeadersVisible = false;
             this.dgvChiTietHDN.Size = new System.Drawing.Size(559, 296);
             this.dgvChiTietHDN.TabIndex = 0;
-            this.dgvChiTietHDN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHDN_CellClick);
-            this.dgvChiTietHDN.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvChiTietHDN_RowPrePaint);
+            
             // 
             // _STT
             // 
@@ -402,7 +401,7 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            
             // 
             // btnChiPhi
             // 
@@ -416,7 +415,7 @@
             this.btnChiPhi.Text = "Chi Phí";
             this.btnChiPhi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnChiPhi.UseVisualStyleBackColor = false;
-            this.btnChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
+           
             // 
             // btnHuy
             // 
@@ -430,7 +429,7 @@
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            
             // 
             // label12
             // 
@@ -455,7 +454,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+           
             // 
             // groupBox8
             // 
@@ -605,7 +604,7 @@
             this.btnDSCT.Text = "DS CT";
             this.btnDSCT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDSCT.UseVisualStyleBackColor = false;
-            this.btnDSCT.Click += new System.EventHandler(this.btnDSCT_Click);
+            
             // 
             // btnLuuCT
             // 
@@ -619,7 +618,7 @@
             this.btnLuuCT.Text = "Lưu CT";
             this.btnLuuCT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuuCT.UseVisualStyleBackColor = false;
-            this.btnLuuCT.Click += new System.EventHandler(this.btnLuuCT_Click);
+           
             // 
             // btnXoaCT
             // 
@@ -633,7 +632,7 @@
             this.btnXoaCT.Text = "Xóa CT";
             this.btnXoaCT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXoaCT.UseVisualStyleBackColor = false;
-            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click);
+          
             // 
             // btnSuaCT
             // 
@@ -647,7 +646,7 @@
             this.btnSuaCT.Text = "Sửa CT";
             this.btnSuaCT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSuaCT.UseVisualStyleBackColor = false;
-            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click);
+           
             // 
             // btnThemCT
             // 
@@ -661,7 +660,7 @@
             this.btnThemCT.Text = "Thêm CT";
             this.btnThemCT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThemCT.UseVisualStyleBackColor = false;
-            this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click);
+           
             // 
             // btnXoa
             // 
@@ -675,7 +674,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+           
             // 
             // btnSua
             // 
@@ -689,7 +688,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            
             // 
             // btnThem
             // 
@@ -703,7 +702,7 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+          
             // 
             // groupBox4
             // 
@@ -737,7 +736,7 @@
             this.Controls.Add(this.groupBox4);
             this.Name = "frmHoaDonNhap";
             this.Text = "frmHoaDonNhap";
-            this.Load += new System.EventHandler(this.frmHoaDonNhap_Load);
+            
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);

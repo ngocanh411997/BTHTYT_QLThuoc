@@ -17,7 +17,7 @@ namespace QLThuoc.view
         CoSo CS = new CoSo();
         CoSoBUS Bus = new CoSoBUS();
         private int fluu = 1;
-        private object cboTenCS;
+       // private object cboTenCS;
 
         public frmCoSo()
         {

@@ -17,7 +17,7 @@ namespace QLThuoc.view
         LoaiThuoc LT = new LoaiThuoc();
         LoaiThuocBUS Bus = new LoaiThuocBUS();
         private int fluu = 1;
-        private object cboTenLoaiThuoc;
+       // private object cboTenLoaiThuoc;
         public frmLoaiThuoc()
         {
             InitializeComponent();

@@ -43,6 +43,10 @@ END
 SELECT * FROM dbo.NhanVien WHERE NgaySinh='10/10/1997'
 
 -------------
+-- Sửa bảng HDX
+ALTER TABLE dbo.HoaDonXuat
+ADD TrangThai NVARCHAR(50)
+
 -- HoaDonXuat
 -- Xem HDX
 GO
@@ -79,6 +83,9 @@ BEGIN
 	DELETE dbo.HoaDonXuat
 	WHERE MaHoaDon=@MaHoaDon
 END
+-- Sửa bảng CTHDX
+ALTER TABLE dbo.ChiTietHoaDonXuat
+ADD ThanhTien int
 -- Xem CTHDX
 GO
 CREATE PROC CTHDX_SelectAll
@@ -88,7 +95,7 @@ BEGIN
 END
 -- Thêm CTHDX
 GO
-CREATE PROC ThemCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT)
+ALTER PROC ThemCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT,@ThanhTien INT)
 AS
 BEGIN
 	INSERT INTO dbo.ChiTietHoaDonXuat
@@ -96,19 +103,20 @@ BEGIN
 	          MaThuoc ,
 	          DonViTinh ,
 	          Gia ,
-	          SoLuong
+	          SoLuong,
+			  ThanhTien
 	        )
-	VALUES  ( @MaHDX,@MaThuoc,@DonViTinh,@Gia,@SoLuong)
+	VALUES  ( @MaHDX,@MaThuoc,@DonViTinh,@Gia,@SoLuong,@Gia*@SoLuong)
 END
 
 
 -- Sửa CTHDX
 GO
-ALTER PROC SuaCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT)
+ALTER PROC SuaCTHDX(@MaHDX VARCHAR(10), @MaThuoc VARCHAR(10), @DonViTinh NVARCHAR(50), @Gia BIGINT,@SoLuong INT,@ThanhTien INT)
 AS
 BEGIN
 	UPDATE dbo.ChiTietHoaDonXuat
-	SET MaThuoc=@MaThuoc,DonViTinh=@DonViTinh,Gia=@Gia,SoLuong=@SoLuong
+	SET MaThuoc=@MaThuoc,DonViTinh=@DonViTinh,Gia=@Gia,SoLuong=@SoLuong,ThanhTien=@Gia*@SoLuong
 	WHERE MaHDX=@MaHDX AND MaThuoc=@MaThuoc
 END
 -- Xóa CTHDX
@@ -121,14 +129,6 @@ BEGIN
 END
 
 --
-EXEC dbo.ThemCTHDX @MaHDX = 'DX04', -- varchar(10)
-    @MaThuoc = 'T02', -- varchar(10)
-    @DonViTinh = N'Vỉ', -- nvarchar(50)
-    @Gia = 200, -- bigint
-    @SoLuong = 20 -- int
-
-EXEC dbo.XoaCTHDX @MaHDX = 'DX01', -- varchar(10)
-    @MaThuoc = 'T06' -- varchar(10)
 
 
 	SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) 

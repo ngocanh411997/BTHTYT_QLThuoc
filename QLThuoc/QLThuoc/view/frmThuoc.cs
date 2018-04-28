@@ -17,7 +17,7 @@ namespace QLThuoc.view
         Thuoc T = new Thuoc();
         ThuocBUS Bus = new ThuocBUS();
         private int fluu = 1;
-        private object cboTenThuoc;
+        //private object cboTenThuoc;
         public frmThuoc()
         {
             InitializeComponent();
