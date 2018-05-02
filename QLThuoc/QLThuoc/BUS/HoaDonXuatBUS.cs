@@ -55,9 +55,9 @@ namespace QLThuoc.BUS
             return da.DeleteDataCT(IDHD,IDT);
         }
         //
-        public DataTable GetListT()
+        public DataTable GetListT(string str)
         {
-            return da.GetListT();
+            return da.GetListT(str);
         }
         //
         public DataTable ThanhToan(string str)

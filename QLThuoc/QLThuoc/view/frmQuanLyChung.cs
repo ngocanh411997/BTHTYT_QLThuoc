@@ -84,5 +84,13 @@ namespace QLThuoc.view
             HDTT.ShowDialog();
             this.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Kho K = new Kho();
+            K.ShowDialog();
+            this.Show();
+        }
     }
 }

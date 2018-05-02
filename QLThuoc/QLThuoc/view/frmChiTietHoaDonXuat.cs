@@ -29,7 +29,7 @@ namespace QLThuoc.view
         public void ShowT()
         {
             DataTable dt = new DataTable();
-            dt = Bus.GetListT();
+            dt = Bus.GetListT("SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='"+txt_MaHD.Text+"')");
             cbTenThuoc.DataSource = dt;
             cbTenThuoc.DisplayMember = "TenThuoc";
             cbTenThuoc.ValueMember = "MaThuoc";
@@ -208,7 +208,7 @@ namespace QLThuoc.view
             this.Hide();
             frmThanhToan ThanhToan = new frmThanhToan(txt_MaHD.Text);
             ThanhToan.ShowDialog();
-            this.Show();
+            
         }
 
     }

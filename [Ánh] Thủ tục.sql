@@ -165,3 +165,20 @@ AS
 BEGIN
 	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
 END
+
+
+SELECT MaHDX,TenThuoc, DonViTinh,ChiTietHoaDonXuat.SoLuong,Gia,ThanhTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc
+WHERE MaHDX=''
+
+--
+SELECT HoaDonXuat.MaKH,TenKH,MaHDX, SUM(ThanhTien) AS TongTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDonXuat.MaKH
+WHERE TrangThai=N'Đã thanh toán' AND MaHDX=''
+GROUP BY HoaDonXuat.MaKH,TenKH,MaHDX
+
+
+SELECT MaHDX,TenThuoc,DonViTinh,Gia,ChiTietHoaDonXuat.SoLuong,ThanhTien FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc
+
+SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='DX04')
+
+
+SELECT * FROM dbo.ChiTietHoaDonNhap

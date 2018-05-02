@@ -27,5 +27,10 @@ namespace QLThuoc.view
             else
                 this.Show();
         }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+
+        }
     }
 }

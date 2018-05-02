@@ -100,9 +100,9 @@ namespace QLThuoc.DAL
             return conn.ExcuteSQL("XoaCTHDX", para);
         }
         //
-        public DataTable GetListT()
+        public DataTable GetListT(string str)
         {
-            return conn.GetData("Xem_Thuoc ", null);
+            return conn.GetData(str);
         }
         //
         public DataTable ThanhToan(string str)
@@ -122,7 +122,7 @@ namespace QLThuoc.DAL
         // Quản lý hóa đơn đã thanh toán
         public DataTable GetDataHoaDonTT()
         {
-            return conn.GetData("HoaDonDaTT", null);
+            return conn.GetData("XemHoaDonTT", null);
         }
     }
 }

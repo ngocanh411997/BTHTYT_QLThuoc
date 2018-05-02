@@ -29,7 +29,7 @@ namespace QLThuoc.view
         }
         private void HienThiCT()
         {
-            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien=(Gia*SoLuong) FROM dbo.ChiTietHoaDonXuat where MaHDX like '%" + txtMaHD.Text.Trim() + "%'");
+            dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,TenThuoc,DonViTinh,Gia,ChiTietHoaDonXuat.SoLuong,ThanhTien FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc where MaHDX like '%" + txtMaHD.Text.Trim() + "%'");
             dgvChiTietHDX.AutoResizeColumns();
         }
 

@@ -32,7 +32,7 @@ namespace QLThuoc.view
         {
             txtMaHDX.Text = ma;
             txtMaHDX.Enabled = false;
-            dgvThanhToan.DataSource = Bus.ThanhToan("SELECT HoaDonXuat.MaKH,TenKH,MaHDX, SUM(ThanhTien) AS TongTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDonXuat.MaKH WHERE TrangThai = N'Đã thanh toán' AND MaHDX = '"+txtMaHDX.Text+"' GROUP BY HoaDonXuat.MaKH, TenKH, MaHDX");
+            dgvThanhToan.DataSource = Bus.ThanhToan("SELECT HoaDonXuat.MaKH,TenKH,MaHDX, SUM(ThanhTien) AS TongTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDonXuat.MaKH WHERE MaHDX = '"+txtMaHDX.Text+"' GROUP BY HoaDonXuat.MaKH, TenKH, MaHDX");
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -40,7 +40,8 @@ namespace QLThuoc.view
             DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn hủy thao tác đang làm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                this.Close();
+                this.Close();  
+                             
             }
             else
                 HienThi();

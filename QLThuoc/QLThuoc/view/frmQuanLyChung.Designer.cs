@@ -37,12 +37,12 @@
             this.btnThuoc = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnHDTT = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnCS = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnHDTT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +161,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý nhân sự";
             // 
+            // btnHDTT
+            // 
+            this.btnHDTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDTT.Image = ((System.Drawing.Image)(resources.GetObject("btnHDTT.Image")));
+            this.btnHDTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHDTT.Location = new System.Drawing.Point(187, 183);
+            this.btnHDTT.Name = "btnHDTT";
+            this.btnHDTT.Size = new System.Drawing.Size(85, 100);
+            this.btnHDTT.TabIndex = 4;
+            this.btnHDTT.Text = "Hóa đơn đã thanh toán";
+            this.btnHDTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHDTT.UseVisualStyleBackColor = true;
+            this.btnHDTT.Click += new System.EventHandler(this.btnHDTT_Click);
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,6 +187,7 @@
             this.button1.Text = "Kho";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnNhanVien
             // 
@@ -222,20 +237,6 @@
             this.label1.Size = new System.Drawing.Size(403, 42);
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
-            // 
-            // btnHDTT
-            // 
-            this.btnHDTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDTT.Image = ((System.Drawing.Image)(resources.GetObject("btnHDTT.Image")));
-            this.btnHDTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHDTT.Location = new System.Drawing.Point(187, 183);
-            this.btnHDTT.Name = "btnHDTT";
-            this.btnHDTT.Size = new System.Drawing.Size(85, 100);
-            this.btnHDTT.TabIndex = 4;
-            this.btnHDTT.Text = "Hóa đơn đã thanh toán";
-            this.btnHDTT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHDTT.UseVisualStyleBackColor = true;
-            this.btnHDTT.Click += new System.EventHandler(this.btnHDTT_Click);
             // 
             // frmQuanLyChung
             // 
