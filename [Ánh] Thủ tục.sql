@@ -182,3 +182,24 @@ SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietH
 
 
 SELECT * FROM dbo.ChiTietHoaDonNhap
+
+GO
+CREATE PROC KhoThuoc
+AS
+BEGIN
+SELECT T.MaThuoc,T.TenThuoc, SL=N.SLN-X.SLX
+FROM dbo.Thuoc T,(SELECT MaThuoc, SUM(SoLuong) AS SLN FROM dbo.ChiTietHoaDonNhap GROUP BY MaThuoc) N, (SELECT MaThuoc,SUM(SoLuong) AS SLX FROM dbo.ChiTietHoaDonXuat GROUP BY MaThuoc) X
+WHERE N.MaThuoc=T.MaThuoc AND T.MaThuoc=X.MaThuoc
+END
+
+
+SELECT * FROM dbo.ChiTietHoaDonNhap
+
+SELECT * FROM dbo.ChiTietHoaDonXuat
+
+GO
+CREATE PROC DTNgay
+AS
+BEGIN
+SELECT NgayXuat, SUM(ThanhTien) AS DTNgay FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX GROUP BY NgayXuat
+END

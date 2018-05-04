@@ -41,7 +41,6 @@ namespace QLThuoc.view
             cbMaDVSX.Enabled = e;
             txtCongDung.Enabled = e;
             dateHSD.Enabled = e;
-            txtSoLuong.Enabled = e;
             txtNuocSX.Enabled = e;
 
 
@@ -55,7 +54,6 @@ namespace QLThuoc.view
             cbMaDVSX.Text = "";
             txtCongDung.Text = "";
             dateHSD.Text = "";
-            txtSoLuong.Text = "";
             txtNuocSX.Text = "";
 
         }
@@ -80,7 +78,6 @@ namespace QLThuoc.view
                 txtCongDung.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["CongDung"].Value);
                 cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
                 dateHSD.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["HSD"].Value);
-                txtSoLuong.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["SoLuong"].Value);
                 txtNuocSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["NuocSX"].Value);
 
             }
@@ -93,7 +90,6 @@ namespace QLThuoc.view
                 txtCongDung.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["CongDung"].Value);
                 cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
                 dateHSD.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["HSD"].Value);
-                txtSoLuong.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["SoLuong"].Value);
                 txtNuocSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["NuocSX"].Value);
 
             }
@@ -149,27 +145,22 @@ namespace QLThuoc.view
             {
                 MessageBox.Show("Bạn chưa nhập hạn sử dụng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (txtSoLuong.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập số lượng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
             if (txtNuocSX.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập nơi sản xuất!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
-            int _soluong;
-            int.TryParse(txtSoLuong.Text, out _soluong);
+           
             T.MaThuoc = txtMaThuoc.Text;
             T.TenThuoc = txtTenThuoc.Text;
             T.MaLoaiThuoc = cbMaLoaiThuoc.Text;
             T.MaDVSX = cbMaDVSX.Text;
             T.CongDung = txtCongDung.Text;
             T.HSD = dateHSD.Text;
-            T.SoLuong = _soluong;
+            
             T.NuocSX = txtNuocSX.Text;
-            if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtSoLuong.Text != "" && txtNuocSX.Text != "" && fluu == 0)
+            if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtNuocSX.Text != "" && fluu == 0)
             {
                 try
                 {
@@ -186,7 +177,7 @@ namespace QLThuoc.view
 
                 }
             }
-            else if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtSoLuong.Text != "" && txtNuocSX.Text != "" && fluu != 0)
+            else if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtNuocSX.Text != "" && fluu != 0)
             {
                 try
                 {
@@ -254,19 +245,11 @@ namespace QLThuoc.view
             if (cbTimKiem.Text == "HSD")
             {
                 dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where HSD like '%" + txtTimKiem.Text.Trim() + "%'");
-            }
-            if (cbTimKiem.Text == "Số Lượng")
-            {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where SoLuong like '%" + txtTimKiem.Text.Trim() + "%'");
-            }
+            }           
             if (cbTimKiem.Text == "Nước SX")
             {
                 dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where NuocSX like N'%" + txtTimKiem.Text.Trim() + "%'");
-            }
-           
-           
-                                                                
-           
+            }      
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -281,6 +264,11 @@ namespace QLThuoc.view
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
         {
 
         }

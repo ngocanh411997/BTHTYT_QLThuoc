@@ -129,5 +129,10 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("KhoThuoc", null);
         }
+        // Doanh thu ngày
+        public DataTable DTNgay()
+        {
+            return conn.GetData("DTNgay", null);
+        }
     }
 }

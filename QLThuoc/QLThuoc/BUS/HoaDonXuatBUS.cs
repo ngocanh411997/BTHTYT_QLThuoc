@@ -78,5 +78,10 @@ namespace QLThuoc.BUS
         {
             return da.KhoThuoc();
         }
+        //Doanh thu ngày
+        public DataTable DTNgay()
+        {
+            return da.DTNgay();
+        }
     }
 }

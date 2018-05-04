@@ -125,9 +125,6 @@ namespace QLThuoc.view
                 MessageBox.Show("Bạn chưa nhập ghi chú!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
             LT.MaLoaiThuoc = txtMaLoaiThuoc.Text;
             LT.TenLoaiThuoc = txtTenLoaiThuoc.Text;
             LT.GhiChu = txtGhiChu.Text;
@@ -145,9 +142,9 @@ namespace QLThuoc.view
                     DisEnl(false);
                     fluu = 1;
                 }
-                catch
+                catch( Exception ex)
                 {
-
+                    MessageBox.Show("Lỗi thêm" + ex.Message);
                 }
             }
             else if (txtMaLoaiThuoc.Text != "" && txtTenLoaiThuoc.Text != "" && txtGhiChu.Text != "" && fluu != 0)

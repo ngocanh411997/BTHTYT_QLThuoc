@@ -92,5 +92,13 @@ namespace QLThuoc.view
             K.ShowDialog();
             this.Show();
         }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDoanhThu DT = new frmDoanhThu();
+            DT.ShowDialog();
+            this.Show();
+        }
     }
 }

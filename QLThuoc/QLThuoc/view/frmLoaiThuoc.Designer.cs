@@ -36,10 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLoaiThuoc = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +54,10 @@
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiThuoc)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -135,44 +135,19 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Loại Thuốc";
             // 
-            // GhiChu
-            // 
-            this.GhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.Name = "GhiChu";
-            // 
-            // TenLoaiThuoc
-            // 
-            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
-            this.TenLoaiThuoc.HeaderText = "Tên loại thuốc";
-            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
-            // 
-            // MaLoaiThuoc
-            // 
-            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
-            this.MaLoaiThuoc.HeaderText = "Mã loại thuốc";
-            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Column1";
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 40;
-            // 
             // dgvLoaiThuoc
             // 
             this.dgvLoaiThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLoaiThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.STT,
             this.MaLoaiThuoc,
             this.TenLoaiThuoc,
             this.GhiChu});
-            this.dgvLoaiThuoc.Location = new System.Drawing.Point(16, 20);
+            this.dgvLoaiThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLoaiThuoc.Location = new System.Drawing.Point(3, 17);
             this.dgvLoaiThuoc.Name = "dgvLoaiThuoc";
             this.dgvLoaiThuoc.RowHeadersVisible = false;
-            this.dgvLoaiThuoc.Size = new System.Drawing.Size(560, 345);
+            this.dgvLoaiThuoc.Size = new System.Drawing.Size(518, 351);
             this.dgvLoaiThuoc.TabIndex = 0;
             this.dgvLoaiThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiThuoc_CellClick);
             this.dgvLoaiThuoc.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvLoaiThuoc_RowPrePaint);
@@ -183,7 +158,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(371, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(593, 371);
+            this.groupBox2.Size = new System.Drawing.Size(524, 371);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thống kê";
@@ -359,7 +334,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(22, 149);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(260, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(168, 55);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -373,6 +348,32 @@
             this.groupBox7.TabIndex = 26;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chức Năng";
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "Column1";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // MaLoaiThuoc
+            // 
+            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
+            this.MaLoaiThuoc.HeaderText = "Mã loại thuốc";
+            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
+            // 
+            // TenLoaiThuoc
+            // 
+            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
+            this.TenLoaiThuoc.HeaderText = "Tên loại thuốc";
+            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.Name = "GhiChu";
             // 
             // frmLoaiThuoc
             // 
@@ -411,10 +412,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridView dgvLoaiThuoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
@@ -433,5 +430,9 @@
         private System.Windows.Forms.ToolStripMenuItem btnXoa;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }

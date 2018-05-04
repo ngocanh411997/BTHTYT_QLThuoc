@@ -9,16 +9,16 @@ go
 EXEC Xem_LoaiThuoc
 go
 -- thủ tục thêm loại thuốc
-create proc Them_LoaiThuoc
+ALTER proc Them_LoaiThuoc
 (
 	@MaLoaiThuoc nvarchar(10),
-	@TenLoaiTThuoc nvarchar(50),
+	@TenLoaiThuoc nvarchar(50),
 	@GhiChu nvarchar(50)
 )
 as
 begin
 insert into LoaiThuoc(MaLoaiThuoc,TenLoaiThuoc,GhiChu)
-values(@MaLoaiThuoc,@TenLoaiTThuoc,@GhiChu)
+values(@MaLoaiThuoc,@TenLoaiThuoc,@GhiChu)
 end
 
 go

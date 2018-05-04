@@ -1,4 +1,6 @@
-﻿-- Thủ tục lấy ra thông tin của Thuốc
+﻿ALTER TABLE dbo.Thuoc
+DROP COLUMN SoLuong
+-- Thủ tục lấy ra thông tin của Thuốc
 create proc Xem_Thuoc
 as
 begin
@@ -9,7 +11,7 @@ go
 EXEC Xem_Thuoc
 go
 -- thủ tục thêm thuốc
-create proc Them_Thuoc
+ALTER proc Them_Thuoc
 (
 	@MaThuoc varchar(10),
 	@TenThuoc nvarchar(50),
@@ -17,18 +19,17 @@ create proc Them_Thuoc
 	@MaDVSX nvarchar(10),
 	@CongDung nvarchar(50),
 	@HSD nvarchar(50),
-	@SoLuong int,
 	@NuocSX nvarchar(50)
 )
 as
 begin
-insert into Thuoc(MaThuoc,TenThuoc,MaLoaiThuoc,MaDVSX,CongDung,HSD,SoLuong,NuocSX)
-values(@MaThuoc,@TenThuoc,@MaLoaiThuoc,@MaDVSX,@CongDung,@HSD,@SoLuong,@NuocSX)
+insert into Thuoc(MaThuoc,TenThuoc,MaLoaiThuoc,MaDVSX,CongDung,HSD,NuocSX)
+values(@MaThuoc,@TenThuoc,@MaLoaiThuoc,@MaDVSX,@CongDung,@HSD,@NuocSX)
 end
 
 go
 -- thủ tục sửa Thuốc
-create proc Sua_Thuoc
+ALTER proc Sua_Thuoc
 (
 	@MaThuoc varchar(10),
 	@TenThuoc nvarchar(50),
@@ -36,7 +37,6 @@ create proc Sua_Thuoc
 	@MaDVSX nvarchar(10),
 	@CongDung nvarchar(50),
 	@HSD nvarchar(50),
-	@SoLuong int,
 	@NuocSX nvarchar(50))
 as
 begin
@@ -46,7 +46,6 @@ set TenThuoc = @TenThuoc,
 	MaDVSX = @MaDVSX,
 	CongDung=@CongDung,
 	HSD=@HSD,
-	SoLuong=@SoLuong,
 	NuocSX=@NuocSX
 where MaThuoc = @MaThuoc
 end

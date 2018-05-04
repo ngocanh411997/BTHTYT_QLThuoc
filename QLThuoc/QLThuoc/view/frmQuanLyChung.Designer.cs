@@ -43,6 +43,7 @@
             this.btnCS = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +150,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDoanhThu);
             this.groupBox2.Controls.Add(this.btnHDTT);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnNhanVien);
@@ -238,6 +240,20 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
             // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoanhThu.Image = ((System.Drawing.Image)(resources.GetObject("btnDoanhThu.Image")));
+            this.btnDoanhThu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDoanhThu.Location = new System.Drawing.Point(322, 45);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(85, 100);
+            this.btnDoanhThu.TabIndex = 5;
+            this.btnDoanhThu.Text = "Doanh Thu";
+            this.btnDoanhThu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
+            // 
             // frmQuanLyChung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,5 +288,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnHDTT;
+        private System.Windows.Forms.Button btnDoanhThu;
     }
 }

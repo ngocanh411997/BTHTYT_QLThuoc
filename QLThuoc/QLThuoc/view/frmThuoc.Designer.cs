@@ -36,8 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbMaDVSX = new System.Windows.Forms.ComboBox();
             this.cbMaLoaiThuoc = new System.Windows.Forms.ComboBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtSL = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtCongDung = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,7 +69,6 @@
             this.MaDVSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CongDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NuocSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -91,8 +88,6 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cbMaDVSX);
             this.groupBox1.Controls.Add(this.cbMaLoaiThuoc);
-            this.groupBox1.Controls.Add(this.txtSoLuong);
-            this.groupBox1.Controls.Add(this.txtSL);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtCongDung);
             this.groupBox1.Controls.Add(this.label6);
@@ -104,14 +99,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(333, 368);
+            this.groupBox1.Size = new System.Drawing.Size(333, 295);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị thông tin thuốc";
             // 
             // txtNuocSX
             // 
-            this.txtNuocSX.Location = new System.Drawing.Point(120, 304);
+            this.txtNuocSX.Location = new System.Drawing.Point(117, 258);
             this.txtNuocSX.Name = "txtNuocSX";
             this.txtNuocSX.Size = new System.Drawing.Size(174, 21);
             this.txtNuocSX.TabIndex = 41;
@@ -119,7 +114,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 304);
+            this.label10.Location = new System.Drawing.Point(18, 258);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 15);
             this.label10.TabIndex = 40;
@@ -158,22 +153,6 @@
             this.cbMaLoaiThuoc.Name = "cbMaLoaiThuoc";
             this.cbMaLoaiThuoc.Size = new System.Drawing.Size(173, 23);
             this.cbMaLoaiThuoc.TabIndex = 36;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(119, 260);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(174, 21);
-            this.txtSoLuong.TabIndex = 35;
-            // 
-            // txtSL
-            // 
-            this.txtSL.AutoSize = true;
-            this.txtSL.Location = new System.Drawing.Point(18, 263);
-            this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(60, 15);
-            this.txtSL.TabIndex = 34;
-            this.txtSL.Text = "Số Lượng";
             // 
             // label7
             // 
@@ -246,7 +225,7 @@
             // 
             this.groupBox7.Controls.Add(this.menuStrip1);
             this.groupBox7.Controls.Add(this.mnsIDU);
-            this.groupBox7.Location = new System.Drawing.Point(12, 395);
+            this.groupBox7.Location = new System.Drawing.Point(12, 322);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(333, 191);
             this.groupBox7.TabIndex = 27;
@@ -314,7 +293,7 @@
             this.mnsIDU.Location = new System.Drawing.Point(24, 26);
             this.mnsIDU.Name = "mnsIDU";
             this.mnsIDU.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnsIDU.Size = new System.Drawing.Size(263, 55);
+            this.mnsIDU.Size = new System.Drawing.Size(355, 55);
             this.mnsIDU.TabIndex = 9;
             this.mnsIDU.Text = "menuStrip1";
             // 
@@ -341,6 +320,7 @@
             this.btnSua.Text = "Thay đổi thông tin";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
             // 
@@ -433,7 +413,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(351, 117);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(667, 469);
+            this.groupBox2.Size = new System.Drawing.Size(667, 396);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
@@ -449,13 +429,12 @@
             this.MaDVSX,
             this.CongDung,
             this.HSD,
-            this.SoLuong,
             this.NuocSX,
             this.Gia});
             this.dgvThuoc.Location = new System.Drawing.Point(12, 20);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.RowHeadersVisible = false;
-            this.dgvThuoc.Size = new System.Drawing.Size(649, 423);
+            this.dgvThuoc.Size = new System.Drawing.Size(649, 366);
             this.dgvThuoc.TabIndex = 0;
             this.dgvThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThuoc_CellClick);
             this.dgvThuoc.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvThuoc_RowPrePaint);
@@ -505,12 +484,6 @@
             this.HSD.HeaderText = "HSD";
             this.HSD.Name = "HSD";
             // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
             // NuocSX
             // 
             this.NuocSX.DataPropertyName = "NuocSX";
@@ -527,7 +500,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1071, 623);
+            this.ClientSize = new System.Drawing.Size(1071, 533);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -559,8 +532,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbMaDVSX;
         private System.Windows.Forms.ComboBox cbMaLoaiThuoc;
-        private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.Label txtSL;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtCongDung;
         private System.Windows.Forms.Label label6;
@@ -595,7 +566,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDVSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn CongDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn HSD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn NuocSX;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }

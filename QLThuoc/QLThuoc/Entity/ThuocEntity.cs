@@ -14,7 +14,6 @@ namespace QLThuoc.models
         public string MaDVSX { get; set; }
         public string CongDung { get; set; }
         public string HSD { get; set; }
-        public int SoLuong { get; set; }
         public string NuocSX { get; set; }
        
         public Thuoc()
@@ -25,10 +24,9 @@ namespace QLThuoc.models
             MaDVSX = "";
             CongDung = "";
             HSD = "";
-            SoLuong = 0;
             NuocSX = "";
         }
-        public Thuoc(string _MaThuoc, string _TenThuoc, string _MaLoaiThuoc, string _MaDVSX, string _CongDung, string _HSD, int _SoLuong, string _NuocSX)
+        public Thuoc(string _MaThuoc, string _TenThuoc, string _MaLoaiThuoc, string _MaDVSX, string _CongDung, string _HSD, string _NuocSX)
         {
             MaThuoc = _MaThuoc;
             TenThuoc = _TenThuoc;
@@ -36,7 +34,6 @@ namespace QLThuoc.models
             MaDVSX = _MaDVSX;
             CongDung = _CongDung;
             HSD = _HSD;
-            SoLuong = _SoLuong;
             NuocSX = _NuocSX;
         }
     }
