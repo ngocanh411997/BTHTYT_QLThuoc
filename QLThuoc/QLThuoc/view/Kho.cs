@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLThuoc.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace QLThuoc.view
 {
     public partial class Kho : Form
     {
+        HoaDonXuatBUS Bus = new HoaDonXuatBUS();
         public Kho()
         {
             InitializeComponent();
@@ -30,7 +32,18 @@ namespace QLThuoc.view
 
         private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
+            dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
+        }
 
+        private void Kho_Load(object sender, EventArgs e)
+        {
+            HienThi();
+        }
+        private void HienThi()
+        {
+
+            dataGridView1.DataSource = Bus.KhoThuoc();
+          
         }
     }
 }

@@ -73,5 +73,10 @@ namespace QLThuoc.BUS
         {
             return da.GetDataHoaDonTT();
         }
+        // Kho thuốc
+        public DataTable KhoThuoc()
+        {
+            return da.KhoThuoc();
+        }
     }
 }

@@ -124,5 +124,10 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("XemHoaDonTT", null);
         }
+        // Kho thuốc
+        public DataTable KhoThuoc()
+        {
+            return conn.GetData("KhoThuoc", null);
+        }
     }
 }

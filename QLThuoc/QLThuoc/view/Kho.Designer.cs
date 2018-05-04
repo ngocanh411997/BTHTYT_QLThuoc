@@ -35,7 +35,7 @@
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongCon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.STT,
             this.MaThuoc,
             this.TenThuoc,
-            this.SoLuongCon});
+            this.SL});
             this.dataGridView1.Location = new System.Drawing.Point(18, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(439, 232);
@@ -95,12 +95,12 @@
             this.TenThuoc.HeaderText = "Tên Thuốc";
             this.TenThuoc.Name = "TenThuoc";
             // 
-            // SoLuongCon
+            // SL
             // 
-            this.SoLuongCon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuongCon.DataPropertyName = "SoLuongCon";
-            this.SoLuongCon.HeaderText = "Số Lượng";
-            this.SoLuongCon.Name = "SoLuongCon";
+            this.SL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SL.DataPropertyName = "SL";
+            this.SL.HeaderText = "Số Lượng";
+            this.SL.Name = "SL";
             // 
             // Kho
             // 
@@ -112,6 +112,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Kho";
             this.Text = "Kho";
+            this.Load += new System.EventHandler(this.Kho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -126,6 +127,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongCon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SL;
     }
 }
