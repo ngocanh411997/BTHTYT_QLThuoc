@@ -38,5 +38,13 @@ namespace QLThuoc.BUS
         {
             return da.TimKiemThuoc(strTimKiem);
         }
+        public DataTable GetListT()
+        {
+            return da.GetListT();
+        }
+        public DataTable GetListNCC()
+        {
+            return da.GetListNCC();
+        }
     }
 }

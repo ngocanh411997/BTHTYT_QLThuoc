@@ -57,9 +57,27 @@ namespace QLThuoc.view
             txtNuocSX.Text = "";
 
         }
+        public void ShowT()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListT();
+            cbMaLoaiThuoc.DataSource = dt;
+            cbMaLoaiThuoc.DisplayMember = "TenLoaiThuoc";
+            cbMaLoaiThuoc.ValueMember = "MaLoaiThuoc";
+        }
+        public void ShowNCC()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListNCC();
+            cbMaDVSX.DataSource = dt;
+            cbMaDVSX.DisplayMember = "TenNCC";
+            cbMaDVSX.ValueMember = "MaNCC";
+        }
         private void HienThi()
         {
             dgvThuoc.DataSource = Bus.GetData();
+            ShowT();
+            ShowNCC();
         }
 
         private void frmThuoc_Load(object sender, EventArgs e)
@@ -73,10 +91,10 @@ namespace QLThuoc.view
             if (fluu == 0)
             {
                 txtTenThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenThuoc"].Value);
-                cbMaLoaiThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaLoaiThuoc"].Value);
-                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
+                cbMaLoaiThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenLoaiThuoc"].Value);
+               // cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
                 txtCongDung.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["CongDung"].Value);
-                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
+                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenNCC"].Value);
                 dateHSD.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["HSD"].Value);
                 txtNuocSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["NuocSX"].Value);
 
@@ -85,10 +103,10 @@ namespace QLThuoc.view
             {
                 txtMaThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaThuoc"].Value);
                 txtTenThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenThuoc"].Value);
-                cbMaLoaiThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaLoaiThuoc"].Value);
-                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
+                cbMaLoaiThuoc.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenLoaiThuoc"].Value);
+               // cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
                 txtCongDung.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["CongDung"].Value);
-                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["MaDVSX"].Value);
+                cbMaDVSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["TenNCC"].Value);
                 dateHSD.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["HSD"].Value);
                 txtNuocSX.Text = Convert.ToString(dgvThuoc.CurrentRow.Cells["NuocSX"].Value);
 
@@ -154,8 +172,8 @@ namespace QLThuoc.view
            
             T.MaThuoc = txtMaThuoc.Text;
             T.TenThuoc = txtTenThuoc.Text;
-            T.MaLoaiThuoc = cbMaLoaiThuoc.Text;
-            T.MaDVSX = cbMaDVSX.Text;
+            T.MaLoaiThuoc = cbMaLoaiThuoc.SelectedValue.ToString();
+            T.MaDVSX = cbMaDVSX.SelectedValue.ToString();
             T.CongDung = txtCongDung.Text;
             T.HSD = dateHSD.Text;
             
@@ -270,7 +288,10 @@ namespace QLThuoc.view
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            fluu = 1;
+            DisEnl(true);
+            txtMaThuoc.Enabled = false;
         }
+
     }
 }

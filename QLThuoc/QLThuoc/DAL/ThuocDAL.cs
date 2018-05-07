@@ -61,5 +61,13 @@ namespace QLThuoc.DAL
         {
             return conn.GetData(strTimKiem);
         }
+        public DataTable GetListT()
+        {
+            return conn.GetData("Xem_LoaiThuoc",null);
+        }
+        public DataTable GetListNCC()
+        {
+            return conn.GetData("ShowNCC", null);
+        }
     }
 }

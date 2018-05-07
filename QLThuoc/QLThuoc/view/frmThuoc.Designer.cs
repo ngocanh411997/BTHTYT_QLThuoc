@@ -65,8 +65,8 @@
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDVSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CongDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NuocSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,9 +134,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(18, 83);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 15);
+            this.label4.Size = new System.Drawing.Size(92, 15);
             this.label4.TabIndex = 38;
-            this.label4.Text = "Mã Loại Thuốc";
+            this.label4.Text = "Tên Loại Thuốc";
             // 
             // cbMaDVSX
             // 
@@ -149,7 +149,7 @@
             // cbMaLoaiThuoc
             // 
             this.cbMaLoaiThuoc.FormattingEnabled = true;
-            this.cbMaLoaiThuoc.Location = new System.Drawing.Point(120, 82);
+            this.cbMaLoaiThuoc.Location = new System.Drawing.Point(121, 83);
             this.cbMaLoaiThuoc.Name = "cbMaLoaiThuoc";
             this.cbMaLoaiThuoc.Size = new System.Drawing.Size(173, 23);
             this.cbMaLoaiThuoc.TabIndex = 36;
@@ -199,9 +199,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 15);
+            this.label5.Size = new System.Drawing.Size(63, 15);
             this.label5.TabIndex = 25;
-            this.label5.Text = "Mã ĐVSX";
+            this.label5.Text = "Tên ĐVSX";
             // 
             // label3
             // 
@@ -293,7 +293,7 @@
             this.mnsIDU.Location = new System.Drawing.Point(24, 26);
             this.mnsIDU.Name = "mnsIDU";
             this.mnsIDU.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.mnsIDU.Size = new System.Drawing.Size(355, 55);
+            this.mnsIDU.Size = new System.Drawing.Size(263, 55);
             this.mnsIDU.TabIndex = 9;
             this.mnsIDU.Text = "menuStrip1";
             // 
@@ -381,6 +381,14 @@
             // cbTimKiem
             // 
             this.cbTimKiem.FormattingEnabled = true;
+            this.cbTimKiem.Items.AddRange(new object[] {
+            "Mã Thuốc",
+            "Tên Thuốc",
+            "Mã Loại Thuốc",
+            "Mã ĐVSX",
+            "Công Dụng",
+            "HSD",
+            "Nước SX"});
             this.cbTimKiem.Location = new System.Drawing.Point(118, 17);
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(179, 23);
@@ -425,8 +433,8 @@
             this.STT,
             this.MaThuoc,
             this.TenThuoc,
-            this.MaLoaiThuoc,
-            this.MaDVSX,
+            this.TenLoaiThuoc,
+            this.TenNCC,
             this.CongDung,
             this.HSD,
             this.NuocSX,
@@ -459,18 +467,18 @@
             this.TenThuoc.HeaderText = "Tên thuốc";
             this.TenThuoc.Name = "TenThuoc";
             // 
-            // MaLoaiThuoc
+            // TenLoaiThuoc
             // 
-            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
-            this.MaLoaiThuoc.HeaderText = "Mã loại thuốc";
-            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
-            this.MaLoaiThuoc.Width = 50;
+            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
+            this.TenLoaiThuoc.HeaderText = "Tên loại thuốc";
+            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            this.TenLoaiThuoc.Width = 50;
             // 
-            // MaDVSX
+            // TenNCC
             // 
-            this.MaDVSX.DataPropertyName = "MaDVSX";
-            this.MaDVSX.HeaderText = "Mã ĐVSX";
-            this.MaDVSX.Name = "MaDVSX";
+            this.TenNCC.DataPropertyName = "TenNCC";
+            this.TenNCC.HeaderText = "Tên NCC";
+            this.TenNCC.Name = "TenNCC";
             // 
             // CongDung
             // 
@@ -562,8 +570,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLoaiThuoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDVSX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn CongDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn HSD;
         private System.Windows.Forms.DataGridViewTextBoxColumn NuocSX;

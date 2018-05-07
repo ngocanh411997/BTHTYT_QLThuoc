@@ -1,10 +1,10 @@
 ﻿ALTER TABLE dbo.Thuoc
 DROP COLUMN SoLuong
 -- Thủ tục lấy ra thông tin của Thuốc
-create proc Xem_Thuoc
+ALTER proc Xem_Thuoc
 as
 begin
-select *from Thuoc
+select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc INNER JOIN dbo.LoaiThuoc ON LoaiThuoc.MaLoaiThuoc = Thuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX
 end
 go
 --test

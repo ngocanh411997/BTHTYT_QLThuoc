@@ -45,3 +45,10 @@ delete LoaiThuoc
 where MaLoaiThuoc = @MaLoaiThuoc
 end
 -----------
+
+GO
+CREATE PROC ShowNCC
+AS
+BEGIN
+    SELECT * FROM dbo.NhaCungCap
+END

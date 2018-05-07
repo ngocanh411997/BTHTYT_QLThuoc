@@ -152,7 +152,7 @@ BEGIN
 END
 --Xem hóa đơn đã thanh toán
 GO
-ALTER PROC [dbo].[XemHDTT]
+CREATE PROC [dbo].[XemHDTT]
 AS
 BEGIN
 	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
@@ -160,7 +160,7 @@ END
 
 --
 GO
-ALTER PROC [dbo].[XemHoaDonTT]
+CREATE PROC [dbo].[XemHoaDonTT]
 AS
 BEGIN
 	SELECT * FROM dbo.HoaDonXuat WHERE TrangThai=N'Đã thanh toán'
