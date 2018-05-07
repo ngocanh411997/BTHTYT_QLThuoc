@@ -10,7 +10,7 @@ using QLThuoc.models;
 
 namespace QLThuoc.DAL
 {
-     public class HoaDonNhapDAL
+    public class HoaDonNhapDAL
     {
         KetNoi conn = new KetNoi();
 
@@ -18,6 +18,14 @@ namespace QLThuoc.DAL
         public DataTable GetData()
         {
             return conn.GetData("Xem_HDN", null);
+        }
+        public DataTable Show_NCC()
+        {
+            return conn.GetData("Show_NCC", null);
+        }
+        public DataTable Show_NV()
+        {
+            return conn.GetData("Show_NV", null);
         }
 
 
@@ -28,7 +36,8 @@ namespace QLThuoc.DAL
                 new SqlParameter("MaHDN",HDN.MaHoaDon),
                 new SqlParameter("MaNCC",HDN.MaNCC),
                 new SqlParameter("NgayNhap",HDN.NgayNhap),
-                new SqlParameter("MaNVNhap",HDN.MaNVNhap)
+                new SqlParameter("MaNVNhap",HDN.MaNVNhap),
+                new SqlParameter("TrangThai", HDN.TrangThai)
             };
             return conn.ExcuteSQL("Them_HDN", para);
         }
@@ -39,7 +48,8 @@ namespace QLThuoc.DAL
                new SqlParameter("MaHDN",HDN.MaHoaDon),
                 new SqlParameter("MaNCC",HDN.MaNCC),
                 new SqlParameter("NgayNhap",HDN.NgayNhap),
-                new SqlParameter("MaNVNhap",HDN.MaNVNhap)
+                new SqlParameter("MaNVNhap",HDN.MaNVNhap),
+                 new SqlParameter("TrangThai", HDN.TrangThai)
         };
             return conn.ExcuteSQL("Sua_HDN", para);
         }
@@ -61,52 +71,7 @@ namespace QLThuoc.DAL
             return conn.GetData(strTimKiem);
         }
 
-        // Chi tiết hóa đơn
-        public DataTable GetCTHDN(string CTHDN)
-        {
-            return conn.GetData(CTHDN);
-        }
-
-        public int InsertDataCT(ChiTietHoaDonNhapEntity CTHDN)
-        {
-            SqlParameter[] para =
-            {
-                new SqlParameter("MaHDN",CTHDN.MaHDN),
-                new SqlParameter("MaThuoc",CTHDN.MaThuoc),
-                new SqlParameter("DVT",CTHDN.DonViTinh),
-                new SqlParameter("Gia",CTHDN.Gia),
-               new SqlParameter("SoLuong",CTHDN.SoLuong),
-
-            };
-            return conn.ExcuteSQL("Them_CTHDN", para);
-        }
-        public int UpdateDataCT(ChiTietHoaDonNhapEntity CTHDN)
-        {
-            SqlParameter[] para =
-           {
-                new SqlParameter("MaHDN",CTHDN.MaHDN),
-                new SqlParameter("MaThuoc",CTHDN.MaThuoc),
-                new SqlParameter("DVT",CTHDN.DonViTinh),
-                new SqlParameter("Gia",CTHDN.Gia),
-               new SqlParameter("SoLuong",CTHDN.SoLuong),
-            };
-            return conn.ExcuteSQL("Sua_CTHDN", para);
-        }
-        public int DeleteDataCT(string IDHD, string IDT)
-        {
-            SqlParameter[] para =
-            {
-               new SqlParameter("MaHDN",IDHD),
-            new SqlParameter("MaThuoc", IDT),
-
-        };
-            return conn.ExcuteSQL("Xoa_CTHDN", para);
-        }
-
-        public DataTable TinhChiPhi(string str)
-        {
-            return conn.GetData(str);
-        }
+        // Chi tiết hóa đơn nhập
 
     }
 }

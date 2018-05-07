@@ -50,36 +50,40 @@ end
 go
 -----------
 --Hóa đơn
+
+alter table HoaDonNhap add TrangThai NVARCHAR(50)
+alter table ChiTietHoaDonNhap add ThanhTien int 
 -- thủ tục xem hóa đơn nhập
-create proc Xem_HDN
+alter proc Xem_HDN
 as
 begin
-select * from HoaDonNhap
+select hd.MaHoaDon, TenNCC, NgayNhap,hd.MaNVNhap ,hd.TrangThai from HoaDonNhap hd , NhaCungCap
+where hd.MaNCC = NhaCungCap.MaNCC and TrangThai =N'Chưa thanh toán'
 end
 
 -- thêm hóa đơn nhập
-create proc Them_HDN
-( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10))
+alter proc Them_HDN
+( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10), @TrangThai nvarchar(50))
 as
 begin
 insert into HoaDonNhap
-values(@MaHDN, @MaNCC, @NgayNhap, @MaNVNhap)
+values(@MaHDN, @MaNCC, @NgayNhap, @MaNVNhap, N'Chưa thanh toán')
 end
 go
 
 -- sửa hóa đơn nhập
-create proc Sua_HDN
-( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10))
+alter proc Sua_HDN
+( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10),@TrangThai nvarchar(50))
 as
 begin
 update HoaDonNhap
-set MaNCC = @MaNCC, NgayNhap = @NgayNhap, MaNVNhap = @MaNVNhap
+set MaNCC = @MaNCC, NgayNhap = @NgayNhap, MaNVNhap = @MaNVNhap, TrangThai = N'Chưa thanh toán' 
 where MaHoaDon = @MaHDN
 end
 go
 
 -- xóa hóa đơn nhập
-create proc Xoa_HDN(@MaHDN varchar(10))
+alter proc Xoa_HDN(@MaHDN varchar(10))
 as
 begin
 update ChiTietHoaDonNhap
@@ -91,31 +95,48 @@ end
 go
 
 
---Hóa đơn
+-- showcomno cho mã nhà cung cấp
+create proc Show_NCC
+as
+begin
+select TenNCC, MaNCC
+from NhaCungCap
+end
+go
+
+-- show combo cho mã nhân viên
+create proc Show_NV
+as
+begin
+select MaNV
+from NhanVien
+end
+go
+
 --thêm chi tiết hóa đơn nhập
-create proc Them_CTHDN
-( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int)
+alter proc Them_CTHDN
+( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
 as
 begin
 insert into ChiTietHoaDonNhap
-values (@MaHDN, @MaThuoc, @DVT, @Gia, @Soluong)
+values (@MaHDN, @MaThuoc, @DVT, @Gia, @Soluong, @ThanhTien)
 end
 go
 
 -- sửa chi tiết hóa đơn nhập
-create proc Sua_CTHDN
-( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int)
+alter proc Sua_CTHDN
+( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
 as
 begin
 update ChiTietHoaDonNhap
-set MaThuoc = @MaThuoc, DonViTinh = @DVT, Gia = @Gia, SoLuong = @Soluong
+set MaThuoc = @MaThuoc, DonViTinh = @DVT, Gia = @Gia, SoLuong = @Soluong, ThanhTien = @Gia * @Soluong
 where MaHDN = @MaHDN and MaThuoc = @MaThuoc
 end
 go
 
 
 -- xóa chi tiết hóa đơn nhập
-create proc Xoa_CTHDN(@MaHDN varchar(10), @MaThuoc varchar(10))
+alter proc Xoa_CTHDN(@MaHDN varchar(10), @MaThuoc varchar(10))
 as
 begin
 delete ChiTietHoaDonNhap

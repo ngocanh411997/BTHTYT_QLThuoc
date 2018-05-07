@@ -38,7 +38,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLamMoi = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLamTrong = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,6 +47,11 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgvCS = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -57,11 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenCS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenCS = new System.Windows.Forms.TextBox();
             this.mnsIDU.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -153,13 +152,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnXoa,
             this.btnLamMoi,
-            this.btnThongKe,
             this.btnLamTrong,
             this.btnThoat});
             this.menuStrip1.Location = new System.Drawing.Point(3, 132);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(313, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(244, 55);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,18 +184,6 @@
             this.btnLamMoi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThongKe.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.ShowShortcutKeys = false;
-            this.btnThongKe.Size = new System.Drawing.Size(69, 51);
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // btnLamTrong
             // 
@@ -306,6 +292,40 @@
             this.dgvCS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCS_CellClick);
             this.dgvCS.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvCS_RowPrePaint);
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // MaCS
+            // 
+            this.MaCS.DataPropertyName = "MaCS";
+            this.MaCS.HeaderText = "Mã cơ sở";
+            this.MaCS.Name = "MaCS";
+            this.MaCS.Width = 90;
+            // 
+            // TenCS
+            // 
+            this.TenCS.DataPropertyName = "TenCS";
+            this.TenCS.HeaderText = "Tên cơ sở";
+            this.TenCS.Name = "TenCS";
+            this.TenCS.Width = 150;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 150;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dgvCS);
@@ -396,40 +416,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hiển thị thông tin cơ sở";
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 40;
-            // 
-            // MaCS
-            // 
-            this.MaCS.DataPropertyName = "MaCS";
-            this.MaCS.HeaderText = "Mã cơ sở";
-            this.MaCS.Name = "MaCS";
-            this.MaCS.Width = 90;
-            // 
-            // TenCS
-            // 
-            this.TenCS.DataPropertyName = "TenCS";
-            this.TenCS.HeaderText = "Tên cơ sở";
-            this.TenCS.Name = "TenCS";
-            this.TenCS.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 150;
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            // 
             // txtTenCS
             // 
             this.txtTenCS.Location = new System.Drawing.Point(108, 67);
@@ -492,7 +478,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem btnXoa;
         private System.Windows.Forms.ToolStripMenuItem btnLamMoi;
-        private System.Windows.Forms.ToolStripMenuItem btnThongKe;
         private System.Windows.Forms.ToolStripMenuItem btnLamTrong;
         private System.Windows.Forms.ToolStripMenuItem btnThoat;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;

@@ -8,10 +8,14 @@ using QLThuoc.Entity;
 using QLThuoc.models;
 using System.Data;
 
+
+
 namespace QLThuoc.BUS
 {
-     public class HoaDonNhapBUS
+   public class HoaDonNhapBUS
     {
+
+
         HoaDonNhapDAL HDN_dal = new HoaDonNhapDAL();
         public string TangMa()
         {
@@ -21,6 +25,14 @@ namespace QLThuoc.BUS
         public DataTable GetData()
         {
             return HDN_dal.GetData();
+        }
+        public DataTable Show_NCC()
+        {
+            return HDN_dal.Show_NCC();
+        }
+        public DataTable Show_NV()
+        {
+            return HDN_dal.Show_NV();
         }
         public int InsertData(HoaDonNhap HDN)
         {
@@ -38,29 +50,6 @@ namespace QLThuoc.BUS
         {
             return HDN_dal.TimKiemHDN(strTimKiem);
         }
-
-        // chi tiết hóa đơn
-        public DataTable GetCTHDN(string CTHDN)
-        {
-            return HDN_dal.GetCTHDN(CTHDN);
-        }
-        public int InsertDataCT(ChiTietHoaDonNhapEntity CTHDN)
-        {
-            return HDN_dal.InsertDataCT(CTHDN);
-        }
-        public int UpdateDataCT(ChiTietHoaDonNhapEntity CTHDN)
-        {
-            return HDN_dal.UpdateDataCT(CTHDN);
-        }
-        public int DeleteDataCT(string IDHD, string IDT)
-        {
-            return HDN_dal.DeleteDataCT(IDHD, IDT);
-        }
-        public DataTable TinhChiPhi(string str)
-        {
-            return HDN_dal.TinhChiPhi(str);
-        }
-
 
 
     }

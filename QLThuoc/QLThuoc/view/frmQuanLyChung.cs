@@ -73,6 +73,7 @@ namespace QLThuoc.view
 
         private void btnHDNhap_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmHoaDonNhap HDN = new frmHoaDonNhap();
             HDN.ShowDialog();
         }
