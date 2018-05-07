@@ -12,7 +12,7 @@ using System.Data;
 
 namespace QLThuoc.BUS
 {
-   public class HoaDonNhapBUS
+    public class HoaDonNhapBUS
     {
 
 
@@ -51,6 +51,46 @@ namespace QLThuoc.BUS
             return HDN_dal.TimKiemHDN(strTimKiem);
         }
 
+        // chi tiết hóa đơn
+        public DataTable Xem_CTHDN(string str)
+        {
+            return HDN_dal.Xem_CTHDN(str);
+        }
+        public DataTable ShowTenThuoc(string str)
+        {
+            return HDN_dal.ShowTenThuoc(str);
+        }
+        public int ThemCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            return HDN_dal.ThemCT(CTHDN);
+        }
+        public int SuaCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            return HDN_dal.SuaCT(CTHDN);
+        }
+        public int XoaCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            return HDN_dal.XoaCT(CTHDN);
+        }
+        // tính chi phí cho hóa đơn
+        public DataTable TinhChiPhi(string str)
+        {
+            return HDN_dal.GetData();
+        }
+        // Update lại trạng thái cho hóa đơn sau khi đã tính chi phí
+        public int Update_ChiPhi(HoaDonNhap HDN)
+        {
+            return HDN_dal.Update_ChiPhi(HDN);
+        }
+        // Xem những hóa đơn đã trả chi phí
+        public DataTable Xem_ChiPhi(HoaDonNhap HDN)
+        {
+            return HDN_dal.Xem_ChiPhi(HDN);
+        }
 
+        internal void XoaCT(string text, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

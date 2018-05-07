@@ -201,7 +201,7 @@ namespace QLThuoc.view
             else
             {
                 this.Hide();
-                frm_ChiTietHoaDonNhap CT = new frm_ChiTietHoaDonNhap();
+                frm_ChiTietHoaDonNhap CT = new frm_ChiTietHoaDonNhap(txtMaHD.Text);
                 CT.ShowDialog();
                 this.Show();
             }
@@ -253,6 +253,18 @@ namespace QLThuoc.view
             {
                 dgvHDNhap.DataSource = BUS.TimKiemHDN("select hd.MaHoaDon, TenNCC, NgayNhap,hd.MaNVNhap ,hd.TrangThai from HoaDonNhap hd , NhaCungCap where hd.MaNCC = NhaCungCap.MaNCC and hd.NgayNhap like '%" + txtTimKiem.Text.Trim() + "%'and TrangThai=N'Chưa thanh toán'");
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+                HienThi();
         }
     }
 }

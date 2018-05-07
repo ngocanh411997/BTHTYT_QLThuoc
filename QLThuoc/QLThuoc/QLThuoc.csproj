@@ -77,6 +77,12 @@
     <Compile Include="Entity\ThuocEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\frmChiPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmChiPhi.designer.cs">
+      <DependentUpon>frmChiPhi.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\frmChiTietHoaDonXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,7 +170,7 @@
     <Compile Include="view\frm_ChiTietHoaDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\frm_ChiTietHoaDonNhap.Designer.cs">
+    <Compile Include="view\frm_ChiTietHoaDonNhap.designer.cs">
       <DependentUpon>frm_ChiTietHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Kho.cs">
@@ -182,6 +188,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\frmChiPhi.resx">
+      <DependentUpon>frmChiPhi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\frmChiTietHoaDonXuat.resx">
       <DependentUpon>frmChiTietHoaDonXuat.cs</DependentUpon>
     </EmbeddedResource>

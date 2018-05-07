@@ -17,8 +17,8 @@ namespace QLThuoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new frmQuanLyChung());
-            Application.Run(new frmThuoc());
+            Application.Run(new frmQuanLyChung());
+            //Application.Run(new frmThuoc());
         }
     }
 }

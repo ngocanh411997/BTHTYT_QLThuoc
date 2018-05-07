@@ -53,6 +53,7 @@ go
 
 alter table HoaDonNhap add TrangThai NVARCHAR(50)
 alter table ChiTietHoaDonNhap add ThanhTien int 
+
 -- thủ tục xem hóa đơn nhập
 alter proc Xem_HDN
 as
@@ -113,6 +114,26 @@ from NhanVien
 end
 go
 
+-- xem chi tiết hóa đơn nhập
+
+create proc Xem_CTN
+as
+begin
+SELECT MaHDN,TenThuoc, DonViTinh,ChiTietHoaDonNhap.SoLuong,Gia,ThanhTien
+FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN= HoaDonNhap.MaHoaDon 
+INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc
+ WHERE TrangThai=N'Chưa thanh toán'
+ end
+
+
+ -- xem chi tiết nhập của 1 hóa đơn
+SELECT MaHDN,TenThuoc, DonViTinh,ChiTietHoaDonNhap.SoLuong,Gia,ThanhTien
+FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN= HoaDonNhap.MaHoaDon 
+INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc
+where MaHDN = ''
+
+
+
 --thêm chi tiết hóa đơn nhập
 alter proc Them_CTHDN
 ( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
@@ -145,3 +166,23 @@ end
 go
 
 
+-- sửa trạng thái đã thanh toán thành thanh toán
+go
+create PROC SuaTrangThai(@MaHoaDon VARCHAR(10),@TrangThai NVARCHAR(50))
+AS
+BEGIN
+	UPDATE HoaDonNhap
+	SET TrangThai=N'Đã thanh toán'
+	WHERE MaHoaDon=@MaHoaDon
+END
+
+-- xem hóa đơn đã tính cho phí
+GO
+Create PROC Xem_ChiPhi
+AS
+BEGIN
+	SELECT * FROM HoaDonNhap WHERE TrangThai=N'Đã thanh toán'
+END
+
+
+SELECT MaHDN,TenThuoc, DonViTinh,ChiTietHoaDonNhap.SoLuong,Gia,ThanhTien FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN = HoaDonNhap.MaHoaDon INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc where TrangThai=N'Chưa thanh toán'

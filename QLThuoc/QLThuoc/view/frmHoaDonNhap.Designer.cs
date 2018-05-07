@@ -36,6 +36,12 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvHDNhap = new System.Windows.Forms.DataGridView();
+            this.sott = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ma_NV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ngay_Nhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,12 +66,6 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.sott = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ma_HD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ma_NCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ma_NV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ngay_Nhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHDNhap)).BeginInit();
@@ -165,6 +165,52 @@
             this.dgvHDNhap.TabIndex = 0;
             this.dgvHDNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDNhap_CellClick);
             this.dgvHDNhap.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvHDNhap_RowPrePaint);
+            // 
+            // sott
+            // 
+            this.sott.HeaderText = "STT";
+            this.sott.Name = "sott";
+            this.sott.Width = 50;
+            // 
+            // Ma_HD
+            // 
+            this.Ma_HD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Ma_HD.DataPropertyName = "MaHoaDon";
+            this.Ma_HD.FillWeight = 340.136F;
+            this.Ma_HD.HeaderText = "Mã Hóa Đơn";
+            this.Ma_HD.Name = "Ma_HD";
+            // 
+            // Ma_NCC
+            // 
+            this.Ma_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ma_NCC.DataPropertyName = "TenNCC";
+            this.Ma_NCC.FillWeight = 39.96599F;
+            this.Ma_NCC.HeaderText = "Nhà Cung Cấp";
+            this.Ma_NCC.Name = "Ma_NCC";
+            // 
+            // Ma_NV
+            // 
+            this.Ma_NV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ma_NV.DataPropertyName = "MaNVNhap";
+            this.Ma_NV.FillWeight = 39.96599F;
+            this.Ma_NV.HeaderText = "Mã Nhân Viên";
+            this.Ma_NV.Name = "Ma_NV";
+            // 
+            // Ngay_Nhap
+            // 
+            this.Ngay_Nhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ngay_Nhap.DataPropertyName = "NgayNhap";
+            this.Ngay_Nhap.FillWeight = 39.96599F;
+            this.Ngay_Nhap.HeaderText = "Ngày Nhập";
+            this.Ngay_Nhap.Name = "Ngay_Nhap";
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.FillWeight = 39.96599F;
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
             // 
             // STT
             // 
@@ -346,7 +392,7 @@
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(51, 53);
             this.btnNhap.TabIndex = 48;
-            this.btnNhap.Text = "Nhập vào";
+            this.btnNhap.Text = "Nhập hàng";
             this.btnNhap.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNhap.UseVisualStyleBackColor = false;
             this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
@@ -363,6 +409,7 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamTrong
             // 
@@ -433,52 +480,6 @@
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // sott
-            // 
-            this.sott.HeaderText = "STT";
-            this.sott.Name = "sott";
-            this.sott.Width = 50;
-            // 
-            // Ma_HD
-            // 
-            this.Ma_HD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Ma_HD.DataPropertyName = "MaHoaDon";
-            this.Ma_HD.FillWeight = 340.136F;
-            this.Ma_HD.HeaderText = "Mã Hóa Đơn";
-            this.Ma_HD.Name = "Ma_HD";
-            // 
-            // Ma_NCC
-            // 
-            this.Ma_NCC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ma_NCC.DataPropertyName = "TenNCC";
-            this.Ma_NCC.FillWeight = 39.96599F;
-            this.Ma_NCC.HeaderText = "Nhà Cung Cấp";
-            this.Ma_NCC.Name = "Ma_NCC";
-            // 
-            // Ma_NV
-            // 
-            this.Ma_NV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ma_NV.DataPropertyName = "MaNVNhap";
-            this.Ma_NV.FillWeight = 39.96599F;
-            this.Ma_NV.HeaderText = "Mã Nhân Viên";
-            this.Ma_NV.Name = "Ma_NV";
-            // 
-            // Ngay_Nhap
-            // 
-            this.Ngay_Nhap.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ngay_Nhap.DataPropertyName = "NgayNhap";
-            this.Ngay_Nhap.FillWeight = 39.96599F;
-            this.Ngay_Nhap.HeaderText = "Ngày Nhập";
-            this.Ngay_Nhap.Name = "Ngay_Nhap";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.FillWeight = 39.96599F;
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
             // 
             // frmHoaDonNhap
             // 

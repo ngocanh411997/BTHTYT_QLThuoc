@@ -54,6 +54,8 @@ namespace QLThuoc.DAL
             return conn.ExcuteSQL("Sua_HDN", para);
         }
 
+        
+
         public int DeleteData(string ID)
         {
             SqlParameter[] para =
@@ -72,6 +74,85 @@ namespace QLThuoc.DAL
         }
 
         // Chi tiết hóa đơn nhập
+
+        public DataTable Xem_CTHDN(string str)
+        {
+            return conn.GetData(str);
+        }
+
+      
+        public DataTable ShowTenThuoc(string str)
+        {
+            return conn.GetData(str);
+        }
+        // thêm chi tiết hóa đơn
+        public int ThemCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            SqlParameter[] para =
+           {
+                new SqlParameter("MaHDN",CTHDN.MaHDN),
+                new SqlParameter("MaThuoc",CTHDN.MaThuoc),
+                new SqlParameter("DVT",CTHDN.DonViTinh),
+                new SqlParameter("SoLuong",CTHDN.SoLuong),
+                new SqlParameter("Gia",CTHDN.Gia),
+                new SqlParameter("ThanhTien",CTHDN.ThanhTien)
+
+            };
+
+            return conn.ExcuteSQL("Them_CTHDN",para);
+        }
+
+        // sửa chi tiết hóa đơn
+        public int SuaCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            SqlParameter[] para =
+          {
+                new SqlParameter("MaHDN",CTHDN.MaHDN),
+                new SqlParameter("MaThuoc",CTHDN.MaThuoc),
+                new SqlParameter("DVT",CTHDN.DonViTinh),
+                new SqlParameter("SoLuong",CTHDN.SoLuong),
+                new SqlParameter("Gia",CTHDN.Gia),
+                new SqlParameter("ThanhTien",CTHDN.ThanhTien)
+
+            };
+            return conn.ExcuteSQL("Sua_CTHDN", para);
+        }
+
+        // xóa chi tiết hóa đơn
+        public int XoaCT(ChiTietHoaDonNhapEntity CTHDN)
+        {
+            SqlParameter[] para =
+          {
+                new SqlParameter("MaHDN",CTHDN.MaHDN),
+                new SqlParameter("MaThuoc",CTHDN.MaThuoc)
+            };
+            return conn.ExcuteSQL("Xoa_CTHDN", para);
+        }
+
+        // tính chi phí cho hóa đơn
+        public DataTable TinhChiPhi(string str)
+        {
+            return conn.GetData(str);
+        }
+
+        // Update lại trạng thái cho hóa đơn sau khi đã tính chi phí
+        public int Update_ChiPhi(HoaDonNhap HDN)
+        {
+
+            SqlParameter[] para =
+           {
+               new SqlParameter("MaHoaDon",HDN.MaHoaDon),
+                new SqlParameter("TrangThai",HDN.TrangThai)
+            };
+            return conn.ExcuteSQL("SuaTrangThai", para);
+        }
+
+
+        // Xem những hóa đơn đã trả chi phí
+        public DataTable Xem_ChiPhi(HoaDonNhap HDN)
+        {
+            return conn.GetData("Xem_ChiPhi", null);
+        }
 
     }
 }

@@ -13,6 +13,7 @@ namespace QLThuoc.Entity
         public string DonViTinh { get; set; }
         public long Gia { get; set; }
         public int SoLuong { get; set; }
+        public int ThanhTien { get; set; }
 
         public ChiTietHoaDonNhapEntity()
         {
@@ -21,14 +22,16 @@ namespace QLThuoc.Entity
             DonViTinh = "";
             Gia = 0;
             SoLuong = 0;
+            ThanhTien = 0;
         }
-        public ChiTietHoaDonNhapEntity(string _MaHDN, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong)
+        public ChiTietHoaDonNhapEntity(string _MaHDN, string _MaThuoc, string _DonViTinh, long _Gia, int _SoLuong, int _ThanhTien)
         {
             MaHDN = _MaHDN;
             MaThuoc = _MaThuoc;
             DonViTinh = _DonViTinh;
             Gia = _Gia;
             SoLuong = _SoLuong;
+            ThanhTien = _ThanhTien;
         }
     }
 }
