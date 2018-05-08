@@ -140,9 +140,9 @@
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox3.Controls.Add(this.dgvHDNhap);
-            this.groupBox3.Location = new System.Drawing.Point(1, 323);
+            this.groupBox3.Location = new System.Drawing.Point(20, 323);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(702, 216);
+            this.groupBox3.Size = new System.Drawing.Size(661, 216);
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Phiếu Yêu Cầu";
@@ -161,7 +161,7 @@
             this.dgvHDNhap.Location = new System.Drawing.Point(3, 16);
             this.dgvHDNhap.Name = "dgvHDNhap";
             this.dgvHDNhap.RowHeadersVisible = false;
-            this.dgvHDNhap.Size = new System.Drawing.Size(696, 197);
+            this.dgvHDNhap.Size = new System.Drawing.Size(655, 197);
             this.dgvHDNhap.TabIndex = 0;
             this.dgvHDNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHDNhap_CellClick);
             this.dgvHDNhap.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvHDNhap_RowPrePaint);
@@ -485,7 +485,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 539);
+            this.ClientSize = new System.Drawing.Size(710, 539);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);

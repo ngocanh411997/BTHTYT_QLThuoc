@@ -119,12 +119,12 @@ namespace QLThuoc.DAL
         }
 
         // xóa chi tiết hóa đơn
-        public int XoaCT(ChiTietHoaDonNhapEntity CTHDN)
+        public int XoaCT(string IDHD, string IDCT)
         {
             SqlParameter[] para =
           {
-                new SqlParameter("MaHDN",CTHDN.MaHDN),
-                new SqlParameter("MaThuoc",CTHDN.MaThuoc)
+                new SqlParameter("MaHDN",IDHD),
+                new SqlParameter("MaThuoc",IDCT)
             };
             return conn.ExcuteSQL("Xoa_CTHDN", para);
         }

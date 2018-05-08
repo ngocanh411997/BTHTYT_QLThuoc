@@ -30,15 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiPhi));
             this.btnThoat = new System.Windows.Forms.Button();
-            this.txtMaHDX = new System.Windows.Forms.TextBox();
+            this.txtMaHDN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvThanhToan = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dgvChiPhi = new System.Windows.Forms.DataGridView();
             this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiPhi)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -53,13 +54,14 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // txtMaHDX
+            // txtMaHDN
             // 
-            this.txtMaHDX.Location = new System.Drawing.Point(118, 277);
-            this.txtMaHDX.Name = "txtMaHDX";
-            this.txtMaHDX.Size = new System.Drawing.Size(100, 20);
-            this.txtMaHDX.TabIndex = 44;
+            this.txtMaHDN.Location = new System.Drawing.Point(118, 277);
+            this.txtMaHDN.Name = "txtMaHDN";
+            this.txtMaHDN.Size = new System.Drawing.Size(100, 20);
+            this.txtMaHDN.TabIndex = 44;
             // 
             // label2
             // 
@@ -70,29 +72,18 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Mã hóa đơn";
             // 
-            // dgvThanhToan
+            // dgvChiPhi
             // 
-            this.dgvThanhToan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThanhToan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvChiPhi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChiPhi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
             this.TenNCC,
             this.MaHoaDon,
             this.TongTien});
-            this.dgvThanhToan.Location = new System.Drawing.Point(50, 58);
-            this.dgvThanhToan.Name = "dgvThanhToan";
-            this.dgvThanhToan.Size = new System.Drawing.Size(445, 189);
-            this.dgvThanhToan.TabIndex = 42;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(46, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 24);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Chi Phí";
+            this.dgvChiPhi.Location = new System.Drawing.Point(50, 58);
+            this.dgvChiPhi.Name = "dgvChiPhi";
+            this.dgvChiPhi.Size = new System.Drawing.Size(445, 189);
+            this.dgvChiPhi.TabIndex = 42;
             // 
             // MaNCC
             // 
@@ -114,23 +105,51 @@
             // 
             // TongTien
             // 
+            this.TongTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TongTien.DataPropertyName = "TongTien";
             this.TongTien.HeaderText = "Tổng Tiền";
             this.TongTien.Name = "TongTien";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Location = new System.Drawing.Point(46, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 24);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Chi Phí Cho Hóa Đơn";
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCapNhat.Location = new System.Drawing.Point(387, 253);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(51, 53);
+            this.btnCapNhat.TabIndex = 46;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // frmChiPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 341);
+            this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.txtMaHDX);
+            this.Controls.Add(this.txtMaHDN);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvThanhToan);
+            this.Controls.Add(this.dgvChiPhi);
             this.Controls.Add(this.label1);
             this.Name = "frmChiPhi";
             this.Text = "frmChiPhi";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).EndInit();
+            this.Load += new System.EventHandler(this.frmChiPhi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiPhi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,13 +157,14 @@
 
         #endregion
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.TextBox txtMaHDX;
+        private System.Windows.Forms.TextBox txtMaHDN;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvThanhToan;
+        private System.Windows.Forms.DataGridView dgvChiPhi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }

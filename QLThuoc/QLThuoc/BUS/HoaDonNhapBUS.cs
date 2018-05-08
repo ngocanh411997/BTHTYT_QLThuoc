@@ -68,14 +68,14 @@ namespace QLThuoc.BUS
         {
             return HDN_dal.SuaCT(CTHDN);
         }
-        public int XoaCT(ChiTietHoaDonNhapEntity CTHDN)
+        public int XoaCT(string IDHD, string IDCT)
         {
-            return HDN_dal.XoaCT(CTHDN);
+            return HDN_dal.XoaCT(IDHD,IDCT);
         }
         // tính chi phí cho hóa đơn
         public DataTable TinhChiPhi(string str)
         {
-            return HDN_dal.GetData();
+            return HDN_dal.TinhChiPhi(str);
         }
         // Update lại trạng thái cho hóa đơn sau khi đã tính chi phí
         public int Update_ChiPhi(HoaDonNhap HDN)
@@ -88,9 +88,6 @@ namespace QLThuoc.BUS
             return HDN_dal.Xem_ChiPhi(HDN);
         }
 
-        internal void XoaCT(string text, string v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

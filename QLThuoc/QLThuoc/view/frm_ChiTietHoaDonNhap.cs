@@ -60,7 +60,7 @@ namespace QLThuoc.view
 
         private void btnDSCT_Click(object sender, EventArgs e)
         {
-           dgvChiTietHDN.DataSource = BUS.Xem_CTHDN("SELECT MaHDX,TenThuoc, DonViTinh,ChiTietHoaDonXuat.SoLuong,Gia,ThanhTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE TrangThai=N'Chưa thanh toán'");
+           dgvChiTietHDN.DataSource = BUS.Xem_CTHDN("SELECT MaHDN,TenThuoc, DonViTinh,ChiTietHoaDonNhap.SoLuong,Gia,ThanhTien from ChiTietHoaDonNhap, HoaDonNhap, Thuoc where ChiTietHoaDonNhap.MaHDN = HoaDonNhap.MaHoaDon and Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc and TrangThai = N'Chưa thanh toán'");
             DisEnl(true);
             txt_MaHD.Enabled = false;
             btnLuuCT.Enabled = false;
@@ -201,7 +201,7 @@ namespace QLThuoc.view
         private void btnChiPhi_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmChiPhi ChiPhi = new frmChiPhi();
+            frmChiPhi ChiPhi = new frmChiPhi(txt_MaHD.Text);
             ChiPhi.ShowDialog();
         }
 
@@ -214,6 +214,7 @@ namespace QLThuoc.view
             }
             else
                 HienThi();
+                
         }
     }
 }
