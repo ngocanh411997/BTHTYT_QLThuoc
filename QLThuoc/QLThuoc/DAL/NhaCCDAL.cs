@@ -14,7 +14,7 @@ namespace QLThuoc.DAL
         KetNoi conn = new KetNoi();
         public DataTable GetData()
         {
-            return conn.GetData("Xem_NhaCungCap", null);
+            return conn.GetData("Xem_NhaCC", null);
         }
         public int InsertData(NhaCC NCC)
         {
@@ -25,7 +25,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("DiaChi",NCC.DiaChi),
                 new SqlParameter ("SDT",NCC.SDT)
             };
-            return conn.ExcuteSQL("Them_NhaCungCap", para);
+            return conn.ExcuteSQL("Them_NhaCC", para);
         }
         public int UpdateData(NhaCC NCC)
         {
@@ -36,7 +36,7 @@ namespace QLThuoc.DAL
                 new SqlParameter("DiaChi",NCC.DiaChi),
                 new SqlParameter ("SDT",NCC.SDT)
             };
-            return conn.ExcuteSQL("Sua_NhaCungCap", para);
+            return conn.ExcuteSQL("Sua_NhaCC", para);
         }
         public int DeleteData(string ID)
         {

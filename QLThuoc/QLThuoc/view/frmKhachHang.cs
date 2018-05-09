@@ -174,19 +174,19 @@ namespace QLThuoc.view
 
             if (cbTimKiem.Text == "Mã khách hàng")
             {
-                dgvKH.DataSource = Bus.TimKiemKH("select * from CoSo where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Tên cơ sở")
             {
-                dgvKH.DataSource = Bus.TimKiemKH("select * from CoSo where TenKH like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where TenKH like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Địa chỉ")
             {
-                dgvKH.DataSource = Bus.TimKiemKH("select * from CoSo where DiaChi Like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where DiaChi Like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "SĐT")
             {
-                dgvKH.DataSource = Bus.TimKiemKH("select * from CoSo where SDT like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where SDT like '%" + txtTimKiem.Text.Trim() + "%'");
             }
         }
 

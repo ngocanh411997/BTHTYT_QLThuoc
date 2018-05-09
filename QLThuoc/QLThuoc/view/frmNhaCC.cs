@@ -17,7 +17,6 @@ namespace QLThuoc.view
         NhaCC NCC = new NhaCC();
         NhaCCBUS Bus = new NhaCCBUS();
         private int fluu = 1;
-       // private object cboTenNCC;
         public frmNhaCC()
         {
             InitializeComponent();
@@ -45,9 +44,10 @@ namespace QLThuoc.view
         public void Clear()
         {
             txtMaNCC.Text = "";
+            txtTenNCC.Text = "";
             txtDiaChi.Text = "";
             txtSDT.Text = "";
-            txtTenNCC.Text = "";
+           
         }
         private void HienThi()
         {

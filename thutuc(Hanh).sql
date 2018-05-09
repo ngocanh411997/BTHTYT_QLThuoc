@@ -8,7 +8,7 @@ go
 --test
 EXEC Xem_KhachHang
 go
--- thủ tục thêm cơ sở
+-- thủ tục thêm Khách hàng
 create proc Them_KhachHang
 (
 	@MaKH varchar(10),
@@ -23,7 +23,7 @@ values(@MaKH,@TenKH,@DiaChi,@SDT)
 end
 
 go
--- thủ tục sửa cơ sở
+-- thủ tục sửa Khách hàng
 create proc Sua_KhachHang
 (   
     @MaKH varchar(10),
@@ -40,7 +40,7 @@ set TenKH = @TenKH,
 where MaKH = @MaKH
 end
 go
--- thủ tục xóa cơ sở
+-- thủ tục xóa Khách hàng
 create proc Xoa_KhachHang(@MaKH varchar(10))
 as
 begin
@@ -48,3 +48,53 @@ delete KhachHang
 where MaKH = @MaKH
 end
 ----------------
+--Nhà cung cấp
+
+create proc Xem_NhaCC
+as
+begin
+select *from NhaCungCap
+end
+go
+--test
+EXEC Xem_NhaCC
+go
+-- thủ tục thêm cung cấp
+create proc Them_NhaCC
+(
+	@MaNCC varchar(10),
+	@TenNCC nvarchar(50),
+	@DiaChi nvarchar(100),
+	@SDT varchar(11)
+)
+as
+begin
+insert into NhaCungCap(MaNCC, TenNCC, DiaChi,SDT)
+values(@MaNCC,@TenNCC,@DiaChi,@SDT)
+end
+
+go
+-- thủ tục sửa cung cấp
+create proc Sua_NhaCC
+(   
+    @MaNCC varchar(10),
+	@TenNCC nvarchar(50),
+	@DiaChi nvarchar(100),
+	@SDT varchar(11)
+)
+as
+begin
+update NhaCungCap
+set TenNCC = @TenNCC,
+	DiaChi = @DiaChi,
+	SDT = @SDT
+where MaNCC = @MaNCC
+end
+go
+-- thủ tục xóa nhà cung cấp
+create proc Xoa_NhaCC(@MaNCC varchar(10))
+as
+begin
+delete NhaCungCap
+where MaNCC = @MaNCC
+end
