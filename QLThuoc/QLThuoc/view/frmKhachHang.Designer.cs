@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cbTimKiem = new System.Windows.Forms.ComboBox();
@@ -51,17 +56,11 @@
             this.btnThem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsIDU = new System.Windows.Forms.MenuStrip();
             this.btnThoat = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThongKe = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLamMoi = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -87,6 +86,40 @@
             this.dgvKH.TabIndex = 0;
             this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick_1);
             this.dgvKH.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvKH_RowPrePaint_1);
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã khách hàng";
+            this.MaKH.Name = "MaKH";
+            this.MaKH.Width = 90;
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên khách hàng";
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Width = 150;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.Width = 150;
+            // 
+            // SDT
+            // 
+            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
             // 
             // label8
             // 
@@ -316,18 +349,6 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnThongKe
-            // 
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThongKe.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.ShowShortcutKeys = false;
-            this.btnThongKe.Size = new System.Drawing.Size(69, 51);
-            this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThongKe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
             // btnLamMoi
             // 
             this.btnLamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoi.Image")));
@@ -358,12 +379,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnXoa,
             this.btnLamMoi,
-            this.btnThongKe,
             this.btnThoat});
             this.menuStrip1.Location = new System.Drawing.Point(21, 142);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(237, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(168, 55);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -388,40 +408,6 @@
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thống kê";
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 40;
-            // 
-            // MaKH
-            // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã khách hàng";
-            this.MaKH.Name = "MaKH";
-            this.MaKH.Width = 90;
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên khách hàng";
-            this.TenKH.Name = "TenKH";
-            this.TenKH.Width = 150;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.DataPropertyName = "DiaChi";
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.Width = 150;
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
             // 
             // frmKhachHang
             // 
@@ -475,7 +461,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnThem;
         private System.Windows.Forms.MenuStrip mnsIDU;
         private System.Windows.Forms.ToolStripMenuItem btnThoat;
-        private System.Windows.Forms.ToolStripMenuItem btnThongKe;
         private System.Windows.Forms.ToolStripMenuItem btnLamMoi;
         private System.Windows.Forms.ToolStripMenuItem btnXoa;
         private System.Windows.Forms.MenuStrip menuStrip1;

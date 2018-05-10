@@ -48,7 +48,7 @@ namespace QLThuoc.DAL
         }
         public string TangMa()
         {
-            return conn.TangMa("Select * From NhaCungCap", "NCC");
+            return conn.TangMaNCC("Select * From NhaCungCap", "NCC");
         }
         public DataTable TimKiemNCC(string strTimKiem)
         {

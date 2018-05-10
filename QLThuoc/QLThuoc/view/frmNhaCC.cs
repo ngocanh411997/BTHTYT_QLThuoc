@@ -33,7 +33,7 @@ namespace QLThuoc.view
             btnThem.Enabled = !e;
             btnXoa.Enabled = !e;
             btnSua.Enabled = !e;
-            btnThongKe.Enabled = !e;
+           
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             txtMaNCC.Enabled = e;
@@ -211,11 +211,11 @@ namespace QLThuoc.view
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             
-                if (cbTimKiem.Text == "Mã cơ sở")
+                if (cbTimKiem.Text == "Mã nhà cung cấp")
                 {
                     dgvNhaCC.DataSource = Bus.TimKiemNCC("select * from NhaCungCap where MaNCC like '%" + txtTimKiem.Text.Trim() + "%'");
                 }
-                if (cbTimKiem.Text == "Tên cơ sở")
+                if (cbTimKiem.Text == "Tên nhà cung cấp")
                 {
                     dgvNhaCC.DataSource = Bus.TimKiemNCC("select * from NhaCungCap where TenNCC like N'%" + txtTimKiem.Text.Trim() + "%'");
                 }

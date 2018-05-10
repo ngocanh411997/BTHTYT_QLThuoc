@@ -98,3 +98,25 @@ begin
 delete NhaCungCap
 where MaNCC = @MaNCC
 end
+
+CREATE proc Xoa_NhaCungCap( @MaNCC varchar(10))
+as
+begin
+alter table HoaDonNhap
+nocheck constraint FK__HoaDonNha__MaNCC__25869641
+delete HoaDonNhap where MaNCC = @MaNCC
+delete NhaCungCap where MaNCC = @MaNCC
+alter table LopHocPhan
+check constraint FK__HoaDonNha__MaNCC__25869641
+end
+CREATE proc Xoa_NhaCungCap( @MaNCC varchar(10))
+as
+begin
+alter table HoaDonNhap
+nocheck constraint FK__HoaDonNha__MaNCC__25869641
+delete HoaDonNhap where MaNCC = @MaNCC
+delete NhaCungCap where MaNCC = @MaNCC
+alter table LopHocPhan
+check constraint FK__HoaDonNha__MaNCC__25869641
+end
+

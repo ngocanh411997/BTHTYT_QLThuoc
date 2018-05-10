@@ -31,7 +31,7 @@ namespace QLThuoc.view
             btnThem.Enabled = !e;
             btnXoa.Enabled = !e;
             btnSua.Enabled = !e;
-            btnThongKe.Enabled = !e;
+          
             btnLuu.Enabled = e;
             btnHuy.Enabled = e;
             txtMaKH.Enabled = e;
