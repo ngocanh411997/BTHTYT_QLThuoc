@@ -13,7 +13,7 @@ namespace QLThuoc.DAL
         private SqlConnection conn;
         public KetNoi()
         {
-            conn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuoc;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QLThuoc;Integrated Security=True");
         }
         public DataTable GetData(string strSql)
         {
@@ -148,6 +148,22 @@ namespace QLThuoc.DAL
                 Ma = Ma + k.ToString();
             }
             return Ma;
+        }
+        public DataSet HD1(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "DataTable1");
+            return ds;
+        }
+        public DataSet HD2(string sql)
+        {
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
         }
     }
 }

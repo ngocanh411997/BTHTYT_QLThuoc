@@ -419,8 +419,11 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmNhaCC";
-            this.Text = "frmNhaCC";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhà Cung Cấp";
             this.Load += new System.EventHandler(this.frmNhaCC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCC)).EndInit();
             this.groupBox1.ResumeLayout(false);

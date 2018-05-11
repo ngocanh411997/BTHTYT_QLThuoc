@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kho));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,20 +64,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnThoat.Location = new System.Drawing.Point(406, 9);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(51, 53);
-            this.btnThoat.TabIndex = 39;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -102,6 +88,20 @@
             this.SL.HeaderText = "Số Lượng";
             this.SL.Name = "SL";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnThoat.Location = new System.Drawing.Point(406, 9);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(51, 53);
+            this.btnThoat.TabIndex = 39;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // Kho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -110,6 +110,8 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Kho";
             this.Text = "Kho";
             this.Load += new System.EventHandler(this.Kho_Load);

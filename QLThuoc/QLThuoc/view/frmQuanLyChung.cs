@@ -19,56 +19,58 @@ namespace QLThuoc.view
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmNhanVien NhanVien = new frmNhanVien();
             NhanVien.ShowDialog();
+            this.Show();
         }
 
         private void btnCS_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmCoSo CoSo = new frmCoSo();
             CoSo.ShowDialog();
+            this.Show();
         }
 
         private void btnHDXuat_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmHoaDonXuat HDX = new frmHoaDonXuat();
             HDX.ShowDialog();
+            this.Show();
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmKhachHang KhachHang = new frmKhachHang();
             KhachHang.ShowDialog();
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn hủy thao tác đang làm?", "Xác nhận hủy", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-                this.Show();
-                    
+            this.Show();
         }
 
         private void btnThuoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmThuoc Thuoc = new frmThuoc();
             Thuoc.ShowDialog();
+            this.Show();
         }
 
         private void btnLoaiThuoc_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLoaiThuoc LoaiThuoc = new frmLoaiThuoc();
             LoaiThuoc.ShowDialog();
+            this.Show();
         }
 
         private void btnNCC_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmNhaCC NCC = new frmNhaCC();
             NCC.ShowDialog();
+            this.Show();
         }
 
         private void btnHDNhap_Click(object sender, EventArgs e)

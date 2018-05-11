@@ -22,8 +22,9 @@ namespace QLThuoc.DAL
             {
                 new SqlParameter("MaLoaiThuoc",LT.MaLoaiThuoc),
                 new SqlParameter("TenLoaiThuoc",LT.TenLoaiThuoc),
-                new SqlParameter("GhiChu",LT.GhiChu)
-                
+                new SqlParameter("GhiChu",LT.GhiChu),
+                new SqlParameter("TTLT",LT.TTLT)
+
             };
             return conn.ExcuteSQL("Them_LoaiThuoc", para);
         }
@@ -34,8 +35,9 @@ namespace QLThuoc.DAL
             {
                 new SqlParameter("MaLoaiThuoc",LT.MaLoaiThuoc),
                 new SqlParameter("TenLoaiThuoc",LT.TenLoaiThuoc),
-                new SqlParameter("GhiChu",LT.GhiChu)
-               
+                new SqlParameter("GhiChu",LT.GhiChu),
+                new SqlParameter("TTLT",LT.TTLT)
+
             };
             return conn.ExcuteSQL("Sua_LoaiThuoc", para);
         }

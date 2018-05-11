@@ -57,6 +57,9 @@ namespace QLThuoc.view
             obj.MaHoaDon = txtMaHDX.Text;
             Bus.UpdateDataTT(obj);
             MessageBox.Show("Xuất hóa đơn thành công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+            frmInHoaDonXuat InHD = new frmInHoaDonXuat(txtMaHDX.Text);
+            InHD.ShowDialog();
         }
     }
 }

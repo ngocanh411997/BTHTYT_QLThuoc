@@ -88,10 +88,10 @@ ALTER TABLE dbo.ChiTietHoaDonXuat
 ADD ThanhTien int
 -- Xem CTHDX
 GO
-CREATE PROC CTHDX_SelectAll
+ALTER PROC CTHDX_SelectAll
 AS
 BEGIN
-	SELECT * FROM dbo.ChiTietHoaDonXuat
+	SELECT MaHDX,MaThuoc,DonViTinh,Gia,SoLuong,ThanhTien FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX WHERE TrangThai='Chưa thanh toán'
 END
 -- Thêm CTHDX
 GO
@@ -178,7 +178,7 @@ GROUP BY HoaDonXuat.MaKH,TenKH,MaHDX
 
 SELECT MaHDX,TenThuoc,DonViTinh,Gia,ChiTietHoaDonXuat.SoLuong,ThanhTien FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc
 
-SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='DX04')
+SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='DX04') AND TTT='0'
 
 
 SELECT * FROM dbo.ChiTietHoaDonNhap
@@ -197,9 +197,37 @@ SELECT * FROM dbo.ChiTietHoaDonNhap
 
 SELECT * FROM dbo.ChiTietHoaDonXuat
 
+-- DT ngày
 GO
-CREATE PROC DTNgay
+ALTER PROC DTNgay
 AS
 BEGIN
-SELECT NgayXuat, SUM(ThanhTien) AS DTNgay FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX GROUP BY NgayXuat
+SELECT NgayXuat, SUM(ThanhTien) AS DTNgay FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX
+WHERE TrangThai=N'Đã thanh toán'
+ GROUP BY NgayXuat
+END
+
+-- KHVIP
+GO
+CREATE PROC KHVIP
+AS
+BEGIN
+	SELECT TOP 3 A.MaKH,A.TenKH,A.CHITIEU
+	FROM (SELECT KhachHang.MaKH,TenKH, SUM(ThanhTien) AS CHITIEU FROM dbo.KhachHang INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaKH = KhachHang.MaKH INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon
+			GROUP BY KhachHang.MaKH,TenKH) A
+END
+
+
+
+
+
+GO
+ALTER PROC Top3KH
+AS
+BEGIN
+SELECT TOP 3 A.MAKH,A.TENKH,A.CHITIEU
+FROM dbo.KHACHHANG KH,(SELECT KHACHHANG.MAKH,TENKH,SUM(THANHTIEN) AS CHITIEU
+FROM dbo.KHACHHANG INNER JOIN dbo.PHIEUYC ON PHIEUYC.MAKH = KHACHHANG.MAKH INNER JOIN dbo.CHITIETPHIEUYC ON CHITIETPHIEUYC.MAPHIEU = PHIEUYC.MAPHIEU
+GROUP BY KHACHHANG.MAKH,TENKH) A
+WHERE A.MAKH=KH.MAKH
 END

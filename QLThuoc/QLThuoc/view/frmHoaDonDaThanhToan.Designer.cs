@@ -328,8 +328,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnThoat);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmHoaDonDaThanhToan";
-            this.Text = "frmHoaDonDaThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Hóa Đơn Đã Thanh Toán";
             this.Load += new System.EventHandler(this.frmHoaDonDaThanhToan_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

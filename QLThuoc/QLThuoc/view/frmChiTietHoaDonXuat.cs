@@ -26,10 +26,19 @@ namespace QLThuoc.view
         {
             ma = text;
         }
+
+        public void ShowThuoc()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListThuoc();
+            cbTenThuoc.DataSource = dt;
+            cbTenThuoc.DisplayMember = "TenThuoc";
+            cbTenThuoc.ValueMember = "MaThuoc";
+        }
         public void ShowT()
         {
             DataTable dt = new DataTable();
-            dt = Bus.GetListT("SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='"+txt_MaHD.Text+"')");
+            dt = Bus.GetListT("SELECT * FROM dbo.Thuoc WHERE TenThuoc NOT IN (SELECT TenThuoc FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX='"+txt_MaHD.Text+"') AND TTT='0'");
             cbTenThuoc.DataSource = dt;
             cbTenThuoc.DisplayMember = "TenThuoc";
             cbTenThuoc.ValueMember = "MaThuoc";
@@ -51,7 +60,8 @@ namespace QLThuoc.view
             txt_MaHD.Text = ma;
             dgvChiTietHDX.DataSource = Bus.DataCTHDX("SELECT MaHDX,TenThuoc, DonViTinh,ChiTietHoaDonXuat.SoLuong,Gia,ThanhTien FROM dbo.HoaDonXuat INNER JOIN dbo.ChiTietHoaDonXuat ON ChiTietHoaDonXuat.MaHDX = HoaDonXuat.MaHoaDon INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonXuat.MaThuoc WHERE MaHDX = '"+txt_MaHD.Text+"' and TrangThai=N'Chưa thanh toán'");
             txt_MaHD.Enabled = false;
-            ShowT();
+            ShowThuoc();
+            //ShowT();
         }
 
         private void btnThemCT_Click(object sender, EventArgs e)
@@ -59,6 +69,7 @@ namespace QLThuoc.view
             fluu = 0;
             DisEnl(true);
             txt_MaHD.Enabled = false;
+            ShowT();
         }
 
         private void btnSuaCT_Click(object sender, EventArgs e)
@@ -192,11 +203,22 @@ namespace QLThuoc.view
 
         private void dgvChiTietHDX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbTenThuoc.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["TenThuoc"].Value);
-            txtSoLuong.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["SoLuong"].Value);
-            txtGia.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["Gia"].Value);
-            cbDonViTinh.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["DonViTinh"].Value);
+            if(fluu ==0)
+            {
+                txtSoLuong.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["SoLuong"].Value);
+                txtGia.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["Gia"].Value);
+                cbDonViTinh.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["DonViTinh"].Value);
+            }
+            else
+            {
+                cbTenThuoc.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["TenThuoc"].Value);
+                txtSoLuong.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["SoLuong"].Value);
+                txtGia.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["Gia"].Value);
+                cbDonViTinh.Text = Convert.ToString(dgvChiTietHDX.CurrentRow.Cells["DonViTinh"].Value);
+            }
+        
         }
+           
 
         private void dgvChiTietHDX_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {

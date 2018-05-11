@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThanhToan));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvThanhToan = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMaHDX = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnXuatHD = new System.Windows.Forms.Button();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtMaHDX = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnXuatHD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,30 @@
             this.dgvThanhToan.Name = "dgvThanhToan";
             this.dgvThanhToan.Size = new System.Drawing.Size(445, 189);
             this.dgvThanhToan.TabIndex = 1;
+            // 
+            // MaKH
+            // 
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.HeaderText = "Mã KH";
+            this.MaKH.Name = "MaKH";
+            // 
+            // TenKH
+            // 
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.HeaderText = "Tên KH";
+            this.TenKH.Name = "TenKH";
+            // 
+            // MaHoaDon
+            // 
+            this.MaHoaDon.DataPropertyName = "MaHDX";
+            this.MaHoaDon.HeaderText = "Mã hóa đơn";
+            this.MaHoaDon.Name = "MaHoaDon";
+            // 
+            // TongTien
+            // 
+            this.TongTien.DataPropertyName = "TongTien";
+            this.TongTien.HeaderText = "Tổng Tiền";
+            this.TongTien.Name = "TongTien";
             // 
             // label2
             // 
@@ -110,30 +134,6 @@
             this.btnXuatHD.UseVisualStyleBackColor = false;
             this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
             // 
-            // MaKH
-            // 
-            this.MaKH.DataPropertyName = "MaKH";
-            this.MaKH.HeaderText = "Mã KH";
-            this.MaKH.Name = "MaKH";
-            // 
-            // TenKH
-            // 
-            this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên KH";
-            this.TenKH.Name = "TenKH";
-            // 
-            // MaHoaDon
-            // 
-            this.MaHoaDon.DataPropertyName = "MaHDX";
-            this.MaHoaDon.HeaderText = "Mã hóa đơn";
-            this.MaHoaDon.Name = "MaHoaDon";
-            // 
-            // TongTien
-            // 
-            this.TongTien.DataPropertyName = "TongTien";
-            this.TongTien.HeaderText = "Tổng Tiền";
-            this.TongTien.Name = "TongTien";
-            // 
             // frmThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,8 +145,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvThanhToan);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmThanhToan";
-            this.Text = "frmThanhToan";
+            this.Text = "Thanh Toán";
             this.Load += new System.EventHandler(this.frmThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).EndInit();
             this.ResumeLayout(false);

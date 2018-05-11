@@ -104,6 +104,10 @@ namespace QLThuoc.DAL
         {
             return conn.GetData(str);
         }
+        public DataTable GetListThuoc()
+        {
+            return conn.GetData("Xem_Thuoc", null);
+        }
         //
         public DataTable ThanhToan(string str)
         {
@@ -133,6 +137,16 @@ namespace QLThuoc.DAL
         public DataTable DTNgay()
         {
             return conn.GetData("DTNgay", null);
+        }
+        // DT Tháng + Năm
+        public DataTable DT(string sql)
+        {
+            return conn.GetData(sql);
+        }
+        //KHVIP 
+        public DataTable KHVIP()
+        {
+            return conn.GetData("KHVIP",null);
         }
     }
 }

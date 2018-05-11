@@ -550,8 +550,11 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmNhanVien";
-            this.Text = "frmNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhân Viên";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();

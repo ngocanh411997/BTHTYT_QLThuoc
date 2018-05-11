@@ -59,6 +59,10 @@ namespace QLThuoc.BUS
         {
             return da.GetListT(str);
         }
+        public DataTable GetListThuoc()
+        {
+            return da.GetListThuoc();
+        }
         //
         public DataTable ThanhToan(string str)
         {
@@ -82,6 +86,16 @@ namespace QLThuoc.BUS
         public DataTable DTNgay()
         {
             return da.DTNgay();
+        }
+        // DT
+        public DataTable DT(string sql)
+        {
+            return da.DT(sql);
+        }
+        //KHVIP
+        public DataTable KHVIP()
+        {
+            return da.KHVIP();
         }
     }
 }

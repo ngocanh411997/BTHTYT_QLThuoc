@@ -24,16 +24,20 @@ namespace QLThuoc.view
             DTNgay.ShowDialog();
             this.Show();
         }
-
-        private void btnThoat_Click(object sender, EventArgs e)
+        private void btnThang_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn thoát?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-                this.Show();
+            this.Hide();
+            frmDTThang DTThang = new frmDTThang();
+            DTThang.ShowDialog();
+            this.Show();
+        }
+
+        private void btnNam_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmDTNam DTN = new frmDTNam();
+            DTN.ShowDialog();
+            this.Show();
         }
     }
 }

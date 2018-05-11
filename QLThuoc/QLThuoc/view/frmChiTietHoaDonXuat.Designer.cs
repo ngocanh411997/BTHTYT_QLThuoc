@@ -29,14 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietHoaDonXuat));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietHDX = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbTenThuoc = new System.Windows.Forms.ComboBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cbDonViTinh = new System.Windows.Forms.ComboBox();
@@ -52,14 +60,6 @@
             this.btnXoaCT = new System.Windows.Forms.Button();
             this.btnSuaCT = new System.Windows.Forms.Button();
             this.btnThemCT = new System.Windows.Forms.Button();
-            this.cbTenThuoc = new System.Windows.Forms.ComboBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDX)).BeginInit();
             this.groupBox6.SuspendLayout();
@@ -139,6 +139,56 @@
             this.dgvChiTietHDX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHDX_CellClick);
             this.dgvChiTietHDX.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvChiTietHDX_RowPrePaint);
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 50;
+            // 
+            // MaHDX
+            // 
+            this.MaHDX.DataPropertyName = "MaHDX";
+            this.MaHDX.HeaderText = "Mã HĐ";
+            this.MaHDX.Name = "MaHDX";
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.DataPropertyName = "TenThuoc";
+            this.TenThuoc.HeaderText = "Tên Thuốc";
+            this.TenThuoc.Name = "TenThuoc";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.Width = 70;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.Width = 60;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            dataGridViewCellStyle1.Format = "0,000";
+            this.Gia.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.Width = 80;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            dataGridViewCellStyle2.Format = "0,000";
+            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.cbTenThuoc);
@@ -157,6 +207,19 @@
             this.groupBox6.TabIndex = 40;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Nhập Thông Chi Tiết Phiếu Yêu Cầu";
+            // 
+            // cbTenThuoc
+            // 
+            this.cbTenThuoc.FormattingEnabled = true;
+            this.cbTenThuoc.Items.AddRange(new object[] {
+            "Viên",
+            "Vỉ",
+            "Túi",
+            "Gói"});
+            this.cbTenThuoc.Location = new System.Drawing.Point(83, 49);
+            this.cbTenThuoc.Name = "cbTenThuoc";
+            this.cbTenThuoc.Size = new System.Drawing.Size(174, 21);
+            this.cbTenThuoc.TabIndex = 12;
             // 
             // txtGia
             // 
@@ -322,69 +385,6 @@
             this.btnThemCT.UseVisualStyleBackColor = false;
             this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click);
             // 
-            // cbTenThuoc
-            // 
-            this.cbTenThuoc.FormattingEnabled = true;
-            this.cbTenThuoc.Items.AddRange(new object[] {
-            "Viên",
-            "Vỉ",
-            "Túi",
-            "Gói"});
-            this.cbTenThuoc.Location = new System.Drawing.Point(83, 49);
-            this.cbTenThuoc.Name = "cbTenThuoc";
-            this.cbTenThuoc.Size = new System.Drawing.Size(174, 21);
-            this.cbTenThuoc.TabIndex = 12;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 50;
-            // 
-            // MaHDX
-            // 
-            this.MaHDX.DataPropertyName = "MaHDX";
-            this.MaHDX.HeaderText = "Mã HĐ";
-            this.MaHDX.Name = "MaHDX";
-            // 
-            // TenThuoc
-            // 
-            this.TenThuoc.DataPropertyName = "TenThuoc";
-            this.TenThuoc.HeaderText = "Tên Thuốc";
-            this.TenThuoc.Name = "TenThuoc";
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.Width = 70;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.Width = 60;
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "Gia";
-            dataGridViewCellStyle3.Format = "0,000";
-            this.Gia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.Width = 80;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            dataGridViewCellStyle4.Format = "0,000";
-            this.ThanhTien.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            // 
             // frmChiTietHoaDonXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,8 +395,11 @@
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmChiTietHoaDonXuat";
-            this.Text = "frmChiTietHoaDonXuat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mua Hàng";
             this.Load += new System.EventHandler(this.frmChiTietHoaDonXuat_Load);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDX)).EndInit();

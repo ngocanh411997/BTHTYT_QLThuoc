@@ -42,9 +42,6 @@ namespace QLThuoc.view
             txtCongDung.Enabled = e;
             dateHSD.Enabled = e;
             txtNuocSX.Enabled = e;
-
-
-
         }
         public void Clear()
         {
@@ -115,7 +112,6 @@ namespace QLThuoc.view
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
             fluu = 0;
             txtMaThuoc.Text = Bus.TangMaT();
             DisEnl(true);
@@ -138,7 +134,6 @@ namespace QLThuoc.view
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
             if (txtMaThuoc.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập mã thuốc!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -175,7 +170,7 @@ namespace QLThuoc.view
             T.MaLoaiThuoc = cbMaLoaiThuoc.SelectedValue.ToString();
             T.MaDVSX = cbMaDVSX.SelectedValue.ToString();
             T.CongDung = txtCongDung.Text;
-            T.HSD = dateHSD.Text;
+            T.HSD = dateHSD.Value;
             
             T.NuocSX = txtNuocSX.Text;
             if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtNuocSX.Text != "" && fluu == 0)
@@ -190,9 +185,9 @@ namespace QLThuoc.view
                     DisEnl(false);
                     fluu = 1;
                 }
-                catch
+                catch ( Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
             }
             else if (txtMaThuoc.Text != "" && txtTenThuoc.Text != "" && cbMaLoaiThuoc.Text != "" && cbMaDVSX.Text != "" && txtCongDung.Text != "" && dateHSD.Text != "" && txtNuocSX.Text != "" && fluu != 0)

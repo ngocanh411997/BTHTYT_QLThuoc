@@ -37,6 +37,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvLoaiThuoc = new System.Windows.Forms.DataGridView();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,10 +58,6 @@
             this.btnXoa = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenLoaiThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiThuoc)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -151,6 +151,32 @@
             this.dgvLoaiThuoc.TabIndex = 0;
             this.dgvLoaiThuoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiThuoc_CellClick);
             this.dgvLoaiThuoc.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvLoaiThuoc_RowPrePaint);
+            // 
+            // STT
+            // 
+            this.STT.DataPropertyName = "Column1";
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.Width = 40;
+            // 
+            // MaLoaiThuoc
+            // 
+            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
+            this.MaLoaiThuoc.HeaderText = "Mã loại thuốc";
+            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
+            // 
+            // TenLoaiThuoc
+            // 
+            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
+            this.TenLoaiThuoc.HeaderText = "Tên loại thuốc";
+            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GhiChu.DataPropertyName = "GhiChu";
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.Name = "GhiChu";
             // 
             // groupBox2
             // 
@@ -349,32 +375,6 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chức Năng";
             // 
-            // STT
-            // 
-            this.STT.DataPropertyName = "Column1";
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.Width = 40;
-            // 
-            // MaLoaiThuoc
-            // 
-            this.MaLoaiThuoc.DataPropertyName = "MaLoaiThuoc";
-            this.MaLoaiThuoc.HeaderText = "Mã loại thuốc";
-            this.MaLoaiThuoc.Name = "MaLoaiThuoc";
-            // 
-            // TenLoaiThuoc
-            // 
-            this.TenLoaiThuoc.DataPropertyName = "TenLoaiThuoc";
-            this.TenLoaiThuoc.HeaderText = "Tên loại thuốc";
-            this.TenLoaiThuoc.Name = "TenLoaiThuoc";
-            // 
-            // GhiChu
-            // 
-            this.GhiChu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GhiChu.DataPropertyName = "GhiChu";
-            this.GhiChu.HeaderText = "Ghi chú";
-            this.GhiChu.Name = "GhiChu";
-            // 
             // frmLoaiThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,8 +384,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox7);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmLoaiThuoc";
-            this.Text = "frmLoaiThuoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Loại Thuốc";
             this.Load += new System.EventHandler(this.frmLoaiThuoc_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

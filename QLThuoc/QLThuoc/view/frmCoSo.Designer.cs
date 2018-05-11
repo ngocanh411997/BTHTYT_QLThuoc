@@ -432,8 +432,11 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmCoSo";
-            this.Text = "frmCoSo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cơ Sở";
             this.Load += new System.EventHandler(this.frmCoSo_Load);
             this.mnsIDU.ResumeLayout(false);
             this.mnsIDU.PerformLayout();

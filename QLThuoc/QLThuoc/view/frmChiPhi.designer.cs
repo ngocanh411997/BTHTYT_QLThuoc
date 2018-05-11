@@ -146,8 +146,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvChiPhi);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmChiPhi";
-            this.Text = "frmChiPhi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Chi Phí";
             this.Load += new System.EventHandler(this.frmChiPhi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiPhi)).EndInit();
             this.ResumeLayout(false);

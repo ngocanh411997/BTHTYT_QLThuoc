@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDTNgay));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDTNgay = new System.Windows.Forms.DataGridView();
@@ -83,8 +83,8 @@
             // 
             this.DTNgay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.DTNgay.DataPropertyName = "DTNgay";
-            dataGridViewCellStyle4.Format = "0,000";
-            this.DTNgay.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Format = "0,000";
+            this.DTNgay.DefaultCellStyle = dataGridViewCellStyle1;
             this.DTNgay.HeaderText = "Doanh thu";
             this.DTNgay.Name = "DTNgay";
             // 
@@ -161,8 +161,11 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.dgvDTNgay);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frmDTNgay";
-            this.Text = "frmDTNgay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ngày";
             this.Load += new System.EventHandler(this.frmDTNgay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDTNgay)).EndInit();
             this.ResumeLayout(false);

@@ -1,8 +1,11 @@
-﻿-- Thủ tục lấy ra thông tin của Loại Thuốc
-create proc Xem_LoaiThuoc
+﻿ALTER TABLE dbo.LoaiThuoc
+ADD TTLT NVARCHAR(2)
+-- Thủ tục lấy ra thông tin của Loại Thuốc
+ALTER proc Xem_LoaiThuoc
 as
 begin
-select *from LoaiThuoc
+select MaLoaiThuoc,TenLoaiThuoc,GhiChu FROM LoaiThuoc
+WHERE TTLT='0'
 end
 go
 --test
@@ -13,35 +16,41 @@ ALTER proc Them_LoaiThuoc
 (
 	@MaLoaiThuoc nvarchar(10),
 	@TenLoaiThuoc nvarchar(50),
-	@GhiChu nvarchar(50)
+	@GhiChu nvarchar(50),
+	@TTLT NVARCHAR(2)
 )
 as
 begin
-insert into LoaiThuoc(MaLoaiThuoc,TenLoaiThuoc,GhiChu)
-values(@MaLoaiThuoc,@TenLoaiThuoc,@GhiChu)
+insert into LoaiThuoc(MaLoaiThuoc,TenLoaiThuoc,GhiChu,TTLT)
+values(@MaLoaiThuoc,@TenLoaiThuoc,@GhiChu,'0')
 end
 
 go
 -- thủ tục sửa Loại Thuốc
-create proc Sua_LoaiThuoc
+ALTER proc Sua_LoaiThuoc
 (
 	@MaLoaiThuoc varchar(10),
 	@TenLoaiThuoc nvarchar(50),
-	@GhiChu nvarchar(50))
+	@GhiChu nvarchar(50),
+	@TTLT NVARCHAR(2))
 	as
 begin
 update LoaiThuoc
 set TenLoaiThuoc = @TenLoaiThuoc,
-    GhiChu=@GhiChu
-
+    GhiChu=@GhiChu,
+	TTLT='0'
 where MaLoaiThuoc = @MaLoaiThuoc
 end
 go
 -- thủ tục xóa Loại Thuốc
-create proc Xoa_LoaiThuoc(@MaLoaiThuoc varchar(10))
+ALTER proc Xoa_LoaiThuoc(@MaLoaiThuoc varchar(10))
 as
-begin
-delete LoaiThuoc
+BEGIN
+UPDATE dbo.Thuoc
+SET TTT='1'
+WHERE MaLoaiThuoc=@MaLoaiThuoc
+UPDATE LoaiThuoc
+SET TTLT ='1'
 where MaLoaiThuoc = @MaLoaiThuoc
 end
 -----------

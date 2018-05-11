@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ChiTietHoaDonNhap));
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietHDN = new System.Windows.Forms.DataGridView();
+            this._STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -52,13 +59,6 @@
             this.btnThemCT = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnChiPhi = new System.Windows.Forms.Button();
-            this._STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDN)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -96,6 +96,55 @@
             this.dgvChiTietHDN.TabIndex = 0;
             this.dgvChiTietHDN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHDN_CellClick);
             this.dgvChiTietHDN.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvChiTietHDN_RowPrePaint);
+            // 
+            // _STT
+            // 
+            this._STT.HeaderText = "STT";
+            this._STT.Name = "_STT";
+            this._STT.Width = 50;
+            // 
+            // MaHDN
+            // 
+            this.MaHDN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MaHDN.DataPropertyName = "MaHDN";
+            this.MaHDN.HeaderText = "Mã HĐ";
+            this.MaHDN.Name = "MaHDN";
+            this.MaHDN.Width = 80;
+            // 
+            // TenThuoc
+            // 
+            this.TenThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenThuoc.DataPropertyName = "TenThuoc";
+            this.TenThuoc.HeaderText = "Tên Thuốc";
+            this.TenThuoc.Name = "TenThuoc";
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn Vị Tính";
+            this.DonViTinh.Name = "DonViTinh";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuong.DataPropertyName = "SoLuong";
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // Gia
+            // 
+            this.Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
             // 
             // groupBox1
             // 
@@ -341,55 +390,6 @@
             this.btnChiPhi.UseVisualStyleBackColor = false;
             this.btnChiPhi.Click += new System.EventHandler(this.btnChiPhi_Click);
             // 
-            // _STT
-            // 
-            this._STT.HeaderText = "STT";
-            this._STT.Name = "_STT";
-            this._STT.Width = 50;
-            // 
-            // MaHDN
-            // 
-            this.MaHDN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MaHDN.DataPropertyName = "MaHDN";
-            this.MaHDN.HeaderText = "Mã HĐ";
-            this.MaHDN.Name = "MaHDN";
-            this.MaHDN.Width = 80;
-            // 
-            // TenThuoc
-            // 
-            this.TenThuoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenThuoc.DataPropertyName = "TenThuoc";
-            this.TenThuoc.HeaderText = "Tên Thuốc";
-            this.TenThuoc.Name = "TenThuoc";
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn Vị Tính";
-            this.DonViTinh.Name = "DonViTinh";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // Gia
-            // 
-            this.Gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            // 
             // frm_ChiTietHoaDonNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,8 +401,11 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "frm_ChiTietHoaDonNhap";
-            this.Text = "frm_ChiTietHoaDonNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhập Hàng";
             this.Load += new System.EventHandler(this.frm_ChiTietHoaDonNhap_Load);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHDN)).EndInit();

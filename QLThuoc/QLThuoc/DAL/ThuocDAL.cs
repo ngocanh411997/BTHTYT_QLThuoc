@@ -26,7 +26,8 @@ namespace QLThuoc.DAL
                 new SqlParameter ("MaDVSX",T.MaDVSX),
                 new SqlParameter("CongDung",T.CongDung),
                 new SqlParameter("HSD",T.HSD),
-                new SqlParameter("NuocSX",T.NuocSX)
+                new SqlParameter("NuocSX",T.NuocSX),
+                 new SqlParameter("TTT",T.TTT)
             };
             return conn.ExcuteSQL("Them_Thuoc", para);
         }
@@ -41,7 +42,8 @@ namespace QLThuoc.DAL
                 new SqlParameter ("MaDVSX",T.MaDVSX),
                 new SqlParameter("CongDung",T.CongDung),
                 new SqlParameter("HSD",T.HSD),
-                new SqlParameter("NuocSX",T.NuocSX)
+                new SqlParameter("NuocSX",T.NuocSX),
+                 new SqlParameter("TTT",T.TTT)
             };
             return conn.ExcuteSQL("Sua_Thuoc", para);
         }

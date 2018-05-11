@@ -272,6 +272,7 @@ namespace QLThuoc.view
                 frmChiTietHoaDonXuat CT = new frmChiTietHoaDonXuat(txtMaHD.Text);
                 CT.ShowDialog();
                 this.Show();
+                HienThi();
             } 
         }
 
