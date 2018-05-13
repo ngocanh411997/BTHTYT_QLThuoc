@@ -32,7 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLoaiThuoc = new System.Windows.Forms.Button();
             this.btnNCC = new System.Windows.Forms.Button();
-            this.btnHDNhap = new System.Windows.Forms.Button();
+            this.btnHDN = new System.Windows.Forms.Button();
             this.btnHDXuat = new System.Windows.Forms.Button();
             this.btnThuoc = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnCS = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTongChiPhi = new System.Windows.Forms.Button();
+            this.btnHDDT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +53,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnLoaiThuoc);
             this.groupBox1.Controls.Add(this.btnNCC);
-            this.groupBox1.Controls.Add(this.btnHDNhap);
+            this.groupBox1.Controls.Add(this.btnHDN);
             this.groupBox1.Controls.Add(this.btnHDXuat);
             this.groupBox1.Controls.Add(this.btnThuoc);
             this.groupBox1.Controls.Add(this.btnKhachHang);
@@ -91,19 +93,19 @@
             this.btnNCC.UseVisualStyleBackColor = true;
             this.btnNCC.Click += new System.EventHandler(this.btnNCC_Click);
             // 
-            // btnHDNhap
+            // btnHDN
             // 
-            this.btnHDNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHDNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnHDNhap.Image")));
-            this.btnHDNhap.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHDNhap.Location = new System.Drawing.Point(119, 140);
-            this.btnHDNhap.Name = "btnHDNhap";
-            this.btnHDNhap.Size = new System.Drawing.Size(85, 100);
-            this.btnHDNhap.TabIndex = 1;
-            this.btnHDNhap.Text = "Hóa đơn nhập";
-            this.btnHDNhap.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHDNhap.UseVisualStyleBackColor = true;
-            this.btnHDNhap.Click += new System.EventHandler(this.btnHDNhap_Click);
+            this.btnHDN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDN.Image = ((System.Drawing.Image)(resources.GetObject("btnHDN.Image")));
+            this.btnHDN.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHDN.Location = new System.Drawing.Point(119, 140);
+            this.btnHDN.Name = "btnHDN";
+            this.btnHDN.Size = new System.Drawing.Size(85, 100);
+            this.btnHDN.TabIndex = 1;
+            this.btnHDN.Text = "Hóa đơn nhập";
+            this.btnHDN.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHDN.UseVisualStyleBackColor = true;
+            this.btnHDN.Click += new System.EventHandler(this.btnHDNhap_Click);
             // 
             // btnHDXuat
             // 
@@ -149,6 +151,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnHDDT);
+            this.groupBox2.Controls.Add(this.btnTongChiPhi);
             this.groupBox2.Controls.Add(this.btnDoanhThu);
             this.groupBox2.Controls.Add(this.btnHDTT);
             this.groupBox2.Controls.Add(this.button1);
@@ -157,7 +161,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(378, 110);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(354, 257);
+            this.groupBox2.Size = new System.Drawing.Size(484, 257);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý nhân sự";
@@ -167,7 +171,7 @@
             this.btnDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoanhThu.Image = ((System.Drawing.Image)(resources.GetObject("btnDoanhThu.Image")));
             this.btnDoanhThu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDoanhThu.Location = new System.Drawing.Point(250, 25);
+            this.btnDoanhThu.Location = new System.Drawing.Point(258, 25);
             this.btnDoanhThu.Name = "btnDoanhThu";
             this.btnDoanhThu.Size = new System.Drawing.Size(85, 100);
             this.btnDoanhThu.TabIndex = 5;
@@ -243,11 +247,37 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Hệ thống quản lý thuốc";
             // 
+            // btnTongChiPhi
+            // 
+            this.btnTongChiPhi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongChiPhi.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTongChiPhi.Location = new System.Drawing.Point(258, 140);
+            this.btnTongChiPhi.Name = "btnTongChiPhi";
+            this.btnTongChiPhi.Size = new System.Drawing.Size(85, 99);
+            this.btnTongChiPhi.TabIndex = 6;
+            this.btnTongChiPhi.Text = "Tổng Chi Phí";
+            this.btnTongChiPhi.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTongChiPhi.UseVisualStyleBackColor = true;
+            this.btnTongChiPhi.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnHDDT
+            // 
+            this.btnHDDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHDDT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHDDT.Location = new System.Drawing.Point(386, 25);
+            this.btnHDDT.Name = "btnHDDT";
+            this.btnHDDT.Size = new System.Drawing.Size(85, 99);
+            this.btnHDDT.TabIndex = 6;
+            this.btnHDDT.Text = "Hóa Đơn Đã Trả";
+            this.btnHDDT.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHDDT.UseVisualStyleBackColor = true;
+            this.btnHDDT.Click += new System.EventHandler(this.btnHDDT_Click);
+            // 
             // frmQuanLyChung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 384);
+            this.ClientSize = new System.Drawing.Size(892, 384);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
@@ -268,7 +298,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLoaiThuoc;
         private System.Windows.Forms.Button btnNCC;
-        private System.Windows.Forms.Button btnHDNhap;
+        private System.Windows.Forms.Button btnHDN;
         private System.Windows.Forms.Button btnHDXuat;
         private System.Windows.Forms.Button btnThuoc;
         private System.Windows.Forms.Button btnKhachHang;
@@ -279,5 +309,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnHDTT;
         private System.Windows.Forms.Button btnDoanhThu;
+        private System.Windows.Forms.Button btnHDDT;
+        private System.Windows.Forms.Button btnTongChiPhi;
     }
 }

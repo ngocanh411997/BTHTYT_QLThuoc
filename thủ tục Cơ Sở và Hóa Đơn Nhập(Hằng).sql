@@ -178,7 +178,7 @@ END
 
 -- xem hóa đơn đã tính cho phí
 GO
-Create PROC Xem_ChiPhi
+alter PROC Xem_ChiPhi
 AS
 BEGIN
 	SELECT * FROM HoaDonNhap WHERE TrangThai=N'Đã thanh toán'
@@ -186,3 +186,47 @@ END
 
 
 SELECT MaHDN,TenThuoc, DonViTinh,ChiTietHoaDonNhap.SoLuong,Gia,ThanhTien FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN = HoaDonNhap.MaHoaDon INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc where TrangThai=N'Chưa thanh toán'
+
+
+-- Tính chi phí cho 1 ngày
+GO
+Create PROC ChiPhiNgay
+AS
+BEGIN
+SELECT NgayNhap as 'Ngày Nhập', SUM(ThanhTien) AS 'Chi Phí Ngày' 
+FROM ChiTietHoaDonNhap INNER JOIN dbo.HoaDonNhap ON HoaDonNhap.MaHoaDon = ChiTietHoaDonNhap.MaHDN
+WHERE TrangThai=N'Đã thanh toán'
+ GROUP BY NgayNhap
+END
+
+-- Tính chi phí trong 1 tháng
+Go
+CREATE PROC ChiPhiThang
+as
+begin
+SELECT MONTH(NgayNhap) AS 'Tháng', YEAR(NgayNhap) AS 'Năm', SUM(ThanhTien) AS 'Chi Phí Tháng'
+ FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN= HoaDonNhap.MaHoaDon
+ WHERE TrangThai = N'Đã thanh toán'
+ GROUP BY MONTH(NgayNhap), YEAR(NgayNhap)
+END
+
+-- Tính chi phí trong 1 năm
+Go
+CREATE PROC ChiPhiNam
+as
+begin
+SELECT YEAR(NgayNhap) AS 'Năm', SUM(ThanhTien) AS 'Chi Phí Năm'
+ FROM dbo.HoaDonNhap INNER JOIN dbo.ChiTietHoaDonNhap ON ChiTietHoaDonNhap.MaHDN= HoaDonNhap.MaHoaDon
+ WHERE TrangThai = N'Đã thanh toán'
+ GROUP BY YEAR(NgayNhap)
+END
+
+-- tạo bảng user
+create table TaiKhoan(
+Name varchar(20) primary key,
+Pass varchar(20))
+
+insert into TaiKhoan 
+values('admin', '123')
+insert into TaiKhoan 
+values('NV', '123')

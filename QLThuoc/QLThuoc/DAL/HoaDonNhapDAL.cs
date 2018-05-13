@@ -154,5 +154,24 @@ namespace QLThuoc.DAL
             return conn.GetData("Xem_ChiPhi", null);
         }
 
+
+        // Chi Phí trong 1 Ngày
+        public DataTable ChiPhiNgay()
+        {
+            return conn.GetData("ChiPhiNgay", null);
+
+        }
+        // Chi Phí trong 1 tháng
+        public DataTable ChiPhiThang()
+        {
+            return conn.GetData("ChiPhiThang", null);
+
+        }
+        // Chi phí trong 1 năm
+        public DataTable ChiPhiNam()
+        {
+            return conn.GetData("ChiPhiNam", null);
+
+        }
     }
 }

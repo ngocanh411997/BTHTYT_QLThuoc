@@ -72,6 +72,7 @@ namespace QLThuoc.view
             NCC.ShowDialog();
             this.Show();
         }
+       
 
         private void btnHDNhap_Click(object sender, EventArgs e)
         {
@@ -102,6 +103,22 @@ namespace QLThuoc.view
             this.Hide();
             frmDoanhThu DT = new frmDoanhThu();
             DT.ShowDialog();
+            this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTongChiPhi TCP = new frmTongChiPhi();
+            TCP.ShowDialog();
+            this.Show();
+        }
+
+        private void btnHDDT_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHoaDonDaTra HDDT = new frmHoaDonDaTra();
+            HDDT.ShowDialog();
             this.Show();
         }
     }

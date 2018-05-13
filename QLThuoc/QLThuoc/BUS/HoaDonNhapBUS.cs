@@ -34,6 +34,7 @@ namespace QLThuoc.BUS
         {
             return HDN_dal.Show_NV();
         }
+
         public int InsertData(HoaDonNhap HDN)
         {
             return HDN_dal.InsertData(HDN);
@@ -87,7 +88,21 @@ namespace QLThuoc.BUS
         {
             return HDN_dal.Xem_ChiPhi(HDN);
         }
+        // chi phí trong 1 ngày
+        public DataTable ChiPhiNgay()
+        {
+            return HDN_dal.ChiPhiNgay();
+        }
+        // chi phí trong 1 tháng
+        public DataTable ChiPhiThang()
+        {
+            return HDN_dal.ChiPhiThang();
+        }
+        // chi phí 1 năm
+        public DataTable ChiPhiNam()
+        {
+            return HDN_dal.ChiPhiNam();
+        }
 
-        
     }
 }

@@ -5,16 +5,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QLThuoc.Tool;
 
 namespace QLThuoc.DAL
 {
     public class KetNoi
     {
-        private SqlConnection conn;
-        public KetNoi()
-        {
-            conn = new SqlConnection(@"Data Source=NGOCANH\NGOCANH;Initial Catalog=QLThuoc;Integrated Security=True");
-        }
+        SqlConnection conn = String_SQLConn.StringSQL();
+        //private SqlConnection conn;
+        //public KetNoi()
+        //{
+        //    // kết nối của Hằng
+        //    conn = new SqlConnection(@"Data Source=DESKTOP-LNKB7IU\SQLEXPRESS;Initial Catalog=QLThuoc;Integrated Security=True");
+        //}
         public DataTable GetData(string strSql)
         {
             DataTable dt = new DataTable();

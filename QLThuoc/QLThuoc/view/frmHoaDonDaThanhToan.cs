@@ -96,5 +96,55 @@ namespace QLThuoc.view
                 dgvHoaDon.DataSource = Bus.TimKiemHDX("select * from HoaDonXuat where MaNVXuat Like  '%" + txtTimKiem.Text.Trim() + "%' and TRANGTHAI=N'Đã thanh toán'");
             }
         }
+
+        private void cbTimKiem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaHD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvChiTietHDX_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

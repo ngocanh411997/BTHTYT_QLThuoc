@@ -76,6 +76,7 @@
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(121, 21);
             this.cbTimKiem.TabIndex = 3;
+            this.cbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbTimKiem_SelectedIndexChanged);
             // 
             // btnLamMoi
             // 
@@ -116,6 +117,7 @@
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtTimKiem
             // 
@@ -123,6 +125,7 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(177, 20);
             this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // txtMaHD
             // 
@@ -130,6 +133,7 @@
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(100, 20);
             this.txtMaHD.TabIndex = 28;
+            this.txtMaHD.TextChanged += new System.EventHandler(this.txtMaHD_TextChanged);
             // 
             // label2
             // 
@@ -139,6 +143,7 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 27;
             this.label2.Text = "Mã HĐ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvHoaDon
             // 
@@ -156,6 +161,7 @@
             this.dgvHoaDon.Size = new System.Drawing.Size(505, 301);
             this.dgvHoaDon.TabIndex = 0;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
+            this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             this.dgvHoaDon.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvHoaDon_RowPrePaint);
             // 
             // STT
@@ -208,6 +214,7 @@
             this.label1.Size = new System.Drawing.Size(308, 33);
             this.label1.TabIndex = 25;
             this.label1.Text = "Hóa đơn đã thanh toán";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox3
             // 
@@ -220,6 +227,7 @@
             this.groupBox3.TabIndex = 23;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Hóa Đơn Đã Thanh Toán";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnThoat
             // 
@@ -246,6 +254,7 @@
             this.groupBox7.TabIndex = 35;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Chi Tiết Hóa Đơn";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
             // dgvChiTietHDX
             // 
@@ -264,6 +273,7 @@
             this.dgvChiTietHDX.Size = new System.Drawing.Size(565, 292);
             this.dgvChiTietHDX.TabIndex = 0;
             this.dgvChiTietHDX.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHDX_CellClick);
+            this.dgvChiTietHDX.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHDX_CellContentClick);
             this.dgvChiTietHDX.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvChiTietHDX_RowPrePaint);
             // 
             // _STT
