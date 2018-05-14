@@ -219,3 +219,64 @@ END
 
 SELECT MaHDX,MaNVXuat,NgayXuat,HoaDonXuat.MaKH,TenKH,SUM(ThanhTien) AS TongTien FROM dbo.ChiTietHoaDonXuat INNER JOIN dbo.HoaDonXuat ON HoaDonXuat.MaHoaDon = ChiTietHoaDonXuat.MaHDX INNER JOIN dbo.KhachHang ON KhachHang.MaKH = HoaDonXuat.MaKH WHERE MaHDX='DX04'
 GROUP BY MaHDX,MaNVXuat,NgayXuat,HoaDonXuat.MaKH,TenKH
+
+
+-----
+CREATE FUNCTION [dbo].[ChuyenDoiUnicode] ( @strInput NVARCHAR(4000) )
+ RETURNS NVARCHAR(4000) AS BEGIN 
+ IF @strInput IS NULL RETURN @strInput
+ IF @strInput = '' RETURN @strInput 
+ DECLARE @RT NVARCHAR(4000) 
+ DECLARE @SIGN_CHARS NCHAR(136) 
+ DECLARE @UNSIGN_CHARS NCHAR (136) 
+ SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) 
+ SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' 
+ DECLARE @COUNTER int 
+ DECLARE @COUNTER1 int 
+ SET @COUNTER = 1 
+ WHILE (@COUNTER <=LEN(@strInput)) 
+ BEGIN SET @COUNTER1 = 1 
+ WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) 
+ BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) 
+ BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) 
+ ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) 
+ BREAK END 
+ SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END 
+ SET @strInput = replace(@strInput,' ','-') 
+ RETURN @strInput END
+GO
+
+
+go
+CREATE PROC TKTenNV(@Ten NVARCHAR(50))
+AS BEGIN
+SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
+WHERE dbo.ChuyenDoiUnicode(TenNV) LIKE N'%'+dbo.ChuyenDoiUnicode(@Ten)+N'%' 
+END
+
+go
+CREATE PROC TKGTNV(@Ten NVARCHAR(50))
+AS BEGIN
+SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
+WHERE dbo.ChuyenDoiUnicode(GioiTinh) LIKE N'%'+dbo.ChuyenDoiUnicode(@Ten)+N'%' 
+END
+
+go
+CREATE PROC TKDCNV(@Ten NVARCHAR(50))
+AS BEGIN
+SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
+WHERE dbo.ChuyenDoiUnicode(NhanVien.DiaChi) LIKE N'%'+dbo.ChuyenDoiUnicode(@Ten)+N'%' 
+END
+
+go
+CREATE PROC TKCSNV(@Ten NVARCHAR(50))
+AS BEGIN
+SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi
+	FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS
+WHERE dbo.ChuyenDoiUnicode(TenCS) LIKE N'%'+dbo.ChuyenDoiUnicode(@Ten)+N'%' 
+END
+
+SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS WHERE NhanVien.SDT LIKE '%01688%'

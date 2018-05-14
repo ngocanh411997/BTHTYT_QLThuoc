@@ -250,34 +250,47 @@ namespace QLThuoc.view
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (cbTimKiem.Text == "Mã nhân viên")
+            if (cbTimKiem.Text == "")
             {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where MaNV like '%" + txtTimKiem.Text.Trim() + "%'");
+                MessageBox.Show("Bạn chưa chọn kiểu tìm kiếm!", "Thông báo");
             }
-            if (cbTimKiem.Text == "Tên nhân viên")
+            else if (txtTimKiem.Text == "")
             {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where TenNV like N'%" + txtTimKiem.Text.Trim() + "%'");
+                MessageBox.Show("Bạn chưa nhập từ khóa!", "Thông báo");
             }
-            if (cbTimKiem.Text == "Ngày sinh")
+            else
             {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where NgaySinh Like '%" + txtTimKiem.Text.Trim() + "%'");
+                if (cbTimKiem.Text == "Mã nhân viên")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemNV("SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS where MaNV like '%" + txtTimKiem.Text.Trim() + "%'");
+                }
+                if (cbTimKiem.Text == "Tên nhân viên")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemTen("EXEC dbo.TKTenNV @Ten = N'" + txtTimKiem.Text + "'");
+                }
+                if (cbTimKiem.Text == "Ngày sinh")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemTen("SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS where NgaySinh Like '%" + txtTimKiem.Text.Trim() + "%'");
+                }
+                if (cbTimKiem.Text == "SĐT")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemNV("SELECT MaNV,TenNV,TenCS,GioiTinh,NgaySinh,NhanVien.SDT,NhanVien.DiaChi FROM dbo.NhanVien INNER JOIN dbo.CoSo ON CoSo.MaCS = NhanVien.MaCS where NhanVien.SDT like '%" + txtTimKiem.Text.Trim() + "%'");
+                }
+                if (cbTimKiem.Text == "Giới tính")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemTen("EXEC dbo.TKGTNV @Ten = N'" + txtTimKiem.Text + "'");
+                }
+                if (cbTimKiem.Text == "Địa chỉ")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemTen("EXEC dbo.TKDCNV @Ten = N'" + txtTimKiem.Text + "'");
+                }
+                if (cbTimKiem.Text == "Cơ sở")
+                {
+                    dgvNhanVien.DataSource = Bus.TimKiemTen("EXEC dbo.TKCSNV @Ten = N'" + txtTimKiem.Text + "'");
+                }
+                
             }
-            if (cbTimKiem.Text == "SĐT")
-            {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where SDT like '%" + txtTimKiem.Text.Trim() + "%'");
-            }
-            if (cbTimKiem.Text == "Giới tính")
-            {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where GioiTinh like N'%" + txtTimKiem.Text.Trim() + "%'");
-            }
-            if (cbTimKiem.Text == "Địa chỉ")
-            {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where DiaChi like N'%" + txtTimKiem.Text.Trim() + "%'");
-            }
-            if (cbTimKiem.Text == "Cơ sở")
-            {
-                dgvNhanVien.DataSource = Bus.TimKiemNV("select * from NhanVien where MaCS like '%" + txtTimKiem.Text + "%'");
-            }
+            
         }
 
         

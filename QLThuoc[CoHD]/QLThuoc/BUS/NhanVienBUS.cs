@@ -40,7 +40,10 @@ namespace QLThuoc.BUS
         {
             return da.GetListCS();
         }
-
+        public DataTable TimKiemTen(string Ten)
+        {
+            return da.TimKiemTen(Ten);
+        }
 
 
     } 

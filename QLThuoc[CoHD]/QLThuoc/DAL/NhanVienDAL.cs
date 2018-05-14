@@ -64,5 +64,9 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("Xem_CoSo", null);
         }
+        public DataTable TimKiemTen(string Ten)
+        {
+            return conn.GetData(Ten);
+        }
     }
 }
