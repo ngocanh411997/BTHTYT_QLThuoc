@@ -230,3 +230,19 @@ insert into TaiKhoan
 values('admin', '123')
 insert into TaiKhoan 
 values('NV', '123')
+
+
+-- Tài khoản :v nốt
+
+create proc Xem_TK
+as
+begin
+select * from TaiKhoan
+end
+go
+create proc Them_TK(@Name varchar(20), @Pass varchar(20))
+as
+begin
+insert into TaiKhoan
+values(@Name, @Pass)
+end
