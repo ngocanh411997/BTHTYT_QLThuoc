@@ -80,11 +80,6 @@
     <Compile Include="DAL\NhaCCDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
     <Compile Include="DAL\ThuocDAL.cs" />
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Entity\ChiTietHoaDonNhapEntity.cs" />
     <Compile Include="Entity\ChiTietHoaDonXuatEntity.cs" />
     <Compile Include="Entity\CoSoEntity.cs" />
@@ -173,12 +168,6 @@
     <Compile Include="view\frmHuongDan.Designer.cs">
       <DependentUpon>frmHuongDan.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\frmInHoaDonXuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\frmInHoaDonXuat.Designer.cs">
-      <DependentUpon>frmInHoaDonXuat.cs</DependentUpon>
-    </Compile>
     <Compile Include="view\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,12 +246,6 @@
     <Compile Include="view\frmHoaDonDaTra.Designer.cs">
       <DependentUpon>frmHoaDonDaTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\InHoaDonXuat.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>InHoaDonXuat.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="view\Kho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,9 +298,6 @@
     <EmbeddedResource Include="view\frmHuongDan.resx">
       <DependentUpon>frmHuongDan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\frmInHoaDonXuat.resx">
-      <DependentUpon>frmInHoaDonXuat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,24 +337,9 @@
     <EmbeddedResource Include="view\frmHoaDonDaTra.resx">
       <DependentUpon>frmHoaDonDaTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\InHoaDonXuat.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InHoaDonXuat.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="view\Kho.resx">
       <DependentUpon>Kho.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

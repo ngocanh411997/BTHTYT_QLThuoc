@@ -55,7 +55,7 @@ alter table HoaDonNhap add TrangThai NVARCHAR(50)
 alter table ChiTietHoaDonNhap add ThanhTien int 
 
 -- thủ tục xem hóa đơn nhập
-alter proc Xem_HDN
+CREATE proc Xem_HDN
 as
 begin
 select hd.MaHoaDon, TenNCC, NgayNhap,hd.MaNVNhap ,hd.TrangThai from HoaDonNhap hd , NhaCungCap
@@ -63,7 +63,7 @@ where hd.MaNCC = NhaCungCap.MaNCC and TrangThai =N'Chưa thanh toán'
 end
 
 -- thêm hóa đơn nhập
-alter proc Them_HDN
+CREATE proc Them_HDN
 ( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10), @TrangThai nvarchar(50))
 as
 begin
@@ -73,7 +73,7 @@ end
 go
 
 -- sửa hóa đơn nhập
-alter proc Sua_HDN
+CREATE proc Sua_HDN
 ( @MaHDN varchar(10), @MaNCC varchar(10), @NgayNhap date, @MaNVNhap varchar(10),@TrangThai nvarchar(50))
 as
 begin
@@ -84,7 +84,7 @@ end
 go
 
 -- xóa hóa đơn nhập
-alter proc Xoa_HDN(@MaHDN varchar(10))
+CREATE proc Xoa_HDN(@MaHDN varchar(10))
 as
 begin
 update ChiTietHoaDonNhap
@@ -135,7 +135,7 @@ where MaHDN = ''
 
 
 --thêm chi tiết hóa đơn nhập
-alter proc Them_CTHDN
+CREATE proc Them_CTHDN
 ( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
 as
 begin
@@ -145,7 +145,7 @@ end
 go
 
 -- sửa chi tiết hóa đơn nhập
-alter proc Sua_CTHDN
+CREATE proc Sua_CTHDN
 ( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
 as
 begin
@@ -157,7 +157,7 @@ go
 
 
 -- xóa chi tiết hóa đơn nhập
-alter proc Xoa_CTHDN(@MaHDN varchar(10), @MaThuoc varchar(10))
+CREATE proc Xoa_CTHDN(@MaHDN varchar(10), @MaThuoc varchar(10))
 as
 begin
 delete ChiTietHoaDonNhap
@@ -168,7 +168,7 @@ go
 
 -- sửa trạng thái đã thanh toán thành thanh toán
 go
-create PROC SuaTrangThai(@MaHoaDon VARCHAR(10),@TrangThai NVARCHAR(50))
+CREATE PROC SuaTrangThai(@MaHoaDon VARCHAR(10),@TrangThai NVARCHAR(50))
 AS
 BEGIN
 	UPDATE HoaDonNhap
@@ -178,7 +178,7 @@ END
 
 -- xem hóa đơn đã tính cho phí
 GO
-alter PROC Xem_ChiPhi
+CREATE PROC Xem_ChiPhi
 AS
 BEGIN
 	SELECT * FROM HoaDonNhap WHERE TrangThai=N'Đã thanh toán'
