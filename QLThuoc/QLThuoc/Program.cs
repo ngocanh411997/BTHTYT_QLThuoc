@@ -17,7 +17,7 @@ namespace QLThuoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDangNhap());
+            Application.Run(new frmLoaiThuoc());
             //Application.Run(new frmHoaDonDaTra());
             //Application.Run(new frmMain());
             //Application.Run(new frmThuoc());

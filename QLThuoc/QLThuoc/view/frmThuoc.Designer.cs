@@ -199,9 +199,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.Size = new System.Drawing.Size(56, 15);
             this.label5.TabIndex = 25;
-            this.label5.Text = "Tên ĐVSX";
+            this.label5.Text = "Tên NCC";
             // 
             // label3
             // 
@@ -384,8 +384,8 @@
             this.cbTimKiem.Items.AddRange(new object[] {
             "Mã Thuốc",
             "Tên Thuốc",
-            "Mã Loại Thuốc",
-            "Mã ĐVSX",
+            "Tên Loại Thuốc",
+            "Tên NCC",
             "Công Dụng",
             "HSD",
             "Nước SX"});

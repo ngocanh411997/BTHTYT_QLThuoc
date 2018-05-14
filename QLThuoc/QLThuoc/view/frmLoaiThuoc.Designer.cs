@@ -212,6 +212,10 @@
             // cbTimKiem
             // 
             this.cbTimKiem.FormattingEnabled = true;
+            this.cbTimKiem.Items.AddRange(new object[] {
+            "Mã Loại Thuốc",
+            "Tên Loại Thuốc",
+            "Ghi Chú"});
             this.cbTimKiem.Location = new System.Drawing.Point(129, 19);
             this.cbTimKiem.Name = "cbTimKiem";
             this.cbTimKiem.Size = new System.Drawing.Size(179, 21);

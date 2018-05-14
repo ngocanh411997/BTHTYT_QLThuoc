@@ -144,11 +144,11 @@ namespace QLThuoc.view
             }
             if (cbMaLoaiThuoc.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mã loại thuốc!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa nhập tên loại thuốc!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (cbMaDVSX.Text == "")
             {
-                MessageBox.Show("Bạn chưa nhập mã ĐVSX!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa nhập tên NCC!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (txtCongDung.Text == "")
             {
@@ -237,31 +237,31 @@ namespace QLThuoc.view
         {
             if (cbTimKiem.Text == "Mã Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaThuoc like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where MaThuoc like '%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Tên Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where TenThuoc like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where TenThuoc like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Mã Loại Thuốc")
+            if (cbTimKiem.Text == "Tên Loại Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaLoaiThuoc Like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where TenLoaiThuoc Like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Mã ĐVSX")
+            if (cbTimKiem.Text == "Tên NCC")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaDVSX like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where TenNCC like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Công Dụng")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where CongDung like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where CongDung like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "HSD")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where HSD like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where HSD like '%" + txtTimKiem.Text.Trim() + "%'");
             }           
             if (cbTimKiem.Text == "Nước SX")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where NuocSX like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("SELECT MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.Thuoc,dbo.LoaiThuoc,dbo.NhaCungCap where NuocSX like N'%" + txtTimKiem.Text.Trim() + "%'");
             }      
         }
 
