@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+
 namespace QLThuoc.Entity
 {
     public class TaiKhoan
@@ -20,6 +21,5 @@ namespace QLThuoc.Entity
             Name = _name;
             Pass = _pass;
         }
-
     }
 }

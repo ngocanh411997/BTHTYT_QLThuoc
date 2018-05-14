@@ -65,7 +65,9 @@ namespace QLThuoc.view
 
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmTaiKhoan TK = new frmTaiKhoan();
+            TK.ShowDialog();
+            this.Show();
         }
     }
 }
