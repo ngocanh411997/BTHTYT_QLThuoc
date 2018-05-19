@@ -148,5 +148,13 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("KHVIP",null);
         }
+        public DataTable GetListNV()
+        {
+            return conn.GetData("NV_SelectAll", null);
+        }
+        public DataTable GetListKH()
+        {
+            return conn.GetData("Xem_KhachHang", null);
+        }
     }
 }

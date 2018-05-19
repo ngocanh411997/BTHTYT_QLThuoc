@@ -135,12 +135,12 @@ where MaHDN = ''
 
 
 --thêm chi tiết hóa đơn nhập
-CREATE proc Them_CTHDN
+ALTER proc Them_CTHDN
 ( @MaHDN varchar(10), @MaThuoc varchar(10),@DVT nvarchar(50), @Gia bigint, @Soluong int, @ThanhTien int)
 as
 begin
 insert into ChiTietHoaDonNhap
-values (@MaHDN, @MaThuoc, @DVT, @Gia, @Soluong, @ThanhTien)
+values (@MaHDN, @MaThuoc, @DVT, @Gia, @Soluong, @Gia*@Soluong)
 end
 go
 
@@ -231,12 +231,13 @@ values('admin', '123')
 insert into TaiKhoan 
 values('NV', '123')
 
+GO
+CREATE PROC Them_TK(@Name VARCHAR(20), @Pass VARCHAR(20))
+AS
+BEGIN
+	INSERT INTO dbo.TaiKhoan
+	        ( Name, Pass )
+	VALUES  ( @Name,@Pass)
+END
 
--- Tài khoản :v nốt
-
-create proc Them_TK(@Name varchar(20), @Pass varchar(20))
-as
-begin
-insert into TaiKhoan
-values(@Name, @Pass)
-end
+select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX WHERE MaThuoc like N'%An%'

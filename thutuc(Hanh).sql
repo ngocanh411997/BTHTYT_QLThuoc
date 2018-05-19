@@ -100,25 +100,11 @@ where MaNCC = @MaNCC
 END
 
 GO
-CREATE PROC Xoa_NhaCungCap( @MaNCC varchar(10))
-AS
-BEGIN
-ALTER table HoaDonNhap
-nocheck constraint FK__HoaDonNha__MaNCC__25869641
-delete HoaDonNhap where MaNCC = @MaNCC
 
-alter table LopHocPhan
-check constraint FK__HoaDonNha__MaNCC__25869641
-END
 
-CREATE proc Xoa_NhaCungCap( @MaNCC varchar(10))
+ALTER proc Xoa_NhaCungCap( @MaNCC varchar(10))
 as
 begin
-alter table HoaDonNhap
-nocheck constraint FK__HoaDonNha__MaNCC__25869641
-delete HoaDonNhap where MaNCC = @MaNCC
 delete NhaCungCap where MaNCC = @MaNCC
-alter table LopHocPhan
-check constraint FK__HoaDonNha__MaNCC__25869641
 end
 

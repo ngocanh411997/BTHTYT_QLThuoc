@@ -68,6 +68,7 @@
     <Compile Include="BUS\LoginBUS.cs" />
     <Compile Include="BUS\NhaCCBUS.cs" />
     <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\ThuocBUS.cs" />
     <Compile Include="DAL\CoSoDAL.cs" />
     <Compile Include="DAL\HoaDonNhapDAL.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\NhaCCDAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\ThuocDAL.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +97,7 @@
     <Compile Include="Entity\LoaiThuocEntity.cs" />
     <Compile Include="Entity\NhaCCEntity.cs" />
     <Compile Include="Entity\NhanVienEntity.cs" />
+    <Compile Include="Entity\TaiKhoan.cs" />
     <Compile Include="Entity\ThuocEntity.cs" />
     <Compile Include="Helper\files.cs" />
     <Compile Include="Program.cs" />
@@ -227,6 +230,12 @@
     <Compile Include="view\frmSQL_conn.Designer.cs">
       <DependentUpon>frmSQL_conn.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmTaiKhoan.designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\frmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmSQL_conn.resx">
       <DependentUpon>frmSQL_conn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmThanhToan.resx">
       <DependentUpon>frmThanhToan.cs</DependentUpon>

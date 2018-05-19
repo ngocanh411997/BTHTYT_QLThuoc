@@ -1,4 +1,5 @@
 ﻿using QLThuoc.BUS;
+using QLThuoc.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,6 +53,11 @@ namespace QLThuoc.view
         private void dgvDTNgay_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             dgvDTNgay.Rows[e.RowIndex].Cells["STT"].Value = e.RowIndex + 1;
+        }
+
+        private void btnXuatFile_Click(object sender, EventArgs e)
+        {
+            files.ExportToExcel(dgvDTNgay);
         }
     }
 }

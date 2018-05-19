@@ -31,21 +31,39 @@ namespace QLThuoc.view
             btnHuy.Enabled = e;
             dtNgayXuat.Enabled = e;            
             txtMaHD.Enabled = e;
-            txtMaKH.Enabled = e;
-            txtMaNVXuat.Enabled = e;
+            cbMaKH.Enabled = e;
+            cbMaNV.Enabled = e;
         }
         
         private void clearData()
         {
             txtMaHD.Text = "";
-            txtMaKH.Text = "";
-            txtMaNVXuat.Text = "";
+            cbMaNV.Text = "";
+            cbMaKH.Text = "";
             dtNgayXuat.Text = "";
 
+        }
+        private void ShowListNV()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListNV();
+            cbMaNV.DataSource = dt;
+            cbMaNV.DisplayMember = "MaNV";
+            cbMaNV.ValueMember = "MaNV";
+        }
+        private void ShowListKH()
+        {
+            DataTable dt = new DataTable();
+            dt = Bus.GetListKH();
+            cbMaKH.DataSource = dt;
+            cbMaKH.DisplayMember = "MaKH";
+            cbMaKH.ValueMember = "MaKH";
         }
         private void HienThi()
         {
             dgvHoaDonXuat.DataSource = Bus.GetData();
+            ShowListNV();
+            ShowListKH();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -106,11 +124,11 @@ namespace QLThuoc.view
             {
                 MessageBox.Show("Bạn chưa nhập mã hóa đơn!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (txtMaKH.Text == "")
+            if (cbMaKH.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập mã khách hàng!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (txtMaNVXuat.Text == "")
+            if (cbMaNV.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập nhân viên xuất!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -119,12 +137,12 @@ namespace QLThuoc.view
                 MessageBox.Show("Bạn chưa nhập ngày xuất!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             obj.MaHoaDon = txtMaHD.Text;
-            obj.MaKH = txtMaKH.Text;
-            obj.MaNVXuat = txtMaNVXuat.Text;
+            obj.MaKH = cbMaKH.SelectedValue.ToString();
+            obj.MaNVXuat = cbMaNV.SelectedValue.ToString();
             obj.NgayXuat = dtNgayXuat.Value;
 
 
-            if (txtMaHD.Text != "" && txtMaKH.Text != "" && txtMaNVXuat.Text != "" && dtNgayXuat.Text != "" && fluu == 0)
+            if (txtMaHD.Text != "" && cbMaKH.Text != "" && cbMaNV.Text != "" && dtNgayXuat.Text != "" && fluu == 0)
             {
                 try
                 {
@@ -141,7 +159,7 @@ namespace QLThuoc.view
 
                 }
             }
-            else if (txtMaHD.Text != "" && txtMaKH.Text != "" && txtMaNVXuat.Text != "" && dtNgayXuat.Text != "" && fluu != 0)
+            else if (txtMaHD.Text != "" && cbMaKH.Text != "" && cbMaNV.Text != "" && dtNgayXuat.Text != "" && fluu != 0)
             {
                 try
                 {
@@ -212,8 +230,8 @@ namespace QLThuoc.view
         {
             fluu = -1;
             
-            txtMaKH.Enabled = false;
-            txtMaNVXuat.Enabled = false;
+            cbMaKH.Enabled = false;
+            cbMaNV.Enabled = false;
             dtNgayXuat.Enabled = false;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
@@ -241,15 +259,15 @@ namespace QLThuoc.view
         {
             if (fluu == 0)
             {
-                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
-                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
+                cbMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
+                cbMaNV.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
                 dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
             }
             else if (fluu != 0 && fluu != -1)
             {
                 txtMaHD.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaHoaDon"].Value);
-                txtMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
-                txtMaNVXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
+                cbMaKH.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaKH"].Value);
+                cbMaNV.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["MaNVXuat"].Value);
                 dtNgayXuat.Text = Convert.ToString(dgvHoaDonXuat.CurrentRow.Cells["NgayXuat"].Value);
               
             }

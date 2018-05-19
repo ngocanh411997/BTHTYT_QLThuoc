@@ -192,6 +192,22 @@ FROM dbo.Thuoc T,(SELECT MaThuoc, SUM(SoLuong) AS SLN FROM dbo.ChiTietHoaDonNhap
 WHERE N.MaThuoc=T.MaThuoc AND T.MaThuoc=X.MaThuoc
 END
 
+ IIF(IsNull(SUM(X1.SoLuong)), 0,  SUM(X1.SoLuong)) AS TonXuat,
+            TonNhap - TonXuat AS Ton,
+
+Alter PROC KhoThuoc
+AS
+BEGIN
+SELECT T.MaThuoc,T.TenThuoc, 
+ IIF(ISNULL(SUM(N.SoLuong)), 0,  SUM(N.SoLuong)) AS SLNhap,
+ IIF(ISNULL(SUM(X.SoLuong)), 0,  SUM(X.SoLuong)) AS SLXuat,
+ SLNhap-SLXuat AS SL
+FROM dbo.Thuoc T,(SELECT MaThuoc, SoLuong FROM dbo.ChiTietHoaDonNhap GROUP BY MaThuoc) N, (SELECT MaThuoc,SoLuong FROM dbo.ChiTietHoaDonXuat GROUP BY MaThuoc) X
+WHERE N.MaThuoc=T.MaThuoc AND T.MaThuoc=X.MaThuoc
+GROUP BY T.MaThuoc,T.TenThuoc
+END
+
+
 
 SELECT * FROM dbo.ChiTietHoaDonNhap
 

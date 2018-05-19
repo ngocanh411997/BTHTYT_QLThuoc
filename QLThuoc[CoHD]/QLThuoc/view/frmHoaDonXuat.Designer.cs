@@ -55,12 +55,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtNgayXuat = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtMaNVXuat = new System.Windows.Forms.TextBox();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbMaKH = new System.Windows.Forms.ComboBox();
+            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -341,10 +341,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbMaNV);
+            this.groupBox1.Controls.Add(this.cbMaKH);
             this.groupBox1.Controls.Add(this.dtNgayXuat);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtMaNVXuat);
-            this.groupBox1.Controls.Add(this.txtMaKH);
             this.groupBox1.Controls.Add(this.txtMaHD);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -372,20 +372,6 @@
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Ngày xuất";
-            // 
-            // txtMaNVXuat
-            // 
-            this.txtMaNVXuat.Location = new System.Drawing.Point(112, 90);
-            this.txtMaNVXuat.Name = "txtMaNVXuat";
-            this.txtMaNVXuat.Size = new System.Drawing.Size(174, 20);
-            this.txtMaNVXuat.TabIndex = 6;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Location = new System.Drawing.Point(112, 54);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(174, 20);
-            this.txtMaKH.TabIndex = 5;
             // 
             // txtMaHD
             // 
@@ -420,6 +406,22 @@
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã HĐ";
+            // 
+            // cbMaKH
+            // 
+            this.cbMaKH.FormattingEnabled = true;
+            this.cbMaKH.Location = new System.Drawing.Point(112, 54);
+            this.cbMaKH.Name = "cbMaKH";
+            this.cbMaKH.Size = new System.Drawing.Size(173, 21);
+            this.cbMaKH.TabIndex = 12;
+            // 
+            // cbMaNV
+            // 
+            this.cbMaNV.FormattingEnabled = true;
+            this.cbMaNV.Location = new System.Drawing.Point(111, 90);
+            this.cbMaNV.Name = "cbMaNV";
+            this.cbMaNV.Size = new System.Drawing.Size(173, 21);
+            this.cbMaNV.TabIndex = 13;
             // 
             // frmHoaDonXuat
             // 
@@ -466,8 +468,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtNgayXuat;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMaNVXuat;
-        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.TextBox txtMaHD;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -482,5 +482,7 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnMuaHang;
+        private System.Windows.Forms.ComboBox cbMaNV;
+        private System.Windows.Forms.ComboBox cbMaKH;
     }
 }

@@ -30,7 +30,7 @@ namespace QLThuoc.view
         }
         private void HienThiCT()
         {
-            dgvChiTietHDN.DataSource = BUS.Xem_CTHDN("SELECT MaHDN,TenThuoc,DonViTinh,Gia,ChiTietHoaDonNhap.SoLuong,SUM (ThanhTien) AS TongTien FROM dbo.ChiTietHoaDonNhap INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc where MaHDN like '%" + txtMaHD.Text.Trim() + "%' GROUP BY SELECT MaHDN,TenThuoc,DonViTinh,Gia,ChiTietHoaDonNhap.SoLuong ");
+            dgvChiTietHDN.DataSource = BUS.Xem_CTHDN("SELECT MaHDN,TenThuoc,DonViTinh,Gia,ChiTietHoaDonNhap.SoLuong,SUM (ThanhTien) AS 'Tổng Tiền' FROM dbo.ChiTietHoaDonNhap INNER JOIN dbo.Thuoc ON Thuoc.MaThuoc = ChiTietHoaDonNhap.MaThuoc where MaHDN like '%" + txtMaHD.Text.Trim() + "%' GROUP BY SELECT MaHDN,TenThuoc,DonViTinh,Gia,ChiTietHoaDonNhap.SoLuong ");
             dgvChiTietHDN.AutoResizeColumns();
         }
 

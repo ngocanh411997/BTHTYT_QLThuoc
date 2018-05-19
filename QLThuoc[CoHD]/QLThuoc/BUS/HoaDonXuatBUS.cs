@@ -97,5 +97,13 @@ namespace QLThuoc.BUS
         {
             return da.KHVIP();
         }
+        public DataTable GetListNV()
+        {
+            return da.GetListNV();
+        }
+        public DataTable GetListKH()
+        {
+            return da.GetListKH();
+        }
     }
 }

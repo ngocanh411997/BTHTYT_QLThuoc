@@ -100,6 +100,7 @@
             this.btnXuatFile.Text = "Xuất File";
             this.btnXuatFile.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnXuatFile.UseVisualStyleBackColor = false;
+            this.btnXuatFile.Click += new System.EventHandler(this.btnXuatFile_Click);
             // 
             // btnThoat
             // 

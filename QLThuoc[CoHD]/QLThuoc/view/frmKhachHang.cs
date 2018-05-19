@@ -176,7 +176,7 @@ namespace QLThuoc.view
             {
                 dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where MaKH like '%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Tên cơ sở")
+            if (cbTimKiem.Text == "Tên khách hàng")
             {
                 dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where TenKH like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
@@ -184,7 +184,7 @@ namespace QLThuoc.view
             {
                 dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where DiaChi Like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "SĐT")
+            if (cbTimKiem.Text == "SDT")
             {
                 dgvKH.DataSource = Bus.TimKiemKH("select * from KhachHang where SDT like '%" + txtTimKiem.Text.Trim() + "%'");
             }

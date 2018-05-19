@@ -384,8 +384,8 @@
             this.cbTimKiem.Items.AddRange(new object[] {
             "Mã Thuốc",
             "Tên Thuốc",
-            "Mã Loại Thuốc",
-            "Mã ĐVSX",
+            "Tên Loại Thuốc",
+            "Tên NCC",
             "Công Dụng",
             "HSD",
             "Nước SX"});

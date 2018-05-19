@@ -43,7 +43,7 @@ namespace QLThuoc.view
                 });
             }
 
-            cry.Load(@"C:\Users\NgocAnh\Documents\GitHub\BTHTYT_QLThuoc1\QLThuoc\QLThuoc\view\InHoaDonXuat.rpt");
+            cry.Load(@"C:\Users\NgocAnh\Documents\GitHub\BTHTYT_QLThuoc1\QLThuoc[CoHD]\QLThuoc\view\InHoaDonXuat.rpt");
             cry.SetDataSource(ds1);
             crystalReportViewer1.ReportSource = cry;
             //

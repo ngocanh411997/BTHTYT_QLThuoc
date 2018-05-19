@@ -148,6 +148,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh Toán";
             this.Load += new System.EventHandler(this.frmThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvThanhToan)).EndInit();

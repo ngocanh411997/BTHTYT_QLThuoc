@@ -19,7 +19,8 @@ namespace QLThuoc.view
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
+            this.Close();
         }
 
         private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,6 +52,32 @@ namespace QLThuoc.view
             this.Hide();
             frmHoaDonXuat Xuat = new frmHoaDonXuat();
             Xuat.ShowDialog();
+            this.Show();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            //frmTaiKhoan TK = new frmTaiKhoan();
+            //TK.ShowDialog();
+            //this.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void đăngKýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTaiKhoan TK = new frmTaiKhoan();
+            TK.ShowDialog();
             this.Show();
         }
     }

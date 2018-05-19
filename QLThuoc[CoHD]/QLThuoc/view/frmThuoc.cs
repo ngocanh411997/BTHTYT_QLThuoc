@@ -237,31 +237,31 @@ namespace QLThuoc.view
         {
             if (cbTimKiem.Text == "Mã Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaThuoc like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX WHERE MaThuoc like N'%"+txtTimKiem.Text+"%'");
             }
             if (cbTimKiem.Text == "Tên Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where TenThuoc like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX where TenThuoc like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Mã Loại Thuốc")
+            if (cbTimKiem.Text == "Tên Loại Thuốc")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaLoaiThuoc Like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX Where TenLoaiThuoc Like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
-            if (cbTimKiem.Text == "Mã ĐVSX")
+            if (cbTimKiem.Text == "Tên NCC")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where MaDVSX like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX where TenNCC like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "Công Dụng")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where CongDung like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX where CongDung like N'%" + txtTimKiem.Text.Trim() + "%'");
             }
             if (cbTimKiem.Text == "HSD")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where HSD like '%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX where HSD like '%" + txtTimKiem.Text.Trim() + "%'");
             }           
             if (cbTimKiem.Text == "Nước SX")
             {
-                dgvThuoc.DataSource = Bus.TimKiemThuoc("select * from Thuoc where NuocSX like N'%" + txtTimKiem.Text.Trim() + "%'");
+                dgvThuoc.DataSource = Bus.TimKiemThuoc("select MaThuoc,TenThuoc,TenLoaiThuoc,TenNCC,CongDung,HSD,NuocSX FROM dbo.LoaiThuoc INNER JOIN dbo.Thuoc ON Thuoc.MaLoaiThuoc = LoaiThuoc.MaLoaiThuoc INNER JOIN dbo.NhaCungCap ON NhaCungCap.MaNCC = Thuoc.MaDVSX where NuocSX like N'%" + txtTimKiem.Text.Trim() + "%'");
             }      
         }
 

@@ -47,12 +47,12 @@ namespace QLThuoc.view
                     }
                     else
                     {
-                        
+                        this.Hide();
                         frmMain frmM = new frmMain();
                         frmM.ShowDialog();                    
-                        frmM.Show();
-                        string ID = txtID.Text;
-                        this.Close();
+                        this.Show();
+                      
+                     
                     }
                 }
 
@@ -60,13 +60,14 @@ namespace QLThuoc.view
                 {
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!\nVui lòng thử lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtPass.Text = "";
+                    frmSQL_conn frm = new frmSQL_conn();
+                    frm.ShowDialog();
+                    this.Show();
                 }
             }
             catch
             {
-                frmSQL_conn frm = new frmSQL_conn();
-                frm.ShowDialog();
-                frm.Show();
+               
             }
         }
     }

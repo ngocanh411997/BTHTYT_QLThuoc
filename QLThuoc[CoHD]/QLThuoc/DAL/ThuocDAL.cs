@@ -71,5 +71,6 @@ namespace QLThuoc.DAL
         {
             return conn.GetData("ShowNCC", null);
         }
+    
     }
 }
