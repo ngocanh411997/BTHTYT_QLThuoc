@@ -1,0 +1,24 @@
+﻿@using WebsiteBanThuoc.Models;
+@model List<ThuongHieu>
+
+<h1 id="TieuDeTH">Thương hiệu</h1>
+@foreach (var item in Model)
+{
+    <li>
+        <a href="@Url.Action("ThuocTheoThuongHieu", new { @MaTH=item.MaTH })"> @item.TenTH</a>
+    </li>
+}
+<div>
+    <a href="@Url.Action("DanhMucThuongHieu")">Thương hiệu khác</a>
+</div>
+
+
+<style>
+    #TieuDeTH {
+        padding: 15px 0 15px 15px;
+        color: white;
+        width: 235px;
+        background-color: #de5529;
+    }
+
+</style>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebsiteBanThuoc.Models.DanhMuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/LayOut/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Thêm Danh mục mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã Danh mục
+       </th>
+        <th>
+            Tên Danh mục
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaDM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDM)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { @MaDM =item.MaDM }) |
+            @Html.ActionLink("Xóa", "Delete", new { @MaDM = item.MaDM })
+        </td>
+    </tr>
+}
+
+</table>

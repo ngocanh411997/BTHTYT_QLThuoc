@@ -1,0 +1,28 @@
+﻿@using WebsiteBanThuoc.Models;
+@model KhachHang
+<link href="~/Content/Style.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "ThongTinKH";
+    Layout = "~/Views/LayOut/NguoiDungLayOut.cshtml";
+}
+
+
+<thead>
+    <tr>
+        <th>Tên</th>
+        <th>Email</th>
+        <th>Địa chỉ</th>
+        <th>Điện thoại</th>
+        <th>Ngày sinh</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>@Model.HoTen</td>
+        <td>@Model.Email</td>
+        <td>@Model.DiaChi</td>
+        <td>@Model.DienThoai</td>
+        <td>@Model.NgaySinh</td>
+    </tr>
+</tbody>

@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/fonts.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/screen.css" rel="stylesheet" />
+    <script src="~/Content/NivoSlider/jquery-1.7.1.min.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.pack.js"></script>
+    <link href="~/Content/NivoSlider/nivo-slider.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="ToanTrang">
+        <section class="blank">
+            <div class="flash">
+                <div class="DangKyDangNhap">
+                    @Html.ActionLink("Đăng ký", "DangKy", null, htmlAttributes: new { @class = "DangKy" })
+                    @Html.ActionLink("Đăng nhập", "DangNhap", null, htmlAttributes: new { @class = "DangNhap" })
+                </div>
+            </div>
+            <div class="flash error" id="divDanhMuc">
+                <div id="txtTimKiem">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.TextBox("txtTimKiem", "", htmlAttributes: new { @class = "textBoxTimKiem", @placeholder = "Nhập vào từ khóa cần tìm" })
+                        <div id="divHinhAnhTimKiem">
+                            <button type="submit"><img src="~/Content/images/Search-icon.png" /> </button>
+                        </div>
+                    }
+                </div>
+                <ul class="navMenu">
+                    <li>
+                        <a href="/Home/Index"> Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="#"> Giới thiệu</a>
+                    </li>
+                    <li>
+                        <a href="#"> Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="/Location/Index"> Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="divMenuSlider">
+            <div id="divMenuLeft">
+                <div class="activity">
+                    <h1 class="item-header">Một số sản phẩm mới</h1>
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <p><strong>Dennis The Dude</strong> updated his <a href="#">user profile</a>.</p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="activity-list-update">
+                        <img src="http://lorempixel.com/50/50/" alt="Image">
+                        <p><strong>Abe Kobo</strong> uploaded a new file <a href="#">new-design.png</a></p>
+                        <div class="clear"></div>
+                    </div>
+                    <a href="#" class="item-footer green">
+                        Xem chi tiết
+                    </a>
+                </div>
+            </div>
+            <div id="slider" class="nivoSlider">
+                <img src="~/Content/images/img5.jpg" />
+                <img src="~/Content/images/img4.jpg" />
+                <img src="~/Content/images/img8.png" />
+            </div>
+            <div style="clear:both"></div>
+        </section>
+        <section>
+            <div id="DanhmucSP">
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/banh-keo/c4421?src=static_block" title="">
+                        <img src="~/Content/images/img10.jfif" alt="img">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/c/c15074?src=static_block" title="">
+                        <img src="~/Content/images/tinhdau.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/c/c15074?src=static_block" title="">
+                        <img src="~/Content/images/ungthu.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/c/c15074?src=static_block" title="">
+                        <img src="~/Content/images/giamcan.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/c/c15074?src=static_block" title="">
+                        <img src="~/Content/images/depda.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="https://tiki.vn/c/c15074?src=static_block" title="">
+                        <img src="~/Content/images/treem.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div id="divChuDeVaNXB">
+            <section>
+                @*Phần chủ đề*@
+                <div id="divChuDe">
+                    @*     @Html.Action("ChuDePartial", "ChuDe")*@
+
+                </div>
+                <hr>
+            </section>
+            <div style="clear:both"></div>
+            @*Div nhà xuất bản*@
+            <section class="blank items">
+                <div id="divLeft">
+                    <div class="item">
+                        <div class="item-info" id="divNhaXuatBan">
+                            @*Action partialview*@
+                            @*@Html.Action("NhaXuatBanPartial", "NhaXuatBan")*@
+                            <h1>Thương hiệu</h1>
+
+                            <li>
+                                <a href="#"> 123</a>
+                            </li>
+                            <li>
+                                <a href="#"> 123</a>
+                            </li>
+                            <li>
+                                <a href="#"> 123</a>
+                            </li>
+                            <li>
+                                <a href="#"> 123</a>
+                            </li>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id="divRight">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+        <div style="clear:both"></div>
+
+
+        <div class="container blank">
+            <article>
+                <h3>Phone Support</h3>
+                <p>24/7 Call us now.</p>
+                <p class="lead"><a href="tel://">+ 1900 561 252</a></p>
+            </article>
+            <article>
+                <h3>Our Location</h3>
+                <p>236 Hoang Quoc Viet, Co Nhue, Ha Noi, Viet Nam</p>
+            </article>
+            <div class="clear"></div>
+        </div>
+        <div>
+            <a href="#" class="button button-buy">Website is design by</a>
+        </div>
+    </div>
+
+    @*Script Chạy nivoslider*@
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                controlNav: false,               // 1,2,3... navigation
+                nextText: '',
+                prevText:''
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿@using WebsiteBanThuoc.Models;
+@model Thuoc
+
+<link href="~/Content/Style.css" rel="stylesheet" />
+<link href="~/Content/TrangChuCss.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/LayOut/NguoiDungLayOut.cshtml";
+}
+
+@section NoiDungBenPhai
+    {
+    <div style="float:left"><h1>Sản phẩm liên quan</h1></div>
+    </br>
+<div style="display:inline; float:left">
+    @foreach (var item in Model.DanhMuc.Thuocs.OrderBy(x => Guid.NewGuid()).Skip(1).Take(4))
+    {
+        <div class="prod_box">
+            <div class="top_prod_box"></div>
+            <div class="center_prod_box">
+                @if (item.TenThuoc.Length < 40)
+                {
+                    <div class="product_title"><a href="@Url.Action("XemChiTiet","Thuoc", new { @mathuoc = item.MaThuoc})">@item.TenThuoc</a></div>
+                }
+                else
+                {
+                    <div class="product_title"><a href="@Url.Action("XemChiTiet","Thuoc",new { @mathuoc = item.MaThuoc})">@item.TenThuoc.Substring(0, 40) ...</a> </div>
+                }
+                <div class="product_img"><a href="@Url.Action("XemChiTiet", new { @mathuoc = item.MaThuoc })"><img src="@Url.Content("~/HinhAnhSP/" + item.AnhBia)" alt="" border="0" /></a></div>
+                <div class="prod_price"><span class="price">Giá: @String.Format("{0:0,0}", item.GiaBan) VNĐ</span></div>
+            </div>
+            <div class="bottom_prod_box"></div>
+            @using (Html.BeginForm("ThemGioHang", "GioHang", new { @MaSP = Model.MaThuoc, @strURL = Request.Url.ToString() }))
+            {
+                <input type="submit" style="cursor:pointer; width:130px; height: 45px; font:bold 30px " value="Mua hàng &#xf07a;" id="btnGioHang" class="btn btn-primary">
+            }
+        </div>
+
+    }
+</div>
+
+    }
+
+@*Thông tin thuốc chi tiết*@
+<div class="center_content">
+    <div class="center_title_bar">@Model.DanhMuc.TenDM</div>
+    <div class="prod_box_big">
+        <div class="top_prod_box_big"></div>
+        <div class="center_prod_box_big">
+            <div class="product_img_big">
+                <a href="javascript:popImage('images/big_pic.jpg','Some Title')" title="header=[Zoom] body=[&nbsp;] fade=[on]"><img src="@Url.Content("~/HinhAnhSP/"+Model.AnhBia)" alt="" border="0" /></a>
+
+            </div>
+            <div class="details_big_box">
+                <div class="product_title_big">@Model.TenThuoc</div>
+                <div class="specifications">
+                    Thương hiệu: <span class="blue">@Model.ThuongHieu.TenTH</span><br />
+                    <br />
+                    Mô tả: <span class="black">@Html.Raw(Model.MoTa)</span><br />
+                    <br />
+                </div>
+                <div class="prod_price_big"><span class="price">Giá bán: @String.Format("{0:0,0}", Model.GiaBan) VNĐ </span></div>
+                <br />
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @MaSP = Model.MaThuoc, @strURL = Request.Url.ToString() }))
+                {
+                    <input type="submit" style="cursor:pointer; width:130px; height: 45px; font:bold 30px " value="Mua hàng &#xf07a;" id="btnGioHang" class="btn btn-primary">
+                }
+            </div>
+        </div>
+        <div class="bottom_prod_box_big"></div>
+    </div>
+</div>
+    
+
+
+
+
+
+<style>
+    #btnGioHang {
+        font-family: 'FontAwesome','Segoe UI';
+        background-color: cornflowerblue;
+    }
+
+        #btnGioHang:hover {
+            background-color: #a30a11;
+        }
+</style>
+
+

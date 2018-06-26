@@ -1,0 +1,28 @@
+﻿
+@using WebsiteBanThuoc.Models;
+@*Định nghĩa kiểu dữ liệu cho biến model*@
+@model List<Thuoc>
+
+
+<h1 class="item-header">Một số sản phẩm mới</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="activity-list-update">
+            <img src="@Url.Content("~/HinhAnhSP/"+item.AnhBia)" width="50" height="50" alt="Image">
+            @*Nếu tên thuốc dài hơn 30 ký tự thì chúng ta sẽ cắt tên thuốc ra lấy từ ký tự 0 đến ký tự 35*@
+            @if (item.TenThuoc.Length > 30)
+            {
+                <p><strong title="@item.TenThuoc">Tiêu đề: @item.TenThuoc.Substring(0, 30)...</strong><br /><a href="@Url.Action("XemChiTiet", new { @mathuoc = item.MaThuoc})">Xem chi tiết</a></p>
+            }
+            else
+            {
+                <p><strong title="@item.TenThuoc">Tiêu đề: @item.TenThuoc</strong><br /><a href="@Url.Action("XemChiTiet", new { @mathuoc = item.MaThuoc})">Xem chi tiết</a></p>
+                <div class="clear"></div>
+            }
+        </div>
+    }
+}
+<a href="@Url.Action("TatCa")" style="background-color: #0092a5; " class="item-footer green">
+    Các sản phẩm khác
+</a>

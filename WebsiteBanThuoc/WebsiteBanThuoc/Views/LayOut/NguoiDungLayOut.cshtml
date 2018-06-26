@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/NguoiDungCssLayout/NguoiDungCssLayout.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/fonts.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCssLayout/screen.css" rel="stylesheet" />
+    <script src="~/Content/NivoSlider/jquery-1.7.1.min.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.pack.js"></script>
+    <link href="~/Content/NivoSlider/nivo-slider.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div id="ToanTrang">
+        <section class="blank">
+            <div class="flash">
+                <div class="DangKyDangNhap">   
+
+                   
+                    @Html.Action("GioHangPartial","GioHang")                              
+                    @*@Html.ActionLink("Đăng ký", "Create", "DangKy", null, htmlAttributes: new { @class = "DangKy" })*@
+                    @Html.Action("TKPartial", "DangNhap")
+                    @*@Html.ActionLink("Đăng nhập", "Login", "DangNhap", null, htmlAttributes: new { @class = "DangNhap" })*@
+                </div>
+            </div>
+            <div class="flash error" id="divDanhMuc">
+                <div id="txtTimKiem">
+                    @using (Html.BeginForm("KetQuaTimKiem", "TimKiem", FormMethod.Post))
+                    {
+                        @Html.TextBox("txtTimKiem","",htmlAttributes: new { @class="textBoxTimKiem",@placeholder="Nhập vào từ khóa cần tìm",@style="height:10px"})
+                        <div id="divHinhAnhTimKiem">
+                            <button type="submit"><img src="~/Content/images/Search-icon.png" /> </button>
+                        </div>
+                    }
+                </div>
+                <ul class="navMenu">
+                    <li>
+                        <a href="~/Home/Index"> Trang chủ</a> 
+                    </li>
+                    <li>
+                        <a href="~/GioHang/GioHang">Giỏ hàng</a>
+                    </li>
+                    <li>
+                        <a href="~/Thuoc/TatCa"> Sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="~/Home/Location"> Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="divMenuSlider">
+            @*Div menu bên trái*@
+            <div id="divMenuLeft">
+                @*Chèn partial view sản phẩm mới*@
+                <div class="activity">
+                    @Html.Action("SanPhamMoiPartial","Thuoc")                  
+                </div>
+            </div>
+                <div id="slider" class="nivoSlider">
+                    <img src="~/Content/images/img5.jpg" />
+                    <img src="~/Content/images/img4.jpg" />
+                    <img src="~/Content/images/img8.png" />
+                </div>
+                <div style="clear:both"></div>
+    </section>
+        <section>
+            <div id="DanhmucSP">
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=1" title="">
+                        <img src="~/Content/images/img10.jfif" alt="img">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=2" title="">
+                        <img src="~/Content/images/tinhdau.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=4" title="">
+                        <img src="~/Content/images/ungthu.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=3" title="">
+                        <img src="~/Content/images/giamcan.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=5" title="">
+                        <img src="~/Content/images/depda.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+
+                    <a class="block-link" target="_blank" href="~/DanhMuc/ThuocTheoDanhMuc?MaDM=6" title="">
+                        <img src="~/Content/images/treem.jpg" alt="">
+                        <span class="title"></span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+            <section>
+                @*Phần danh mục*@
+                <div id="divChuDe">
+
+                    @RenderBody()
+                </div>
+                <hr>
+            </section>
+            <div style="clear:both"></div>
+            @*Div thương hiệu*@
+        <div id="divChuDeVaNXB">
+            <section class="blank items">
+                <div id="divLeft">
+                    <div class="item">
+                        <div class="item-info" id="divNhaXuatBan">
+                            @*Action partialview*@
+                            @Html.Action("ThuongHieuPartial", "ThuongHieu")
+                        </div>
+
+                    </div>
+                </div>
+                <div id="divRight">
+                    @RenderSection("NoiDungBenPhai", false)
+                </div>
+                <div style="clear:both"></div>
+                
+            </section>
+        </div>
+        <div style="clear:both"></div>
+
+
+        <div class="container blank">
+            <article>
+                <h3>Phone Support</h3>
+                <p>24/7 Call us now.</p>
+                <p class="lead"><a href="tel://">+ 1900 561 252</a></p>
+            </article>
+            <article>
+                <h3>Our Location</h3>
+                <p>236 Hoang Quoc Viet, Co Nhue, Ha Noi, Viet Nam</p>
+            </article>
+            <div class="clear"></div>
+        </div>
+        <div>
+            <a href="#" class="button button-buy">Website is design by MTA student</a>
+        </div>
+    </div>
+
+    @*Script Chạy nivoslider*@
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                controlNav: false,               // 1,2,3... navigation
+                nextText: '',
+                prevText:''
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@using WebsiteBanThuoc.Models;
+@model List<ThuongHieu>
+
+<link href="~/Content/TrangChuCss.css" rel="stylesheet" />
+<link href="~/Content/Style.css" rel="stylesheet" />
+    @*<script src="~/Content/NivoSlider/jquery-1.7.1.min.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.js"></script>
+    <script src="~/Content/NivoSlider/jquery.nivo.slider.pack.js"></script>
+    <link href="~/Content/NivoSlider/nivo-slider.css" rel="stylesheet" />*@
+
+@{
+    ViewBag.Title = "DanhMucThuongHieu";
+    Layout = "~/Views/LayOut/NguoiDungLayOut.cshtml";
+}
+
+
+@*Ẩn div danh mục và div thương hiệu bên dưới*@
+<style>
+    #divChuDeVaNXB {
+        display: none;
+    }
+</style>
+<hr />
+<h2 style="margin-left:2%;font-weight:normal;color:black">Danh mục thương hiệu</h2>
+<hr />
+<div style="clear:both"></div>
+<div id="divBody" style="width:100%">
+    @*Hiển thị danh mục thương hiệu*@
+    <div style="float:left;width:30%;">
+        @foreach (var item in Model)
+        {
+            <a id="btnChuDe" style="width: 250px; font-size: 11pt; color: aliceblue;  text-decoration: none" href="@Url.Action("ThuocTheoThuongHieu", new {@MaTH=item.MaTH })" class="button button-submit"> @item.TenTH</a>
+            <br />
+        }
+    </div>
+    <div style="float:left;width:70%;">
+        <h1 style="font-size: 30px"> Thương hiệu độc quyền </h1>
+
+        @*<div id="slider" class="nivoSlider">*@
+        @*<img src="~/HinhAnhSP/TH1.jpg" />
+        <img src="~/HinhAnhSP/TH2.jpg" />
+        <img src="~/HinhAnhSP/TH3.jpg" />
+        <img src="~/HinhAnhSP/TH4.jpg" />*@
+        <img src="~/HinhAnhSP/TH5.jpg" />
+        @*</div>*@
+        @*Script Chạy nivoslider*@
+        @*<script type="text/javascript">
+            $(window).load(function () {
+                $('#slider').nivoSlider({
+                    controlNav: false,               // 1,2,3... navigation
+                    nextText: '',
+                    prevText:''
+                });
+            });
+            </script>*@
+
+    </div>
+</div>
+    
+
